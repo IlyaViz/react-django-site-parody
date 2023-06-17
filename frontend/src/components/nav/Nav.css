@@ -1,0 +1,30 @@
+nav{
+    padding-top: 15px;
+}
+
+.all_components{
+    display: flex;
+    justify-content: space-around;
+    gap: 10%;
+    color: white;
+    min-height: 69.8px;
+}
+
+.left_components{
+    display: flex;
+    align-items: center;
+}
+
+.center_components{
+    color: #9ea0a1;
+    display: flex;
+    justify-content: space-between;
+    gap: 28px;
+    font-size: 1.25rem;
+    padding-right: 20px;
+}
+
+.right_components{
+    color: #9ea0a1;
+    font-size: 1.25rem;
+}

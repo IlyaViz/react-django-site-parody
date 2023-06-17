@@ -1,0 +1,22 @@
+*{
+    font-family: Noto Sans,sans-serif;
+}
+
+body{
+    margin: 0px;
+    background-color: black;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+.entrance{
+    background-image: url('https://anitype.online/welcome-background.webp');
+    background-repeat: no-repeat;
+}
+
+.bottom_section{
+    background: linear-gradient(rgb(25, 25, 25) 75%, rgb(0, 0, 0));
+    min-height: 130px;
+}

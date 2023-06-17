@@ -1,0 +1,15 @@
+.selected_component{
+   padding-bottom: 5px;
+   border-bottom: 2px solid rgb(254, 79, 79);
+   transition: border-bottom 0.2s linear;
+   color: white;
+}
+
+.nav_component p{
+   cursor: pointer;
+   transition: color 0.3s linear;
+}
+
+p:hover{
+   color: white;
+}

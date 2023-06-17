@@ -1,0 +1,44 @@
+.entrance_text{
+    color: white;    
+    text-align: center;
+    margin-top: 150px;
+}
+
+.entrance_main_text{
+    font-size: 5rem;
+    margin-bottom: 0px;
+}
+
+.entrance_extra_text{
+    font-size: 1rem;
+    margin-top: 0px;
+}
+
+.entrance_main{
+    display: flex;
+}
+
+.entrance_button{
+    background-color: transparent;
+    border: none;
+    margin: auto;
+    transform: rotate(-90deg) scaleX(-1) translateY(50px) translateX(30px);  
+    user-select: none; 
+    cursor: pointer;
+}
+
+.entrance_button img{
+    width: 250px;
+}
+
+@keyframes buttonDisappear {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: rotate(-15deg) translateX(100px);
+        cursor: default;
+    }
+}
+

@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
+    'corsheaders',
     'api',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -50,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware'
 ]
 
 ROOT_URLCONF = 'site_copy.urls'
@@ -125,5 +127,9 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+#media
 MEDIA_URL = "media/"
 MEDIA_ROOT = "media"
+
+#cors
+CORS_ORIGIN_ALLOW_ALL = True

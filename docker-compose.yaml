@@ -1,0 +1,21 @@
+services:
+  backend:
+    build: ./backend
+    ports:
+      - 8000:8000
+    volumes:
+      - ./backend/api/:/backend/api/
+      - ./backend/media/:/backend/media/
+      - ./backend/site_copy/:/backend/site_copy
+
+  frontend:
+    build: ./frontend
+    depends_on:
+      - backend
+    ports:
+      - 3000:3000
+    volumes:
+      - ./frontend/src/:/frontend/src
+      - ./frontend/public/:/frontend/public/
+    environment:
+      - WATCHPACK_POLLING=true

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { Logo } from "../logo/Logo"
 import { NavComponent } from "../nav_component/NavComponent"
 import { useState } from 'react'
@@ -26,7 +27,7 @@ export const Nav = () => {
                 <div className="center_components">
                     {centerComponentNames.map((val, index) => {
                         if(val === state.selected_nav_component){
-                            return <NavComponent key={index} name={val} selected onClick={() => changeSelectedNavComponent(val)}/>
+                            return <NavComponent key={index} name={val} selected/>
                         } else {
                             return <NavComponent key={index} name={val} onClick={() => changeSelectedNavComponent(val)}/>
                         }
@@ -35,7 +36,7 @@ export const Nav = () => {
 
                 <div className="right_components">
                     {rightComponentNames.map((val, index) => {
-                        return <NavComponent key={index} name={val}/>
+                        return <NavComponent key={index} name={val} redirect='/login'/>
                     })}
                 </div>
             </div>

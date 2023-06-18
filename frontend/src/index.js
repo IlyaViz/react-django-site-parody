@@ -1,23 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import { Nav } from './components/nav/Nav'
-import { EntranceMenu } from './components/entrance_menu/EntranceMenu'
-import { AnimeInWatchMenu } from './components/anime_in_watch_menu/AnimeInWatchMenu'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Home } from './components/home/Home'
+import { Login } from './components/login/Login'
 import './index.css'
 
 const App = () => {
-  const [animeInWatchMenuShown, setAnimeInWatchMenuShown] = useState(false)
-
   return(
-    <div className='app'>
-      <div className='entrance'>
-        <Nav/>
-        <EntranceMenu ShowAnimeInWatchMenu={() => setAnimeInWatchMenuShown(true)}/>
-      </div>
-      <div className='bottom_section'>
-        <AnimeInWatchMenu shown={animeInWatchMenuShown}/>
-      </div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' Component={Home}/>
+        <Route path='/login' Component={Login}/>
+      </Routes>
+    </BrowserRouter>
   )
 }
 

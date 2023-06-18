@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './NavComponent.css'
 
 export const NavComponent = (props) => {
@@ -5,9 +6,9 @@ export const NavComponent = (props) => {
     return(
         <div className="nav_component">
             {props.selected ? 
-            <p href="" className='selected_component' onClick={props.onClick}> {props.name} </p>
+            <Link to={props.redirect} className='selected_component' onClick={props.onClick}> {props.name} </Link>
             :
-            <p href="" onClick={props.onClick}> {props.name} </p>
+            <Link to={props.redirect} onClick={props.onClick}> {props.name} </Link>
             }
         </div>
     )

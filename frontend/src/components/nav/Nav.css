@@ -10,14 +10,14 @@ nav{
     min-height: 69.8px;
 }
 
-.left_components{
+
+.left_components, .center_components, .right_components{
     display: flex;
     align-items: center;
 }
 
 .center_components{
     color: #9ea0a1;
-    display: flex;
     justify-content: space-between;
     gap: 28px;
     font-size: 1.25rem;

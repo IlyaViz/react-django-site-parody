@@ -7,7 +7,7 @@ import './Home.css'
 export const Home = () => {
   const [animeInWatchMenuShown, setAnimeInWatchMenuShown] = useState(false)
 
-  const background = animeInWatchMenuShown ? 'linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 1) 75%)' : 'black'
+  const bottomSectionBackground = animeInWatchMenuShown ? 'linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 1) 75%)' : 'black'
 
   return (
     <div className='home'>
@@ -15,7 +15,7 @@ export const Home = () => {
         <Nav />
         <EntranceMenu ShowAnimeInWatchMenu={() => setAnimeInWatchMenuShown(true)} />
       </div>
-      <div className='bottom_section' style={{ background: background }}>
+      <div className='bottom_section' style={{ background: bottomSectionBackground }}>
         <AnimeInWatchMenu shown={animeInWatchMenuShown} />
       </div>
     </div>

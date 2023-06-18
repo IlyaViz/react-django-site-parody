@@ -10,7 +10,6 @@ export const EntranceMenu = (props) => {
             behavior: "smooth"
         }), 100)
         event.target.style.animation = "buttonDisappear 0.3s linear forwards"
-        event.target.style.visibility = "hidden"
     }
 
     return (
@@ -21,8 +20,8 @@ export const EntranceMenu = (props) => {
             </div>
 
             <div className='entrance_main'>
-                <button className='entrance_button' onClick={onClick}>
-                    <img src="../../../images/arrow.png" alt=''></img>
+                <button className='entrance_button'>
+                    <img src="../../../images/arrow.png" alt='' onClick={onClick}></img>
                 </button>
             </div>
         </div>

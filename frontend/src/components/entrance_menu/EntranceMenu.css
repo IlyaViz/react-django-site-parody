@@ -25,10 +25,11 @@
     margin: auto;
     transform: rotate(-90deg) scaleX(-1) translateY(50px) translateX(30px);
     user-select: none;
-    cursor: pointer;
+    cursor: default;
 }
 
 .entrance_button img {
+    cursor: pointer;
     width: 250px;
 }
 

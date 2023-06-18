@@ -25,3 +25,6 @@ frontend/yarn-error.log*
 
 #media
 backend/media
+
+#cache
+__pycache__

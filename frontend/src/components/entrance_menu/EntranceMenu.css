@@ -1,45 +1,45 @@
-.entrance_text{
-    color: white;    
+.entrance_text {
+    color: white;
     text-align: center;
     margin-top: 200px;
 }
 
-.entrance_main_text{
+.entrance_main_text {
     font-size: 5rem;
     margin-bottom: 0px;
 }
 
-.entrance_extra_text{
+.entrance_extra_text {
     font-size: 1rem;
     margin-top: 0px;
 }
 
-.entrance_main{
+.entrance_main {
     margin-top: 50px;
     display: flex;
 }
 
-.entrance_button{
+.entrance_button {
     background-color: transparent;
     border: none;
     margin: auto;
-    transform: rotate(-90deg) scaleX(-1) translateY(50px) translateX(30px);  
-    user-select: none; 
+    transform: rotate(-90deg) scaleX(-1) translateY(50px) translateX(30px);
+    user-select: none;
     cursor: pointer;
 }
 
-.entrance_button img{
+.entrance_button img {
     width: 250px;
 }
 
 @keyframes buttonDisappear {
-    0%{
+    0% {
         opacity: 1;
     }
-    100%{
+
+    100% {
         opacity: 0;
         transform: rotate(-15deg) translateX(100px);
         cursor: default;
     }
 }
-

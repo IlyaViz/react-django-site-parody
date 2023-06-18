@@ -1,16 +1,17 @@
-span{
+span {
     font-size: 1.5rem;
     text-align: center;
     transition: font-size 0.1s linear, text-shadow 0.1s linear;
     position: sticky;
 }
 
-.logo_class{
+.logo_class {
     margin-bottom: 12.5px;
     max-width: 87px;
 }
 
-.logo_class:hover > span{
+.logo_class:hover>span {
     font-size: 1.75rem !important;
-    text-shadow: 1px 5px 3.2px #979fa3;;
+    text-shadow: 1px 5px 3.2px #979fa3;
+    ;
 }

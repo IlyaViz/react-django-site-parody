@@ -1,26 +1,26 @@
-.selected_component{
+.selected_component {
    padding-bottom: 5px;
    border-bottom: 2px solid rgb(254, 79, 79);
    transition: border-bottom 0.1s linear !important;
    color: white;
 }
 
-.nav_component{
+.nav_component {
    display: flex;
    align-items: center;
 }
 
-.nav_component a{
+.nav_component a {
    cursor: pointer;
    transition: color 0.3s linear;
 }
 
-a{
+a {
    text-decoration: none;
    color: #9ea0a1;
    vertical-align: middle;
 }
 
-a:hover{
+a:hover {
    color: white;
 }

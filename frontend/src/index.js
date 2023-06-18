@@ -6,11 +6,11 @@ import { Login } from './components/login/Login'
 import './index.css'
 
 const App = () => {
-  return(
+  return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' Component={Home}/>
-        <Route path='/login' Component={Login}/>
+        <Route path='/' Component={Home} />
+        <Route path='/login' Component={Login} />
       </Routes>
     </BrowserRouter>
   )
@@ -18,5 +18,5 @@ const App = () => {
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <App/>
+  <App />
 );

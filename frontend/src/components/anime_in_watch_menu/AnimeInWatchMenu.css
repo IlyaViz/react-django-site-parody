@@ -1,34 +1,34 @@
-.anime_in_watch{
+.anime_in_watch {
     color: white;
     padding: 50px 0px 50px 30px;
     animation: showAnimation 1s ease-in-out;
 }
 
-.anime_in_watch p{
+.anime_in_watch p {
     margin-left: 75px;
     font-size: 1.5rem;
     line-height: 0px;
     text-shadow: 0px 0px 20px whitesmoke, 0px 0px 10px black;
 }
 
-.anime_in_watch_menu{
+.anime_in_watch_menu {
     display: flex;
     align-items: center;
 }
 
-.left_control_button{
+.left_control_button {
     transform: translateX(30px);
     position: relative;
     left: 10px;
 }
 
-.right_control_button{
+.right_control_button {
     transform: translateX(-30px);
     position: relative;
     right: 10px;
 }
 
-.control_button{
+.control_button {
     color: black;
     height: 50px;
     cursor: pointer;
@@ -38,32 +38,32 @@
     z-index: 1;
 }
 
-.anime_in_watch_menu_content{
+.anime_in_watch_menu_content {
     display: flex;
     overflow-x: scroll;
     scroll-behavior: smooth;
     gap: 25px;
 }
 
-.anime_in_watch_menu_content::-webkit-scrollbar{
+.anime_in_watch_menu_content::-webkit-scrollbar {
     display: none;
 }
 
-.left_control_button .control_button_content span::before{
+.left_control_button .control_button_content span::before {
     content: "<";
     font-size: 3rem;
 }
 
-.right_control_button .control_button_content span::before{
+.right_control_button .control_button_content span::before {
     content: ">";
     font-size: 3rem;
 }
 
-.anime_in_watch_menu:hover > .control_button{
+.anime_in_watch_menu:hover>.control_button {
     opacity: 1;
 }
 
-.control_button:hover{
+.control_button:hover {
     color: white;
 }
 

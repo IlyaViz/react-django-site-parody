@@ -1,8 +1,8 @@
-nav{
+nav {
     padding-top: 15px;
 }
 
-.all_components{
+.all_components {
     display: flex;
     justify-content: space-around;
     gap: 10%;
@@ -11,12 +11,14 @@ nav{
 }
 
 
-.left_components, .center_components, .right_components{
+.left_components,
+.center_components,
+.right_components {
     display: flex;
     align-items: center;
 }
 
-.center_components{
+.center_components {
     color: #9ea0a1;
     justify-content: space-between;
     gap: 28px;
@@ -24,7 +26,7 @@ nav{
     padding-right: 20px;
 }
 
-.right_components{
+.right_components {
     color: #9ea0a1;
     font-size: 1.25rem;
 }

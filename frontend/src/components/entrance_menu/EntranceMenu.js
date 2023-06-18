@@ -11,10 +11,9 @@ export const EntranceMenu = (props) => {
         }), 100)
         event.target.style.animation = "buttonDisappear 0.3s linear forwards"
         event.target.style.visibility = "hidden"
-
     }
 
-    return(
+    return (
         <div>
             <div className="entrance_text">
                 <h1 className="entrance_main_text">Смотри аниме на AniType</h1>
@@ -27,7 +26,5 @@ export const EntranceMenu = (props) => {
                 </button>
             </div>
         </div>
-        
-        
     )
 }

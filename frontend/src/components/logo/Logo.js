@@ -2,7 +2,7 @@ import './Logo.css'
 
 export const Logo = () => {
 
-    return(
+    return (
         <div className="logo_class">
             <span>AniType</span>
         </div>

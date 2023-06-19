@@ -8,10 +8,14 @@ span {
 .logo_class {
     margin-bottom: 12.5px;
     max-width: 87px;
+    transition: transform 0.09s linear;
 }
 
 .logo_class:hover>span {
     font-size: 1.75rem !important;
-    text-shadow: 1px 5px 3.2px #979fa3;
-    ;
+    text-shadow: 1px 1px 4px #000000;
+}
+
+.logo_class:hover {
+    transform: translate(-5px);
 }

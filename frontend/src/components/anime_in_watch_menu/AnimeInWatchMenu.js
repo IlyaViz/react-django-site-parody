@@ -25,7 +25,10 @@ export const AnimeInWatchMenu = (props) => {
 
     return (
         <div className='anime_in_watch' style={{ display: displayType }}>
-            <p>Сейчас смотрят</p>
+            <div className='anime_in_watch_header'>
+                <p>Сейчас смотрят</p>
+            </div>
+
             <div className='anime_in_watch_menu'>
                 <button className='control_button left_control_button' onClick={() => scrollMenu('left')}>
                     <div className='control_button_content'>

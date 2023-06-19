@@ -3,8 +3,34 @@
     height: 200px;
     min-width: 300px;
     min-height: 200px;
-    border-radius: 40px;
-    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.anime_component_background {
+    position: relative;
+    bottom: 150px;
+    height: 100%;
+    width: 100%;
     background-size: cover;
-    opacity: 0.85;
+    border-radius: 40px;
+    opacity: 0.9;
+    transition: opacity 0.4s ease-out;
+}
+
+.anime_component_text {
+    position: relative;
+    width: 200px;
+    height: 150px;
+    transform: translate(50px, 15px);
+    opacity: 0;
+    overflow: hidden;
+    transition: opacity 0.3 ease;
+}
+
+.anime_component:hover>.anime_component_text {
+    opacity: 1;
+}
+
+.anime_component:hover>.anime_component_background {
+    opacity: 0.25;
 }

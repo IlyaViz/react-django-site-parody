@@ -4,7 +4,7 @@
     animation: showAnimation 1s ease-in-out;
 }
 
-.anime_in_watch p {
+.anime_in_watch_header p {
     margin-left: 75px;
     font-size: 1.5rem;
     line-height: 0px;

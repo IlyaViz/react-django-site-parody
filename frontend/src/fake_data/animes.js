@@ -2,7 +2,7 @@ export const animes = [
     {
         id: 1,
         name: "anime1",
-        description: "top anime",
+        description: "top anime: really top and good and cool and so on so on so on so on so on so on so on so on so on so on so on so on so on so on so on so on so on so on so on so on so on so on so on so on so on so on so on so on so on so on so on so on so on so on so on",
         image_url: "https://assets-prd.ignimgs.com/2022/08/17/top25animecharacters-blogroll-1660777571580.jpg"
     },
     {

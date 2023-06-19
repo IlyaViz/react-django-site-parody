@@ -7,7 +7,7 @@ export const AnimeSmall = (props) => {
 
     return (
         <div className='anime_component'>
-            <div className='anime_component_text'>
+            <div className='anime_component_description'>
                 <p> {descriptionPrettified} </p>
             </div>
             <div className='anime_component_background' style={{ backgroundImage: backgroundImage }} />

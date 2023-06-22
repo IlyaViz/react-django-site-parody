@@ -13,10 +13,6 @@ export const Nav = () => {
     let centerComponentNames = ['Главное', 'Каталог', 'Моё']
     let rightComponentNames = ['Войти']
 
-    const changeSelectedNavComponent = (name) => {
-        setState({ selected_nav_component: name })
-    }
-
     return (
         <nav>
             <div className="all_components">
@@ -29,7 +25,7 @@ export const Nav = () => {
                         if (val === state.selected_nav_component) {
                             return <NavComponent key={index} name={val} selected />
                         } else {
-                            return <NavComponent key={index} name={val} onClick={() => changeSelectedNavComponent(val)} />
+                            return <NavComponent key={index} name={val} onClick={() => setState({ selected_nav_component: val })} />
                         }
                     })}
                 </div>

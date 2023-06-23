@@ -1,0 +1,52 @@
+.episode {
+    width: 350px;
+}
+
+.episode_info {
+    color: black;
+    margin-top: 10px;
+    border-bottom: 3px solid rgb(100,100,100);
+    background-color: rgba(255, 255, 255, 0.8);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 30px;
+    cursor: pointer;
+}
+
+.episode_number {
+    line-height: 0px;
+    text-decoration: underline;
+}
+
+.episode_name {
+    text-align: center;
+    transition: font-size 0.15s ease-in;
+    font-size: 1.25rem;
+}
+
+.episode_video {
+    overflow: hidden;
+    width: 350px;
+    height: 200px;
+    animation: showVideo 0.75s;
+}
+
+.episode_video video {
+    width: 100%;
+    height: 100%;
+}
+
+.episode:hover>.episode_name {
+    font-size: 1.5rem;
+}
+
+@keyframes showVideo {
+    0% {
+        width: 100%;
+        height: 0px;
+    }
+
+    100% {
+        height: 200px;
+    }
+}

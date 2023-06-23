@@ -1,0 +1,28 @@
+.anime_page {
+    width: 100%;
+    height: 100%;
+    background-image: url('https://anitype.online/welcome-background.webp');
+}
+
+.anime_page_content {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 0px;
+}
+
+.episodes {
+    overflow-y: scroll;
+    max-height: 500px;
+}
+
+.no_anime_error {
+    font-size: 2.5rem;
+    color: rgb(140, 50, 50);
+    text-align: center;
+}
+
+.episodes::-webkit-scrollbar {
+    display: none;
+}

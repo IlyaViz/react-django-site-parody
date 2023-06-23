@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { responseTypeEnum } from '../enums/response_type_enum/responseTypeEnum.js'
+import { responseTypeEnum } from '../enums/response_type_enum/ResponseTypeEnum.js'
 
 const backendUrl = "http://127.0.0.1:8000/api/"
 

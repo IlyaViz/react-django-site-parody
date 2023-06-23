@@ -1,0 +1,111 @@
+/* for small card */
+.anime_small_component {
+    width: 300px;
+    height: 200px;
+    min-width: 300px;
+    min-height: 200px;
+    overflow: hidden;
+}
+
+.anime_small_component_background {
+    position: relative;
+    bottom: 185px;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    border-radius: 40px;
+    opacity: 0.9;
+    transition: opacity 0.4s ease-out;
+}
+
+.anime_small_component_description {
+    position: relative;
+    width: 200px;
+    height: 150px;
+    transform: translate(50px, 15px);
+    opacity: 0;
+    overflow: hidden;
+    transition: opacity 0.3 ease;
+}
+
+.anime_small_component_name {
+    position: relative;
+    z-index: 1;
+    width: 250px;
+    height: 35px;
+    overflow: hidden;
+    transform: translate(25px);
+    transition: opacity 0.2s linear;
+}
+
+.anime_small_component:hover>.anime_small_component_description {
+    opacity: 1;
+}
+
+.anime_small_component:hover>.anime_small_component_background {
+    opacity: 0.25;
+}
+
+.anime_small_component:hover>.anime_small_component_name {
+    opacity: 0;
+}
+
+/* for big card */
+
+.anime_big_component {
+    font-size: 1.5rem;
+    width: 500px;
+    height: 400px;
+    min-width: 300px;
+    min-height: 200px;
+    overflow: hidden;
+}
+
+.anime_big_component_background {
+    position: relative;
+    bottom: 358px;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    border-radius: 10px;
+    opacity: 0.9;
+    transition: opacity 0.5s;
+}
+
+.anime_big_component_description {
+    color: white;
+    position: relative;
+    width: 350px;
+    height: 300px;
+    transform: translate(75px, 15px);
+    opacity: 0;
+    overflow: hidden;
+    transition: opacity 0.3 ease;
+    z-index: 1;
+    text-align: center;
+    text-shadow: 0px 0px 5px black;
+
+}
+
+.anime_big_component_name {
+    position: relative;
+    z-index: 1;
+    width: 400px;
+    height: 35px;
+    transform: translate(25px, -15px);
+    transition: opacity 0.2s linear;
+    color: whitesmoke;
+    text-shadow: 0px 0px 1px black;
+}
+
+.anime_big_component:hover>.anime_big_component_description {
+    opacity: 1;
+}
+
+.anime_big_component:hover>.anime_big_component_background {
+    opacity: 0.25;
+}
+
+.anime_big_component:hover>.anime_big_component_name {
+    opacity: 0;
+}

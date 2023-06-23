@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { AnimeApi } from '../../api/AnimeApi'
 import { Episode } from '../episode/Episode'
-import { AnimeSmall } from '../anime_small/AnimeSmall'
-import { responseTypeEnum } from '../../enums/response_type_enum/responseTypeEnum'
+import { AnimeCard } from '../anime_card/AnimeCard'
+import { responseTypeEnum } from '../../enums/response_type_enum/ResponseTypeEnum'
+import { animeCardTypeEnum } from '../../enums/anime_card_type_num/AnimeCardTypeEnum'
 import './AnimePage.css'
 
 export const AnimePage = () => {
@@ -41,8 +42,9 @@ export const AnimePage = () => {
                 <div className='anime_page'>
                     <div className='anime_page_content'>
                         <div className='anime'>
-                            <AnimeSmall
+                            <AnimeCard
                                 id={anime.id}
+                                type={animeCardTypeEnum.big}
                                 name={anime.name}
                                 description={anime.description}
                                 image_url={anime.image}

@@ -1,8 +1,8 @@
-import { AnimeSmall } from '../anime_small/AnimeSmall'
-import { animes } from '../../fake_data/animes'
+import { AnimeCard } from '../anime_card/AnimeCard'
+import { animeCardTypeEnum } from '../../enums/anime_card_type_num/AnimeCardTypeEnum'
 import { useRef, useEffect, useState } from 'react'
 import { AnimeApi } from '../../api/AnimeApi'
-import { responseTypeEnum } from '../../enums/response_type_enum/responseTypeEnum'
+import { responseTypeEnum } from '../../enums/response_type_enum/ResponseTypeEnum'
 import './AnimeInWatchMenu.css'
 
 export const AnimeInWatchMenu = (props) => {
@@ -47,9 +47,10 @@ export const AnimeInWatchMenu = (props) => {
 
                 <div className='anime_in_watch_menu_content' ref={contentRef}>
                     {animes.map((anime, index) => {
-                        return <AnimeSmall
+                        return <AnimeCard
                             key={index}
                             id={anime.id}
+                            type={animeCardTypeEnum.small}
                             name={anime.name}
                             description={anime.description}
                             image_url={anime.image}

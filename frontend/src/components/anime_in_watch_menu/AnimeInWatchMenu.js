@@ -1,16 +1,25 @@
 import { AnimeSmall } from '../anime_small/AnimeSmall'
 import { animes } from '../../fake_data/animes'
-import { useRef } from 'react'
+import { useRef, useEffect, useState } from 'react'
+import { AnimeApi } from '../../api/AnimeApi'
+import { responseTypeEnum } from '../../enums/response_type_enum/responseTypeEnum'
 import './AnimeInWatchMenu.css'
 
 export const AnimeInWatchMenu = (props) => {
+    const [animes, setAnimes] = useState([])
     const contentRef = useRef();
     const displayType = props.shown ? "block" : "none"
 
-    // logic goes here
-    const getAnime = () => {
-        return animes
-    }
+    useEffect(() => {
+        const updateAnimes = () => {
+            AnimeApi.getNewAnimes(10).then((res) => {
+                if (res != responseTypeEnum.error) {
+                    setAnimes(res)
+                }
+            })
+        }
+        updateAnimes()
+    }, [])
 
     const scrollMenu = (side) => {
         const AnimeSmallWidth = contentRef.current.firstChild.offsetWidth
@@ -40,11 +49,13 @@ export const AnimeInWatchMenu = (props) => {
                     {animes.map((anime, index) => {
                         return <AnimeSmall
                             key={index}
+                            id={anime.id}
                             name={anime.name}
                             description={anime.description}
-                            image_url={anime.image_url}
+                            image_url={anime.image}
                         />
-                    })}
+                    })
+                    }
                 </div>
 
                 <button className='control_button right_control_button' onClick={() => scrollMenu('right')}>

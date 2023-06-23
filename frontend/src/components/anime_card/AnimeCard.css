@@ -5,6 +5,7 @@
     min-width: 300px;
     min-height: 200px;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .anime_small_component_background {

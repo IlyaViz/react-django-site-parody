@@ -110,3 +110,28 @@
 .anime_big_component:hover>.anime_big_component_name {
     opacity: 0;
 }
+
+@media screen and (max-width: 500px) {
+    .anime_big_component {
+        font-size: 0.9rem;
+        width: 300px;
+        height: 250px;
+    }
+
+    .anime_big_component_background {
+        bottom: 200px;
+    }
+
+    .anime_big_component_name {
+        width: 250px;
+        height: 35px;
+        transform: translate(25px, 25px);
+    }
+
+    .anime_big_component_description {
+        width: 250px;
+        height: 150px;
+        transform: translate(30px, 15px);
+    }
+
+}

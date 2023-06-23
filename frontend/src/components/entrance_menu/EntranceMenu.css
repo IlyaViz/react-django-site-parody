@@ -44,3 +44,20 @@
         cursor: default;
     }
 }
+
+@media screen and (max-width: 600px) {
+    .center_components{
+        display: none;
+    }
+    .entrance_main_text{
+        font-size: 2.5rem;
+    }   
+    .entrance_extra_text{
+        font-size: 0.5rem;
+    }
+
+
+    .entrance_button img {
+        width: 200px;
+    }
+}

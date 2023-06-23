@@ -1,6 +1,8 @@
 .entrance {
-    background-image: url('https://anitype.online/welcome-background.webp');
+    background-image: url("../../../public/images/background_image_main.png");
     background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
 }
 
 .bottom_section {

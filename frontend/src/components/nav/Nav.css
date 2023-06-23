@@ -30,3 +30,10 @@ nav {
     color: #9ea0a1;
     font-size: 1.25rem;
 }
+
+@media screen and (max-width: 600px) {
+    .center_components {
+        display: none;
+    }
+
+}

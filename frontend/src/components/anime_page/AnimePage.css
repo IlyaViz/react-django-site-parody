@@ -13,6 +13,7 @@
 }
 
 .episodes {
+    display: grid;
     overflow-y: scroll;
     max-height: 500px;
 }
@@ -25,4 +26,30 @@
 
 .episodes::-webkit-scrollbar {
     display: none;
+}
+
+@media screen and (max-width: 950px) {
+    .anime_page_content {
+        flex-direction: column;
+    }
+
+    .episodes {
+        grid-template-columns: 1fr 1fr;
+        max-height: 300px;
+    }
+
+    .episode {
+        margin-left: 10px
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .anime_page_content {
+        flex-direction: column;
+    }
+
+    .episodes {
+        grid-template-columns: 1fr;
+        max-height: 300px;
+    }
 }

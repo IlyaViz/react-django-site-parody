@@ -1,12 +1,11 @@
 import axios from 'axios'
 import { responseTypeEnum } from '../enums/response_type_enum/responseTypeEnum.js'
-
-const backendUrl = "http://127.0.0.1:8000/api/"
+import * as constants from './Constants.js'
 
 export class UserApi {
 
     static createUser = (username, password) => {
-        const requestedUrl = backendUrl + "create_user"
+        const requestedUrl = constants.backendUrl + "create_user"
         const responseData = axios.post(requestedUrl, {
             username: username,
             password: password
@@ -22,7 +21,7 @@ export class UserApi {
 
     // finish later
     static getToken = (username, password) => {
-        const requestedUrl = backendUrl + "get_token"
+        const requestedUrl = constants.backendUrl + "get_token"
         const responseData = axios.post(requestedUrl, {
             username: username,
             password: password

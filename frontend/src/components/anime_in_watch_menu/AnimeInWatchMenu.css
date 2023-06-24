@@ -1,7 +1,6 @@
 .anime_in_watch {
     color: white;
     padding: 50px 0px 50px 30px;
-    animation: showAnimation 1s ease-in-out;
 }
 
 .anime_in_watch_header p {
@@ -74,5 +73,11 @@
 
     100% {
         opacity: 1;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .anime_in_watch_menu_content {
+        gap: 12.5px
     }
 }

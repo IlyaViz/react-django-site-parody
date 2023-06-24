@@ -32,8 +32,17 @@ nav {
 }
 
 @media screen and (max-width: 600px) {
-    .center_components {
+    .left_components {
+        margin-left: 15px;
+    }
+
+    .center_components,
+    .right_components {
         display: none;
+    }
+
+    .all_components {
+        justify-content: start;
     }
 
 }

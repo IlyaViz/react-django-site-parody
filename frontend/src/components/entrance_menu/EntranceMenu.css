@@ -9,28 +9,13 @@
     margin-bottom: 0px;
 }
 
+.entrance_main_text span {
+    font-size: 5rem;
+}
+
 .entrance_extra_text {
     font-size: 1rem;
     margin-top: 0px;
-}
-
-.entrance_main {
-    margin-top: 135px;
-    display: flex;
-}
-
-.entrance_button {
-    background-color: transparent;
-    border: none;
-    margin: auto;
-    transform: rotate(-90deg) scaleX(-1) translateY(50px) translateX(30px);
-    user-select: none;
-    cursor: default;
-}
-
-.entrance_button img {
-    cursor: pointer;
-    width: 250px;
 }
 
 @keyframes buttonDisappear {
@@ -45,19 +30,36 @@
     }
 }
 
+@keyframes entranceButtonMove {
+    0% {
+        transform: translateX(5px)
+    }
+
+    50% {
+        transform: translateX(0px);
+    }
+
+    100% {
+        transform: translate(5px);
+    }
+}
+
 @media screen and (max-width: 600px) {
-    .center_components{
+    .center_components {
         display: none;
     }
-    .entrance_main_text{
+
+    .entrance_main_text,
+    .entrance_main_text span {
         font-size: 2.5rem;
-    }   
-    .entrance_extra_text{
-        font-size: 0.5rem;
     }
 
+    .entrance_main_text span {
+        text-shadow: 1px 0px 10px blue;
+    }
 
-    .entrance_button img {
-        width: 200px;
+    .entrance_extra_text {
+        font-size: 0.5rem;
+        margin-top: 10px;
     }
 }

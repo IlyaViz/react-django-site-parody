@@ -1,10 +1,10 @@
 import './EntranceMenu.css'
 
 export const EntranceMenu = (props) => {
-    const { ShowAnimeInWatchMenu } = props
+    const { setAnimeInWatchMenuShown } = props
 
     const onClick = (event) => {
-        ShowAnimeInWatchMenu()
+        setAnimeInWatchMenuShown()
         setTimeout(() => window.scrollBy({
             top: window.innerHeight,
             behavior: "smooth"
@@ -15,14 +15,8 @@ export const EntranceMenu = (props) => {
     return (
         <div>
             <div className="entrance_text">
-                <h1 className="entrance_main_text">Смотри аниме на AniType</h1>
+                <h1 className="entrance_main_text">Смотри аниме на <span>AniType</span></h1>
                 <h4 className="entrance_extra_text">Огромное количество релизов с озвучкой от любимых студий, современный дизайн и не только, зарегистрируйся прямо сейчас</h4>
-            </div>
-
-            <div className='entrance_main'>
-                <button className='entrance_button'>
-                    <img src="../../../images/arrow.png" alt='' onClick={onClick}></img>
-                </button>
             </div>
         </div>
     )

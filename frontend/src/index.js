@@ -5,6 +5,7 @@ import { Home } from './components/home/Home'
 import { Login } from './components/login/Login'
 import { AnimePage } from './components/anime_page/AnimePage'
 import './index.css'
+import "animate.css/animate.min.css";
 
 const App = () => {
   return (

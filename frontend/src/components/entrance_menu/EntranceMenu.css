@@ -18,6 +18,12 @@
     margin-top: 0px;
 }
 
+/* animations from animate.css */
+.animate__animated.animate__bounceInUp {
+    --animate-timing-function: ease-in;
+}
+
+
 @keyframes buttonDisappear {
     0% {
         opacity: 1;

@@ -11,12 +11,17 @@ export const AnimeInWatchMenu = (props) => {
     const contentRef = useRef();
     const menuRef = useRef()
 
-    const menuIsInView = useInView(menuRef, {once: true, margin: "0px 0px -100px 0px"})
+    const menuIsInView = useInView(menuRef, { once: true, margin: "0px 0px -100px 0px" })
 
     useEffect(() => {
         if (menuIsInView) {
             menuRef.current.style.visibility = "visible"
-            menuRef.current.classList.add("animate__animated", "animate__fadeInRightBig")
+            menuRef.current.classList.add("animate__animated")
+            if (screen.width > 900) {
+                menuRef.current.classList.add("animate__fadeInRightBig")
+            } else {
+                menuRef.current.classList.add("animate__fadeInLeft")
+            }
         }
     }, [menuIsInView])
 

@@ -11,11 +11,6 @@ span {
     transition: transform 0.09s linear;
 }
 
-.logo_class:hover>span {
-    font-size: 1.75rem !important;
-    text-shadow: 1px 1px 4px #000000;
-}
-
-.logo_class:hover {
-    transform: translate(-5px);
+.logo_class:hover { 
+    animation: pulse 1.25s linear infinite;
 }

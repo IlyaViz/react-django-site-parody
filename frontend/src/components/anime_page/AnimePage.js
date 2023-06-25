@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { AnimeApi } from '../../api/AnimeApi'
-import { Episode } from '../episode/Episode'
-import { AnimeCard } from '../anime_card/AnimeCard'
-import { responseTypeEnum } from '../../enums/response_type_enum/ResponseTypeEnum'
-import { animeCardTypeEnum } from '../../enums/anime_card_type_num/AnimeCardTypeEnum'
+import responseTypeEnum from '../../enums/response_type_enum/ResponseTypeEnum'
+import animeCardTypeEnum from '../../enums/anime_card_type_num/AnimeCardTypeEnum'
+import Episode from '../episode/Episode'
+import AnimeCard from '../anime_card/AnimeCard'
 import './AnimePage.css'
 
-export const AnimePage = () => {
+const AnimePage = () => {
     const [anime, setAnime] = useState({})
     const [episodesList, setEpisodesList] = useState([])
     const [animeExist, setAnimeExist] = useState(false)
@@ -75,3 +75,5 @@ export const AnimePage = () => {
         </>
     )
 }
+
+export default AnimePage

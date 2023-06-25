@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { responseTypeEnum } from '../enums/response_type_enum/responseTypeEnum.js'
+import responseTypeEnum from '../enums/response_type_enum/responseTypeEnum.js'
 import * as constants from './Constants.js'
 
 export class UserApi {

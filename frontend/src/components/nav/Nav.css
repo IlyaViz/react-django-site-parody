@@ -31,6 +31,10 @@ nav {
     font-size: 1.25rem;
 }
 
+.burger {
+    display: none;
+}
+
 @media screen and (max-width: 600px) {
     .left_components {
         margin-left: 15px;

@@ -1,10 +1,11 @@
-import { Link } from 'react-router-dom'
-import { Logo } from "../logo/Logo"
-import { NavComponent } from "../nav_component/NavComponent"
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import Logo from "../logo/Logo"
+import NavComponent from "../nav_component/NavComponent"
+import BurgerMenu from '../burger_menu/BurgerMenu'
 import "./Nav.css"
 
-export const Nav = () => {
+const Nav = () => {
 
     let [state, setState] = useState({
         selected_nav_component: 'Главное'
@@ -35,8 +36,14 @@ export const Nav = () => {
                         return <NavComponent key={index} name={val} redirect='/login' />
                     })}
                 </div>
+
+                <div className="burger">
+                    <BurgerMenu />
+                </div>
             </div>
-        </nav>
+        </nav >
 
     )
 }
+
+export default Nav

@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { Home } from './components/home/Home'
-import { Login } from './components/login/Login'
-import { AnimePage } from './components/anime_page/AnimePage'
+import Home from './components/home/Home'
+import Login from './components/login/Login'
+import AnimePage from './components/anime_page/AnimePage'
 import './index.css'
 import "animate.css/animate.min.css";
 

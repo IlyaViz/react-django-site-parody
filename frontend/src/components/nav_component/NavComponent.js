@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import './NavComponent.css'
 
-export const NavComponent = (props) => {
+const NavComponent = (props) => {
     const { name, redirect, onClick } = props
 
     return (
@@ -14,3 +14,5 @@ export const NavComponent = (props) => {
         </div>
     )
 }
+
+export default NavComponent

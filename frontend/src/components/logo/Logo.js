@@ -1,6 +1,6 @@
 import './Logo.css'
 
-export const Logo = () => {
+const Logo = () => {
 
     return (
         <div className="logo_class">
@@ -8,3 +8,5 @@ export const Logo = () => {
         </div>
     )
 }
+
+export default Logo

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { textPrettification } from '../../utils/prettify'
 import './Episode.css'
 
-export const Episode = (props) => {
+const Episode = (props) => {
     const { episodeNumber, name, episodeVideoUrl } = props
     const [videoShown, setVideoShown] = useState(false)
     const videoRef = useRef()
@@ -29,3 +29,5 @@ export const Episode = (props) => {
 
     )
 }
+
+export default Episode

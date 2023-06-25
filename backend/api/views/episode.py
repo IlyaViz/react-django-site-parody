@@ -3,7 +3,6 @@ from rest_framework.generics import CreateAPIView, ListAPIView
 from rest_framework.response import Response
 from django.http.response import FileResponse
 from django.conf import settings
-import ffmpeg
 import re
 import os
 from wsgiref.util import FileWrapper

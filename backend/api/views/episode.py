@@ -42,9 +42,3 @@ class GetEpisodeVideo(APIView):
 
         return response
     
-    def process_range_header(self, range_header):
-        range_match = re.match(r'bytes=(\d+)-(\d*)', range_header)
-        start = int(range_match.group(1))
-        end = int(range_match.group(2))
-        total = end-start+1
-        return start, end, total

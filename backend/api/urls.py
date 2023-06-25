@@ -1,8 +1,14 @@
 from django.urls import path
 from .views.documentation import Documentation
 from .views.user import UserCreateAPIView, TokenCreateAPIView
-from .views.anime import AnimeCreateAPIView, AnimeRetrieveAPIView, LastAnimesListApiView
-from .views.episode import EpisodeCreateAPIView, GetEpisodesListApiView, GetEpisodeVideo
+from .views.anime import (  AnimeCreateAPIView,
+                            AnimeRetrieveAPIView, 
+                            LastAnimesListApiView)
+from .views.episode import (EpisodeCreateAPIView, 
+                            GetEpisodesListApiView, 
+                            GetEpisodeVideoAPIView)
+from .views.documentation import TestAPIView
+
 
 app_name = 'api'
 
@@ -19,5 +25,7 @@ urlpatterns = [
     
     path("add_episode/", EpisodeCreateAPIView.as_view()),
     path("get_episodes/<int:anime_pk>", GetEpisodesListApiView.as_view()),
-    path("get_episode_video/<int:episode_pk>", GetEpisodeVideo.as_view())
+    path("get_episode_video/<int:episode_pk>", GetEpisodeVideoAPIView.as_view()),
+
+    path("test", TestAPIView.as_view())
 ]

@@ -26,8 +26,7 @@ class GetEpisodesListApiView(ListAPIView):
             return Response({"error":"anime with this id does not exist"})
         return super().get(request, *args, **kwargs)
     
-class GetEpisodeVideo(APIView):
-    # need to be redone because video anyway needs to be downloaded fully
+class GetEpisodeVideoAPIView(APIView):
     def get(self, request, *args, **kwargs):
         id = kwargs["episode_pk"]
         try:

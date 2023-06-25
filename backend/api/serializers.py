@@ -18,8 +18,17 @@ class AnimeSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 class EpisodeSerializer(serializers.ModelSerializer):
+    episode_video_url = serializers.SerializerMethodField()
+
     class Meta:
         model = Episode
-        fields = "__all__"
+        fields = ["id", "name", "episode_number", "episode_video_url", "anime"]
+
+    def get_episode_video_url(self, obj):
+        protocol = self.context['request'].scheme
+        site_domain = self.context['request'].get_host() 
+        endpoint = f'{protocol}://{site_domain}/api/get_episode_video/{str(obj.id)}'
+        return endpoint
+
 
    

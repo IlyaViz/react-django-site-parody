@@ -58,7 +58,7 @@ const AnimePage = () => {
                                         key={index}
                                         episodeNumber={episode.episode_number}
                                         name={episode.name}
-                                        episodeVideoUrl={episode.episode}
+                                        episodeVideoUrl={episode.episode_video_url}
                                     />
                                 })
                                 :

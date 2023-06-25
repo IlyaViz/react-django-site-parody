@@ -69,6 +69,18 @@
 
 @media screen and (max-width: 500px) {
     .anime_in_watch_menu_content {
-        gap: 12.5px
+        gap: 12.5px;
+    }
+
+    .anime_in_watch {
+        padding-left: 10px;
+    }
+
+    .anime_in_watch_header p {
+        margin-left: 30px;
+    }
+
+    .control_button {
+        display: none;
     }
 }

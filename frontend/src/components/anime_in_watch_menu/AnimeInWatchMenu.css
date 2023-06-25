@@ -1,5 +1,6 @@
 .anime_in_watch {
     color: white;
+    visibility: hidden;
     padding: 50px 0px 50px 30px;
 }
 
@@ -64,16 +65,6 @@
 
 .control_button:hover {
     color: white;
-}
-
-@keyframes showAnimation {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
 }
 
 @media screen and (max-width: 500px) {

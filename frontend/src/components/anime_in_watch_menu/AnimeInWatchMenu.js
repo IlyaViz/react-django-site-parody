@@ -1,15 +1,24 @@
+import { useInView } from 'framer-motion'
 import { AnimeCard } from '../anime_card/AnimeCard'
 import { animeCardTypeEnum } from '../../enums/anime_card_type_num/AnimeCardTypeEnum'
 import { useRef, useEffect, useState } from 'react'
 import { AnimeApi } from '../../api/AnimeApi'
 import { responseTypeEnum } from '../../enums/response_type_enum/ResponseTypeEnum'
-import ScrollAnimation from 'react-animate-on-scroll'
-import "animate.css/animate.min.css";
 import './AnimeInWatchMenu.css'
 
 export const AnimeInWatchMenu = (props) => {
     const [animes, setAnimes] = useState([])
     const contentRef = useRef();
+    const menuRef = useRef()
+
+    const menuIsInView = useInView(menuRef, {once: true, margin: "0px 0px -100px 0px"})
+
+    useEffect(() => {
+        if (menuIsInView) {
+            menuRef.current.style.visibility = "visible"
+            menuRef.current.classList.add("animate__animated", "animate__fadeInRightBig")
+        }
+    }, [menuIsInView])
 
     useEffect(() => {
         const updateAnimes = () => {
@@ -34,41 +43,39 @@ export const AnimeInWatchMenu = (props) => {
     }
 
     return (
-        <ScrollAnimation animateIn="showAnimation" duration={1}>
-            <div className='anime_in_watch'>
-                <div className='anime_in_watch_header'>
-                    <p>Сейчас смотрят</p>
-                </div>
-
-                <div className='anime_in_watch_menu'>
-                    <button className='control_button left_control_button' onClick={() => scrollMenu('left')}>
-                        <div className='control_button_content'>
-                            <span />
-                        </div>
-                    </button>
-
-                    <div className='anime_in_watch_menu_content' ref={contentRef}>
-                        {animes.map((anime, index) => {
-                            return <AnimeCard
-                                key={index}
-                                id={anime.id}
-                                type={animeCardTypeEnum.small}
-                                name={anime.name}
-                                description={anime.description}
-                                image_url={anime.image}
-                            />
-                        })
-                        }
-                    </div>
-
-                    <button className='control_button right_control_button' onClick={() => scrollMenu('right')}>
-                        <div className='control_button_content'>
-                            <span />
-                        </div>
-                    </button>
-                </div>
+        <div className='anime_in_watch' ref={menuRef}>
+            <div className='anime_in_watch_header'>
+                <p>Сейчас смотрят</p>
             </div>
-        </ScrollAnimation>
+
+            <div className='anime_in_watch_menu'>
+                <button className='control_button left_control_button' onClick={() => scrollMenu('left')}>
+                    <div className='control_button_content'>
+                        <span />
+                    </div>
+                </button>
+
+                <div className='anime_in_watch_menu_content' ref={contentRef}>
+                    {animes.map((anime, index) => {
+                        return <AnimeCard
+                            key={index}
+                            id={anime.id}
+                            type={animeCardTypeEnum.small}
+                            name={anime.name}
+                            description={anime.description}
+                            image_url={anime.image}
+                        />
+                    })
+                    }
+                </div>
+
+                <button className='control_button right_control_button' onClick={() => scrollMenu('right')}>
+                    <div className='control_button_content'>
+                        <span />
+                    </div>
+                </button>
+            </div>
+        </div>
     )
 
 }

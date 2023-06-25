@@ -26,6 +26,7 @@ class GetEpisodesListApiView(ListAPIView):
         return super().get(request, *args, **kwargs)
     
 class GetEpisodeVideo(APIView):
+    # need to be redone because video anyway needs to be downloaded fully
     def get(self, request, *args, **kwargs):
         id = kwargs["episode_pk"]
         try:

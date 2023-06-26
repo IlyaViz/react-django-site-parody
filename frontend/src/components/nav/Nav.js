@@ -24,22 +24,32 @@ const Nav = () => {
                 <div className="center_components">
                     {centerComponentNames.map((val, index) => {
                         if (val === state.selected_nav_component) {
-                            return <NavComponent key={index} name={val} selected />
+                            return <NavComponent
+                                key={index}
+                                name={val}
+                                selected />
                         } else {
-                            return <NavComponent key={index} name={val} onClick={() => setState({ selected_nav_component: val })} />
+                            return <NavComponent
+                                key={index}
+                                name={val}
+                                onClick={() => setState({ selected_nav_component: val })} />
                         }
                     })}
                 </div>
 
                 <div className="right_components">
                     {rightComponentNames.map((val, index) => {
-                        return <NavComponent key={index} name={val} redirect='/login' />
+                        return <NavComponent
+                            key={index}
+                            name={val}
+                            redirect='/login' />
                     })}
                 </div>
 
-                <div className="burger">
-                    <BurgerMenu />
-                </div>
+                <BurgerMenu
+                    componentNames={centerComponentNames}
+                />
+
             </div>
         </nav >
 

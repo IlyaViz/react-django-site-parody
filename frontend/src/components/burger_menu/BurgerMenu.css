@@ -1,0 +1,117 @@
+.burger_menu {
+    display: none;
+}
+
+.burger_icon_opened {
+    position: fixed;
+    right: 25px;
+    z-index: 2;
+}
+
+.burger_icon_opened span,
+.burger_icon_closed span {
+    display: block;
+    position: relative;
+    background-color: white;
+    margin-top: 10px;
+    height: 8px;
+    width: 60px;
+    border-radius: 10px;
+    transition: background-color 0.25s linear;
+    cursor: pointer;
+}
+
+.burger_icon_opened span {
+    position: relative;
+}
+
+.burger_icon_opened #first_burger_span {
+    top: 17px;
+    rotate: 135deg;
+    animation: transformBurgerToCrossSecondPart 0.5s ease-in-out;
+}
+
+.burger_icon_opened #second_burger_span {
+    rotate: 45deg;
+    animation: transformBurgerToCrossFirstPart 0.5s ease-in-out;
+}
+
+.burger_icon_closed span {
+    animation: spawnOpenedBurger 0.5s ease-out;
+}
+
+.burger_components {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    width: 100vw;
+    overflow: hidden;
+    animation: showBurgerElements 0.25s linear;
+    background: rgb(22, 22, 23);
+    padding: 30px 0px 20px 0px;
+    z-index: 1;
+}
+
+.burger_components a {
+    color: #9ea0a1;
+    font-size: 2rem;
+}
+
+.login_burger_component a {
+    color: white;
+}
+
+.burger_closed_element:hover>span {
+    background-color: rgb(240, 230, 230);
+}
+
+@keyframes spawnOpenedBurger {
+    0% {
+        bottom: 100px;
+    }
+
+    100% {
+        bottom: 0px;
+    }
+}
+
+@keyframes transformBurgerToCrossFirstPart {
+    0% {
+        rotate: -135deg
+    }
+
+    100% {
+        rotate: 45deg;
+    }
+}
+
+@keyframes transformBurgerToCrossSecondPart {
+    0% {
+        rotate: 135deg
+    }
+
+    100% {
+        rotate: -45deg;
+    }
+}
+
+@keyframes showBurgerElements {
+    0% {
+        height: 0px;
+    }
+
+    100% {
+        height: 150px;
+    }
+}
+
+
+@media screen and (max-width:600px) {
+    .burger_menu {
+        display: block;
+    }
+
+}

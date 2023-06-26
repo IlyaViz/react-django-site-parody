@@ -13,6 +13,8 @@
 .nav_component a {
    cursor: pointer;
    transition: color 0.3s linear;
+   text-align: center;
+   width: 100%;
 }
 
 a {

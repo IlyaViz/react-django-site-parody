@@ -31,11 +31,11 @@ nav {
     font-size: 1.25rem;
 }
 
-.burger {
-    display: none;
-}
-
 @media screen and (max-width: 600px) {
+    .all_components {
+        gap: 100px;
+    }
+
     .left_components {
         margin-left: 15px;
     }
@@ -43,10 +43,6 @@ nav {
     .center_components,
     .right_components {
         display: none;
-    }
-
-    .all_components {
-        justify-content: start;
     }
 
 }

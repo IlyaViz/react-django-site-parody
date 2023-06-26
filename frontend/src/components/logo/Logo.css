@@ -1,4 +1,4 @@
-span {
+.logo_class span {
     font-size: 1.5rem;
     text-align: center;
     transition: font-size 0.1s linear, text-shadow 0.1s linear;
@@ -12,5 +12,12 @@ span {
 }
 
 .logo_class:hover {
-    animation: pulse 3s linear infinite;
+    animation: bounce 1s ease-in-out infinite;
+}
+
+@media screen and (max-width: 600px) {
+    .logo_class span {
+        font-size: 1.75rem;
+    }
+
 }

@@ -6,10 +6,11 @@ export default class UserApi {
 
     static createUser = (username, password) => {
         const requestedUrl = constants.backendUrl + "create_user"
-        const responseData = axios.post(requestedUrl, {
+        const data = {
             username: username,
             password: password
-        })
+        }
+        const responseData = axios.post(requestedUrl, data)
             .then((response) => {
                 return response.data
             })

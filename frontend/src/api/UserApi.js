@@ -20,13 +20,18 @@ export default class UserApi {
         return responseData
     }
 
-    // finish later
     static getToken = (username, password) => {
         const requestedUrl = constants.backendUrl + "get_token"
-        const responseData = axios.post(requestedUrl, {
+        const data = {
             username: username,
             password: password
-        })
+        }
+        const config = {
+            headers: {
+                "Content-Type": "multipart/form-data"
+            }
+        }
+        const responseData = axios.post(requestedUrl, data, config)
             .then((response) => {
                 return response.data
             })
@@ -35,6 +40,4 @@ export default class UserApi {
             })
         return responseData
     }
-    //
-
 }

@@ -2,7 +2,6 @@
     background-image: url("../../../public/images/background_image_main.png");
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 100vh;
 }
 
 .bottom_section {

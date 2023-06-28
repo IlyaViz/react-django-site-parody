@@ -2,7 +2,7 @@ import axios from 'axios'
 import responseTypeEnum from '../enums/response_type_enum/ResponseTypeEnum.js'
 import * as constants from './Constants.js'
 
-export class UserApi {
+export default class UserApi {
 
     static createUser = (username, password) => {
         const requestedUrl = constants.backendUrl + "create_user"

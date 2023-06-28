@@ -1,6 +1,6 @@
 import { useInView } from 'framer-motion'
 import { useRef, useEffect, useState } from 'react'
-import { AnimeApi } from '../../api/AnimeApi'
+import AnimeApi from '../../api/AnimeApi'
 import animeCardTypeEnum from '../../enums/anime_card_type_num/AnimeCardTypeEnum'
 import responseTypeEnum from '../../enums/response_type_enum/ResponseTypeEnum'
 import AnimeCard from '../anime_card/AnimeCard'

@@ -2,7 +2,7 @@ import axios from 'axios'
 import responseTypeEnum from '../enums/response_type_enum/ResponseTypeEnum.js'
 import * as constants from './Constants.js'
 
-export class AnimeApi {
+export default class AnimeApi {
 
     static getAnime = (id) => {
         const requestedUrl = constants.backendUrl + "get_anime/" + id.toString()

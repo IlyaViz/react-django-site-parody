@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { AnimeApi } from '../../api/AnimeApi'
+import AnimeApi from '../../api/AnimeApi'
 import responseTypeEnum from '../../enums/response_type_enum/ResponseTypeEnum'
 import animeCardTypeEnum from '../../enums/anime_card_type_num/AnimeCardTypeEnum'
 import Episode from '../episode/Episode'

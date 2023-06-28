@@ -29,12 +29,6 @@
     transition: background-color 0.25s linear, color 0.25s linear
 }
 
-.input_section {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
 .form_inputs {
     margin-top: 15px;
     gap: 10px;

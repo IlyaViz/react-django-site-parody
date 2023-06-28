@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 from rest_framework.generics import (CreateAPIView)
+from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
 from ..serializers import UserSerializer
@@ -8,7 +9,7 @@ from ..serializers import UserSerializer
 class UserCreateAPIView(CreateAPIView):
     serializer_class = UserSerializer
 
-class TokenCreateAPIView(CreateAPIView):
+class TokenAPIView(APIView):
     serializer_class = UserSerializer
 
     def post(self, request, *args, **kwargs):

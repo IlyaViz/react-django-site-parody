@@ -1,6 +1,6 @@
 from django.urls import path
 from .views.documentation import Documentation
-from .views.user import UserCreateAPIView, TokenCreateAPIView
+from .views.user import UserCreateAPIView, TokenAPIView
 from .views.anime import (  AnimeCreateAPIView,
                             AnimeRetrieveAPIView, 
                             LastAnimesListApiView)
@@ -17,7 +17,7 @@ urlpatterns = [
 
     path("create_user", UserCreateAPIView.as_view()),
 
-    path("get_token", TokenCreateAPIView.as_view()),
+    path("get_token", TokenAPIView.as_view()),
     
     path("create_anime", AnimeCreateAPIView.as_view()),
     path("get_anime/<int:pk>", AnimeRetrieveAPIView.as_view()),

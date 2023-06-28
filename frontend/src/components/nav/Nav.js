@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
 import Logo from "../logo/Logo"
 import NavComponent from "../nav_component/NavComponent"
 import BurgerMenu from '../burger_menu/BurgerMenu'

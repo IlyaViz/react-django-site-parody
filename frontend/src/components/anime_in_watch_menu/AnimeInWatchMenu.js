@@ -27,14 +27,11 @@ const AnimeInWatchMenu = (props) => {
     }, [menuIsInView])
 
     useEffect(() => {
-        const updateAnimes = () => {
-            AnimeApi.getNewAnimes(10).then((res) => {
-                if (res != responseTypeEnum.error) {
-                    setAnimes(res)
-                }
-            })
-        }
-        updateAnimes()
+        AnimeApi.getNewAnimes(10).then((res) => {
+            if (res != responseTypeEnum.error) {
+                setAnimes(res)
+            }
+        })
     }, [])
 
     const scrollMenu = (side) => {

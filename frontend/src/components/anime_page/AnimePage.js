@@ -14,26 +14,20 @@ const AnimePage = () => {
     const { animeId } = useParams()
 
     useEffect(() => {
-        const updateEpisodeList = () => {
-            AnimeApi.getEpisodes(animeId).then((res) => {
-                if (res != responseTypeEnum.error) {
-                    setEpisodesList(res)
-                }
-            })
-        }
-        updateEpisodeList()
+        AnimeApi.getEpisodes(animeId).then((res) => {
+            if (res != responseTypeEnum.error) {
+                setEpisodesList(res)
+            }
+        })
     }, [])
 
     useEffect(() => {
-        const updateAnime = () => {
-            AnimeApi.getAnime(animeId).then((res) => {
-                if (res != responseTypeEnum.error) {
-                    setAnimeExist(true)
-                    setAnime(res)
-                }
-            })
-        }
-        updateAnime()
+        AnimeApi.getAnime(animeId).then((res) => {
+            if (res != responseTypeEnum.error) {
+                setAnimeExist(true)
+                setAnime(res)
+            }
+        })
     }, [])
 
     return (

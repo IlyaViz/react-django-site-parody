@@ -7,7 +7,7 @@ const Login = () => {
 
     return (
         <div className="login_page">
-            <form className="login_form">
+            <form className="login_form" onSubmit={() => console.log(1)}>
                 <div className="type_buttons">
                     <button className={formType == "login" ? "selected_type" : ""}
                         onClick={(event) => {
@@ -29,7 +29,6 @@ const Login = () => {
                         <input placeholder="Почта" style={{animation:"backInRight 0.75s linear"}} />
                     }
                 </div>
-                <i class="gg-arrow-right-r"></i>
             </form>
         </div>
     )

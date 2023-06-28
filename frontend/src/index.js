@@ -10,14 +10,16 @@ import "animate.css/animate.min.css";
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' Component={Home} />
-        <Route path='/login' Component={Login} />
-        <Route path='/anime/:animeId' Component={AnimePage} />
-        <Route path="/test" Component={Test} />
-      </Routes>
-    </BrowserRouter>
+    <React.StrictMode>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' Component={Home} />
+          <Route path='/login' Component={Login} />
+          <Route path='/anime/:animeId' Component={AnimePage} />
+          <Route path="/test" Component={Test} />
+        </Routes>
+      </BrowserRouter>
+    </React.StrictMode>
   )
 }
 

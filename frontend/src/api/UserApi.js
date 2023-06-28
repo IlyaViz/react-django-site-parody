@@ -37,6 +37,3 @@ export class UserApi {
     //
 
 }
-
-//testing
-UserApi.getToken("Bezzubik12345", "Winter2005").then((resData) => console.log(resData))

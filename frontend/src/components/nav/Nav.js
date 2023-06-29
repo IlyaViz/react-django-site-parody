@@ -11,7 +11,6 @@ const Nav = () => {
     })
 
     let centerComponentNames = ['Главное', 'Каталог', 'Моё']
-    let rightComponentNames = ['Войти']
 
     return (
         <nav>
@@ -37,12 +36,9 @@ const Nav = () => {
                 </div>
 
                 <div className="right_components">
-                    {rightComponentNames.map((val, index) => {
-                        return <NavComponent
-                            key={index}
-                            name={val}
-                            redirect='/login' />
-                    })}
+                    <NavComponent
+                        name="Войти"
+                        redirect='/login' />
                 </div>
 
                 <BurgerMenu

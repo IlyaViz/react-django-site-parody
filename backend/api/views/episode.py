@@ -23,7 +23,7 @@ class GetEpisodesListApiView(ListAPIView):
         try:
             Anime.objects.get(id=anime_id)
         except Anime.DoesNotExist:
-            return Response({"error":"anime with this id does not exist"})
+            return Response({"error":"anime with this id does not exist"}, status=400)
         return super().get(request, *args, **kwargs)
     
 class GetEpisodeVideoAPIView(APIView):
@@ -32,7 +32,7 @@ class GetEpisodeVideoAPIView(APIView):
         try:
             episode_instance = Episode.objects.get(id=id)
         except:
-            return Response({"error":"episode with this id not found"})
+            return Response({"error":"episode with this id not found"},  status=400)
         video_path = episode_instance.episode.path
 
         response = RangedFileResponse(request, open(video_path, "rb"))

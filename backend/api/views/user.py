@@ -17,7 +17,7 @@ class TokenAPIView(APIView):
         password = request.POST["password"]
         user = authenticate(request, username=username, password=password)
         if user is None:
-            return Response({"error":"user with this username or password does not exist"})
+            return Response({"error":"user with this username or password does not exist"}, status=400)
         token = Token.objects.get_or_create(user=user)
         return Response({
             "token":str(token[0])

@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import { textPrettification } from '../../utils/prettify'
-import animeCardTypeEnum from '../../enums/anime_card_type_num/AnimeCardTypeEnum'
+import animeCardTypeEnum from '../../enums/AnimeCardTypeEnum'
 import './AnimeSmallCard.css'
 import './AnimeBigCard.css'
 

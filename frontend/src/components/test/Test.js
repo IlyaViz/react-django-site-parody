@@ -1,8 +1,17 @@
+import { useEffect } from "react"
+import responseTypeEnum from '../../enums/ResponseTypeEnum'
+import UserApi from "../../api/UserApi"
+
 const Test = () => {
 
-    
+    useEffect(() => {
+        UserApi.createUser("Bezzubik1", "Winter2005").then((res) => {
+            console.log(res)
+        })
+    }, [])
+
     return (
-        <video src="http://127.0.0.1:8000/api/get_episode_video/15" controls />        
+        1
     )
 }
 

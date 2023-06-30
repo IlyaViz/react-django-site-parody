@@ -50,6 +50,22 @@ input {
     border: none;
 }
 
+.login_button,
+.registration_button {
+    cursor: pointer;
+    border: 2px solid black;
+    transition: background-color 0.25s, color 0.25s;
+    animation: bounceInLeft 0.75s linear;
+    font-size: 2rem;
+    padding: 10px;
+    margin: 30px 0px 0px 15px;
+    background-color: rgb(21, 21, 21);
+    color: rgb(128, 128, 128);
+    width: 300px;
+    border-radius: 5px;
+    transform: translateX(5px);
+}
+
 .selected_type {
     font-size: 1.55rem !important;
     background-color: white !important;
@@ -58,6 +74,12 @@ input {
 
 .type_buttons button:hover {
     background-color: rgb(60, 60, 60);
+}
+
+.login_button:hover,
+.registration_button:hover {
+    color: rgb(217, 217, 217);
+    background-color: rgb(44, 44, 44);
 }
 
 input:focus {

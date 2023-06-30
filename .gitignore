@@ -30,3 +30,6 @@ backend/media
 __pycache__/
 *.pyc
 *.pyo
+
+#database 
+/backend/db.sqlite3

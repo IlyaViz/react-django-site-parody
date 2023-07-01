@@ -2,12 +2,6 @@ import axios from 'axios'
 import responseTypeEnum from '../enums/ResponseTypeEnum.js'
 import * as constants from './Constants.js'
 
-const config = {
-    headers: {
-        "Content-Type": "multipart/form-data"
-    }
-}
-
 export default class UserApi {
 
     static createUser = (username, password) => {
@@ -16,7 +10,7 @@ export default class UserApi {
             username: username,
             password: password
         }
-        const responseData = axios.post(requestedUrl, data, config)
+        const responseData = axios.post(requestedUrl, data, constants.config)
             .then((response) => {
                 return response.data
             })
@@ -32,7 +26,7 @@ export default class UserApi {
             username: username,
             password: password
         }
-        const responseData = axios.post(requestedUrl, data, config)
+        const responseData = axios.post(requestedUrl, data, constants.config)
             .then((response) => {
                 return response.data
             })
@@ -43,12 +37,9 @@ export default class UserApi {
     }
 
     static validateLocalStorageToken = () => {
+        // by token in config
         const requestedUrl = constants.backendUrl + "validate_token"
-        const token = localStorage.getItem("token")
-        const data = {
-            key: token
-        }
-        const responseData = axios.post(requestedUrl, data, config)
+        const responseData = axios.get(requestedUrl, constants.config)
             .then((response) => {
                 return response.data
             })
@@ -58,12 +49,10 @@ export default class UserApi {
         return responseData
     }
 
-    static getUserInfoByToken = (token) => {
-        const requestedUrl = constants.backendUrl + "get_user_info_by_token"
-        const data = {
-            key: token
-        }
-        const responseData = axios.post(requestedUrl, data, config)
+    static getUserInfo = () => {
+        // by token in config
+        const requestedUrl = constants.backendUrl + "get_user_info"
+        const responseData = axios.get(requestedUrl, constants.config)
             .then((response) => {
                 return response.data
             })

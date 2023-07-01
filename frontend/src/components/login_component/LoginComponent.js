@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import UserApi from "../../api/UserApi"
-import NavComponent from "../nav_component/NavComponent"
 import responseTypeEnum from "../../enums/ResponseTypeEnum"
 import './LoginComponent.css'
 

@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import { jsonObjectArrayPrettification, jsonObjectPrettification } from '../../utils/Prettify'
 import AnimeApi from '../../api/AnimeApi'
 import responseTypeEnum from '../../enums/ResponseTypeEnum'
 import animeCardTypeEnum from '../../enums/AnimeCardTypeEnum'
 import Episode from '../episode/Episode'
 import AnimeCard from '../anime_card/AnimeCard'
 import './AnimePage.css'
-import { jsonObjectArrayPrettification, jsonObjectPrettification } from '../../utils/prettify'
 
 const AnimePage = () => {
     const [anime, setAnime] = useState({})

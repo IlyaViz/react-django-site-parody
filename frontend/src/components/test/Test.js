@@ -3,7 +3,7 @@ import responseTypeEnum from '../../enums/ResponseTypeEnum'
 import UserApi from "../../api/UserApi"
 import AnimeCard from "../anime_card/AnimeCard"
 import AnimeApi from "../../api/AnimeApi"
-import { jsonObjectArrayPrettification, jsonObjectPrettification } from "../../utils/prettify"
+import { jsonObjectArrayPrettification, jsonObjectPrettification } from "../../utils/Prettify"
 
 const Test = () => {
 

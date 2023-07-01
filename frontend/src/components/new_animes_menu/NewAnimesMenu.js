@@ -1,11 +1,12 @@
 import { useInView } from 'framer-motion'
 import { useRef, useEffect, useState } from 'react'
+import { jsonObjectArrayPrettification } from '../../utils/Prettify'
 import AnimeApi from '../../api/AnimeApi'
 import animeCardTypeEnum from '../../enums/AnimeCardTypeEnum'
 import responseTypeEnum from '../../enums/ResponseTypeEnum'
 import AnimeCard from '../anime_card/AnimeCard'
 import './NewAnimesMenu.css'
-import { jsonObjectArrayPrettification } from '../../utils/prettify'
+
 
 
 const NewAnimesMenu = (props) => {

@@ -7,11 +7,10 @@ import "./Nav.css"
 
 const Nav = () => {
 
-    let [state, setState] = useState({
-        selected_nav_component: 'Главное'
-    })
+    const [selectedComponent, setSelectedComponent] = useState("Главное")
 
-    let centerComponentNames = ['Главное', 'Каталог', 'Моё']
+    const centerComponentNames = ['Главное', 'Каталог', 'Моё']
+    const centerComponentRedirectUrls = ['/', '/', '/my']
 
     return (
         <nav>
@@ -22,16 +21,18 @@ const Nav = () => {
 
                 <div className="center_components">
                     {centerComponentNames.map((val, index) => {
-                        if (val === state.selected_nav_component) {
+                        if (val === selectedComponent) {
                             return <NavComponent
                                 key={index}
                                 name={val}
+                                redirect={centerComponentRedirectUrls[index]}
                                 selected />
                         } else {
                             return <NavComponent
                                 key={index}
                                 name={val}
-                                onClick={() => setState({ selected_nav_component: val })} />
+                                redirect={centerComponentRedirectUrls[index]}
+                                onClick={() => setSelectedComponent(val)} />
                         }
                     })}
                 </div>

@@ -1,6 +1,7 @@
 from rest_framework import serializers
-from .models import Anime, Episode
+from rest_framework.authtoken.models import Token
 from django.contrib.auth.models import User
+from .models import Anime, Episode
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -30,5 +31,8 @@ class EpisodeSerializer(serializers.ModelSerializer):
         endpoint = f'{protocol}://{site_domain}/api/get_episode_video/{str(obj.id)}'
         return endpoint
 
-
-   
+class TokenSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Token
+        fields = ["key"]
+    

@@ -4,7 +4,7 @@ from rest_framework.generics import (CreateAPIView)
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
-from ..serializers import UserSerializer
+from ..serializers import UserSerializer, TokenSerializer
 
 class UserCreateAPIView(CreateAPIView):
     serializer_class = UserSerializer
@@ -21,4 +21,19 @@ class TokenAPIView(APIView):
         token = Token.objects.get_or_create(user=user)
         return Response({
             "token":str(token[0])
+        })
+    
+class GetUserInfoByTokenAPIView(APIView):
+    serializer_class = TokenSerializer
+
+    def post(self, request, *args, **kwargs):
+        token = request.POST["key"]
+        try:
+            user = Token.objects.get(key=token).user
+        except:
+            return Response({
+            "error":f"no user for token {token}"
+        }, status=400)
+        return Response({
+            "username":user.username
         })

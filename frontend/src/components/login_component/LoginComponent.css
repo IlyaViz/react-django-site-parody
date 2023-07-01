@@ -1,0 +1,12 @@
+.login_or_user a {
+    color: whitesmoke !important;
+    border-radius: 30px;
+    border: 1px solid rgb(255, 255, 255);
+    padding: 10px;
+    transition: color 0.15s linear, font-size 0.25s, padding 0.25s;
+}
+
+.login_or_user a:hover {
+    padding: 15px;
+    color: rgb(250, 240, 230) !important;
+}

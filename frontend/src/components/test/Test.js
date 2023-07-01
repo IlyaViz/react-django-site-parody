@@ -5,7 +5,7 @@ import UserApi from "../../api/UserApi"
 const Test = () => {
 
     useEffect(() => {
-        UserApi.getToken("Bezzubik", "Winter2005").then((res) => {
+        UserApi.getUserInfoByToken("8e16d098d90ec0c1041115ecba1095b8c0628115").then((res) => {
             console.log(res)
         })
     }, [])

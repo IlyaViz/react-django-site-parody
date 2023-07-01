@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Logo from "../logo/Logo"
 import NavComponent from "../nav_component/NavComponent"
 import BurgerMenu from '../burger_menu/BurgerMenu'
+import LoginComponent from '../login_component/LoginComponent'
 import "./Nav.css"
 
 const Nav = () => {
@@ -36,9 +37,7 @@ const Nav = () => {
                 </div>
 
                 <div className="right_components">
-                    <NavComponent
-                        name="Войти"
-                        redirect='/login' />
+                    <LoginComponent />
                 </div>
 
                 <BurgerMenu

@@ -23,6 +23,21 @@ class TokenAPIView(APIView):
             "token":str(token[0])
         })
     
+class ValidateTokenAPIView(APIView):
+    serializer_class = TokenSerializer
+
+    def post(self, request, *args, **kwargs):
+        token = request.POST["key"]
+        try:
+            Token.objects.get(key=token)
+        except:
+            return Response({
+            "error":f"token({token}) not found"
+        }, status=400)
+        return Response({
+            "valid":True
+        })
+    
 class GetUserInfoByTokenAPIView(APIView):
     serializer_class = TokenSerializer
 

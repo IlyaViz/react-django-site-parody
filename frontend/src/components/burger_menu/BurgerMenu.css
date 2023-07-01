@@ -60,8 +60,9 @@
     font-size: 2rem;
 }
 
-.login_burger_component a {
-    color: white;
+.login_burger_component {
+    display: flex;
+    justify-content: center;
 }
 
 .burger_closed_element:hover>span {

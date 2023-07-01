@@ -1,6 +1,7 @@
 
 import { useState } from 'react'
 import NavComponent from '../nav_component/NavComponent'
+import LoginComponent from '../login_component/LoginComponent'
 import './BurgerMenu.css'
 
 const BurgerMenu = (props) => {
@@ -33,10 +34,7 @@ const BurgerMenu = (props) => {
                     </div>
 
                     <div className='login_burger_component'>
-                        <NavComponent
-                            name="Войти"
-                            redirect='/login'
-                        />
+                        <LoginComponent />
                     </div>
 
                 </div>

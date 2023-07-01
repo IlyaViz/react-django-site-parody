@@ -10,7 +10,6 @@ import "animate.css/animate.min.css";
 
 const App = () => {
   return (
-    <React.StrictMode>
       <BrowserRouter>
         <Routes>
           <Route path='/' Component={Home} />
@@ -19,7 +18,6 @@ const App = () => {
           <Route path="/test" Component={Test} />
         </Routes>
       </BrowserRouter>
-    </React.StrictMode>
   )
 }
 

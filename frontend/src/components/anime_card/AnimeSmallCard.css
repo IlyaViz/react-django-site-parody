@@ -26,6 +26,7 @@
     opacity: 0;
     overflow: hidden;
     transition: opacity 0.3 ease;
+    color: white;
 }
 
 .anime_small_component_name {
@@ -36,6 +37,7 @@
     overflow: hidden;
     transform: translate(25px);
     transition: opacity 0.2s linear;
+    color: white;
 }
 
 .anime_small_component:hover>.anime_small_component_description {

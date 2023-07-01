@@ -10,16 +10,17 @@ const LoginComponent = () => {
     const [isTokenValid, setIsTokenValid] = useState(false)
 
     useEffect(() => {
-        const token = localStorage.getItem("token")
-        
-        if (token != null) {
-            UserApi.getUserInfoByToken(token).then((res) => {
-                if (res != responseTypeEnum.error) {
-                    setIsTokenValid(true)
+        // validate token in local storage
+        UserApi.validateLocalStorageToken().then((res) => {
+            // if valid get token from localstorage and get user info by it
+            if (res != responseTypeEnum.error) {
+                setIsTokenValid(true)
+                const token = localStorage.getItem("token")
+                UserApi.getUserInfoByToken(token).then((res) => {
                     setUser(res)
-                }
-            })
-        }
+                })
+            }
+        })
     }, [])
 
 

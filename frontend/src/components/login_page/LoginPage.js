@@ -27,7 +27,7 @@ const LoginPage = () => {
         } else if (formType == "registration") {
             UserApi.createUser(username, password).then((res) => {
                 if (res != responseTypeEnum.error) {
-                    console.log(res)
+                    setFormType("login")
                 } else {
                     console.log("error while registration")
                 }
@@ -64,6 +64,7 @@ const LoginPage = () => {
                             })
                         }} />
                     <input
+                        type="password"
                         placeholder="Пароль"
                         value={inputValues["password"] == undefined ? "" : inputValues["password"]}
                         onChange={(event) => {
@@ -74,6 +75,7 @@ const LoginPage = () => {
                         }} />
                     {formType == "registration" &&
                         <input
+                            type="email"
                             placeholder="Почта"
                             value={inputValues["email"] == undefined ? "" : inputValues["email"]}
                             onChange={(event) => {

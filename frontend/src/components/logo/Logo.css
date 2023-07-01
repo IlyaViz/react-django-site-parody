@@ -11,10 +11,6 @@
     transition: transform 0.09s linear;
 }
 
-.logo_class:hover {
-    animation: bounce 1s ease-in-out infinite;
-}
-
 @media screen and (max-width: 600px) {
     .logo_class span {
         font-size: 1.75rem;

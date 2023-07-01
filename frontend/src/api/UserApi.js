@@ -42,6 +42,22 @@ export default class UserApi {
         return responseData
     }
 
+    static validateLocalStorageToken = () => {
+        const requestedUrl = constants.backendUrl + "validate_token"
+        const token = localStorage.getItem("token")
+        const data = {
+            key: token
+        }
+        const responseData = axios.post(requestedUrl, data, config)
+            .then((response) => {
+                return response.data
+            })
+            .catch((error) => {
+                return responseTypeEnum.error
+            })
+        return responseData
+    }
+
     static getUserInfoByToken = (token) => {
         const requestedUrl = constants.backendUrl + "get_user_info_by_token"
         const data = {

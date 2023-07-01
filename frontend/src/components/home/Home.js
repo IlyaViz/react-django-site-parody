@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Nav from '../nav/Nav'
 import EntranceMenu from '../entrance_menu/EntranceMenu'
-import AnimeInWatchMenu from '../anime_in_watch_menu/AnimeInWatchMenu'
+import NewAnimesMenu from '../new_animes_menu/NewAnimesMenu'
 import './Home.css'
 
 const Home = () => {
@@ -14,7 +14,7 @@ const Home = () => {
         <EntranceMenu ShowAnimeInWatchMenu={() => setAnimeInWatchMenuShown(true)} />
       </div>
       <div className='bottom_section'>
-        <AnimeInWatchMenu />
+        <NewAnimesMenu />
       </div>
     </div>
   )

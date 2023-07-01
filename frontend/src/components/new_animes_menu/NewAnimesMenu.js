@@ -4,10 +4,10 @@ import AnimeApi from '../../api/AnimeApi'
 import animeCardTypeEnum from '../../enums/AnimeCardTypeEnum'
 import responseTypeEnum from '../../enums/ResponseTypeEnum'
 import AnimeCard from '../anime_card/AnimeCard'
-import './AnimeInWatchMenu.css'
+import './NewAnimesMenu.css'
 
 
-const AnimeInWatchMenu = (props) => {
+const NewAnimesMenu = (props) => {
     const [animes, setAnimes] = useState([])
     const contentRef = useRef();
     const menuRef = useRef()
@@ -48,7 +48,7 @@ const AnimeInWatchMenu = (props) => {
     return (
         <div className='anime_in_watch' ref={menuRef}>
             <div className='anime_in_watch_header'>
-                <p>Сейчас смотрят</p>
+                <p>Недавно вышли</p>
             </div>
 
             <div className='anime_in_watch_menu'>
@@ -83,4 +83,4 @@ const AnimeInWatchMenu = (props) => {
 
 }
 
-export default AnimeInWatchMenu
+export default NewAnimesMenu

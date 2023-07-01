@@ -1,10 +1,10 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import responseTypeEnum from "../../enums/ResponseTypeEnum"
 import UserApi from "../../api/UserApi"
-import "./Login.css"
+import "./LoginPage.css"
 
-const Login = () => {
+const LoginPage = () => {
     const [formType, setFormType] = useState("login")
     const [inputValues, setInputValues] = useState({})
     const navigate = useNavigate()
@@ -17,7 +17,8 @@ const Login = () => {
         if (formType == "login") {
             UserApi.getToken(username, password).then((res) => {
                 if (res != responseTypeEnum.error) {
-                    console.log(res["token"])
+                    const token = res["token"]
+                    localStorage.setItem("token", token)
                     navigate("/")
                 } else {
                     console.log("error while login")
@@ -53,25 +54,36 @@ const Login = () => {
                 </div>
 
                 <div className="form_inputs">
-                    <input placeholder="Имя пользователя" onChange={(event) => {
-                        setInputValues({
-                            ...inputValues,
-                            ...{ "username": event.target.value }
-                        })
-                    }} />
-                    <input placeholder="Пароль" onChange={(event) => {
-                        setInputValues({
-                            ...inputValues,
-                            ...{ "password": event.target.value }
-                        })
-                    }} />
-                    {formType == "registration" &&
-                        <input placeholder="Почта" style={{ animation: "backInRight 0.75s linear" }} onChange={(event) => {
+                    <input
+                        placeholder="Имя пользователя"
+                        value={inputValues["username"] == undefined ? "" : inputValues["username"]}
+                        onChange={(event) => {
                             setInputValues({
                                 ...inputValues,
-                                ...{ "email": event.target.value }
+                                ...{ "username": event.target.value }
                             })
                         }} />
+                    <input
+                        placeholder="Пароль"
+                        value={inputValues["password"] == undefined ? "" : inputValues["password"]}
+                        onChange={(event) => {
+                            setInputValues({
+                                ...inputValues,
+                                ...{ "password": event.target.value }
+                            })
+                        }} />
+                    {formType == "registration" &&
+                        <input
+                            placeholder="Почта"
+                            value={inputValues["email"] == undefined ? "" : inputValues["email"]}
+                            onChange={(event) => {
+                                setInputValues({
+                                    ...inputValues,
+                                    ...{ "email": event.target.value }
+                                })
+                            }}
+                            style={{ animation: "backInRight 0.75s linear" }}
+                        />
                     }
                 </div>
 
@@ -86,4 +98,4 @@ const Login = () => {
 
 }
 
-export default Login
+export default LoginPage

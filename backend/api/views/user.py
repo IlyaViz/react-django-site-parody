@@ -2,6 +2,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 from rest_framework.generics import (CreateAPIView)
 from rest_framework.views import APIView
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.authentication import TokenAuthentication
 from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
 from ..serializers import UserSerializer, TokenSerializer
@@ -24,31 +26,20 @@ class TokenAPIView(APIView):
         })
     
 class ValidateTokenAPIView(APIView):
-    serializer_class = TokenSerializer
+    permission_classes = [IsAuthenticated]
+    authentication_classes = [TokenAuthentication]
 
-    def post(self, request, *args, **kwargs):
-        token = request.POST["key"]
-        try:
-            Token.objects.get(key=token)
-        except:
-            return Response({
-            "error":f"token({token}) not found"
-        }, status=400)
+    def get(self, request, *args, **kwargs):
         return Response({
             "valid":True
         })
     
-class GetUserInfoByTokenAPIView(APIView):
-    serializer_class = TokenSerializer
+class GetUserInfoAPIView(APIView):
+    permission_classes = [IsAuthenticated]
+    authentication_classes = [TokenAuthentication]
 
-    def post(self, request, *args, **kwargs):
-        token = request.POST["key"]
-        try:
-            user = Token.objects.get(key=token).user
-        except:
-            return Response({
-            "error":f"no user for token {token}"
-        }, status=400)
+    def get(self, request, *args, **kwargs):
+        user = request.user
         return Response({
             "username":user.username
         })

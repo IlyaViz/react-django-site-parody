@@ -5,7 +5,8 @@ import './AnimeSmallCard.css'
 import './AnimeBigCard.css'
 
 const AnimeCard = (props) => {
-    const { id, type, name, description, image_url } = props
+    const type = props.type
+    const { id, name, description, image } = props.animeObject
     const navigate = useNavigate()
     const navigationUrl = "/anime/" + id.toString()
 
@@ -21,7 +22,7 @@ const AnimeCard = (props) => {
 
     const prettifiedDescription = textPrettification(description, descriptionMaxSize)
     const prettifiedName = textPrettification(name, nameMaxSize)
-    const backgroundImage = 'url(' + image_url + ')'
+    const backgroundImage = 'url(' + image + ')'
 
     return (
         <>

@@ -5,6 +5,7 @@ import animeCardTypeEnum from '../../enums/AnimeCardTypeEnum'
 import responseTypeEnum from '../../enums/ResponseTypeEnum'
 import AnimeCard from '../anime_card/AnimeCard'
 import './NewAnimesMenu.css'
+import { jsonObjectArrayPrettification } from '../../utils/prettify'
 
 
 const NewAnimesMenu = (props) => {
@@ -29,7 +30,8 @@ const NewAnimesMenu = (props) => {
     useEffect(() => {
         AnimeApi.getNewAnimes(10).then((res) => {
             if (res != responseTypeEnum.error) {
-                setAnimes(res)
+                const prettifiedArray = jsonObjectArrayPrettification(res)
+                setAnimes(prettifiedArray)
             }
         })
     }, [])
@@ -62,11 +64,8 @@ const NewAnimesMenu = (props) => {
                     {animes.map((anime, index) => {
                         return <AnimeCard
                             key={index}
-                            id={anime.id}
                             type={animeCardTypeEnum.small}
-                            name={anime.name}
-                            description={anime.description}
-                            image_url={anime.image}
+                            animeObject={anime}
                         />
                     })
                     }

@@ -6,6 +6,7 @@ import animeCardTypeEnum from '../../enums/AnimeCardTypeEnum'
 import Episode from '../episode/Episode'
 import AnimeCard from '../anime_card/AnimeCard'
 import './AnimePage.css'
+import { jsonObjectArrayPrettification, jsonObjectPrettification } from '../../utils/prettify'
 
 const AnimePage = () => {
     const [anime, setAnime] = useState({})
@@ -16,7 +17,8 @@ const AnimePage = () => {
     useEffect(() => {
         AnimeApi.getEpisodes(animeId).then((res) => {
             if (res != responseTypeEnum.error) {
-                setEpisodesList(res)
+                const prettifiedArray = jsonObjectArrayPrettification(res)
+                setEpisodesList(prettifiedArray)
             }
         })
     }, [])
@@ -24,8 +26,9 @@ const AnimePage = () => {
     useEffect(() => {
         AnimeApi.getAnime(animeId).then((res) => {
             if (res != responseTypeEnum.error) {
+                const prettifiedObject = jsonObjectPrettification(res)
                 setAnimeExist(true)
-                setAnime(res)
+                setAnime(prettifiedObject)
             }
         })
     }, [])
@@ -37,11 +40,8 @@ const AnimePage = () => {
                     <div className='anime_page_content'>
                         <div className='anime'>
                             <AnimeCard
-                                id={anime.id}
                                 type={animeCardTypeEnum.big}
-                                name={anime.name}
-                                description={anime.description}
-                                image_url={anime.image}
+                                animeObject={anime}
                             />
                         </div>
 
@@ -50,9 +50,7 @@ const AnimePage = () => {
                                 episodesList.map((episode, index) => {
                                     return <Episode
                                         key={index}
-                                        episodeNumber={episode.episode_number}
-                                        name={episode.name}
-                                        episodeVideoUrl={episode.episode_video_url}
+                                        episodeObject={episode}
                                     />
                                 })
                                 :

@@ -32,4 +32,4 @@ __pycache__/
 *.pyo
 
 #database 
-/backend/db.sqlite3
+backend/db.sqlite3

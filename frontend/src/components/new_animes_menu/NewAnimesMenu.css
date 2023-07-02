@@ -16,19 +16,19 @@
     align-items: center;
 }
 
-.left_control_button {
+.anime_in_watch_menu .left_control_button {
     transform: translateX(30px);
     position: relative;
     left: 10px;
 }
 
-.right_control_button {
+.anime_in_watch_menu .right_control_button {
     transform: translateX(-30px);
     position: relative;
     right: 10px;
 }
 
-.control_button {
+.anime_in_watch_menu .control_button {
     color: black;
     height: 50px;
     cursor: pointer;
@@ -49,12 +49,12 @@
     display: none;
 }
 
-.left_control_button .control_button_content span::before {
+.anime_in_watch_menu .left_control_button .control_button_content span::before {
     content: "<";
     font-size: 3rem;
 }
 
-.right_control_button .control_button_content span::before {
+.anime_in_watch_menu .right_control_button .control_button_content span::before {
     content: ">";
     font-size: 3rem;
 }
@@ -63,7 +63,7 @@
     opacity: 1;
 }
 
-.control_button:hover {
+.anime_in_watch_menu .control_button:hover {
     color: white;
 }
 
@@ -80,7 +80,7 @@
         margin-left: 30px;
     }
 
-    .control_button {
+    .anime_in_watch_menu .control_button {
         display: none;
     }
 }

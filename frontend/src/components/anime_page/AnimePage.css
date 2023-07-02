@@ -13,33 +13,33 @@
     gap: 0px;
 }
 
-.episodes {
+.anime_page .episodes {
     display: grid;
     overflow-y: scroll;
     max-height: 500px;
 }
 
-.no_anime_error {
+.anime_page .no_anime_error {
     font-size: 2.5rem;
     color: rgb(140, 50, 50);
     text-align: center;
 }
 
-.episodes::-webkit-scrollbar {
+.anime_page .episodes::-webkit-scrollbar {
     display: none;
 }
 
 @media screen and (max-width: 950px) {
-    .anime_page_content {
+    .anime_page .anime_page_content {
         flex-direction: column;
     }
 
-    .episodes {
+    .anime_page .episodes {
         grid-template-columns: 1fr 1fr;
         max-height: 300px;
     }
 
-    .episode {
+    .anime_page .episode {
         margin-left: 10px
     }
 }

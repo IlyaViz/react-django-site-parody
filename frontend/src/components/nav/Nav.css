@@ -2,7 +2,7 @@ nav {
     padding-top: 15px;
 }
 
-.all_components {
+nav .all_components {
     display: flex;
     justify-content: space-around;
     gap: 10%;
@@ -11,14 +11,14 @@ nav {
 }
 
 
-.left_components,
-.center_components,
-.right_components {
+nav .left_components,
+nav .center_components,
+nav .right_components {
     display: flex;
     align-items: center;
 }
 
-.center_components {
+nav .center_components {
     color: #9ea0a1;
     justify-content: space-between;
     gap: 28px;
@@ -26,22 +26,22 @@ nav {
     padding-right: 20px;
 }
 
-.right_components {
+nav .right_components {
     color: #9ea0a1;
     font-size: 1.25rem;
 }
 
 @media screen and (max-width: 600px) {
-    .all_components {
+    nav .all_components {
         gap: 100px;
     }
 
-    .left_components {
+    nav .left_components {
         margin-left: 15px;
     }
 
-    .center_components,
-    .right_components {
+    nav .center_components,
+    nav .right_components {
         display: none;
     }
 

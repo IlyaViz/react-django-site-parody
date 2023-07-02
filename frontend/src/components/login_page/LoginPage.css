@@ -8,17 +8,17 @@
     background-size: cover;
 }
 
-.login_form {
+.login_page .login_form {
     margin-bottom: 50px;
 }
 
-.type_buttons {
+.login_page .type_buttons {
     display: flex;
     justify-content: space-around;
     gap: 5px;
 }
 
-.type_buttons button {
+.login_page .type_buttons button {
     border-radius: 10px;
     width: 175px;
     height: 40px;
@@ -30,7 +30,7 @@
     transition: background-color 0.25s linear, color 0.25s linear
 }
 
-.form_inputs {
+.login_page .form_inputs {
     margin-top: 15px;
     gap: 10px;
     display: flex;
@@ -39,7 +39,7 @@
     align-items: center;
 }
 
-input {
+.login_page .form_inputs input {
     width: 300px;
     height: 50px;
     border-radius: 20px;
@@ -66,13 +66,13 @@ input {
     transform: translateX(5px);
 }
 
-.selected_type {
+.login_page .type_buttons .selected_type {
     font-size: 1.55rem !important;
     background-color: white !important;
     color: black !important;
 }
 
-.type_buttons button:hover {
+.login_page .type_buttons button:hover {
     background-color: rgb(60, 60, 60);
 }
 
@@ -82,6 +82,6 @@ input {
     background-color: rgb(44, 44, 44);
 }
 
-input:focus {
+.login_page .form_inputs input:focus {
     outline: 1px solid rgb(255, 255, 255);
 }

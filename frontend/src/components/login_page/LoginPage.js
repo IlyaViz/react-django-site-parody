@@ -7,7 +7,15 @@ import "./LoginPage.css"
 const LoginPage = () => {
     const [formType, setFormType] = useState("login")
     const [inputValues, setInputValues] = useState({})
+    const [loginErrorOccured, setLoginErrorOccured] = useState(false)
+    const [registrationErrorOccured, setRegistrationErrorOccured] = useState(false)
     const navigate = useNavigate()
+
+    const changeFormType = (type) => {
+        setFormType(type)
+        setLoginErrorOccured(false)
+        setRegistrationErrorOccured(false)
+    }
 
     const onFormSubmit = (event) => {
         event.preventDefault()
@@ -21,14 +29,16 @@ const LoginPage = () => {
                     localStorage.setItem("token", token)
                     navigate("/")
                 } else {
+                    setLoginErrorOccured(true)
                     console.log("error while login")
                 }
             })
         } else if (formType == "registration") {
             UserApi.createUser(username, password).then((res) => {
                 if (res != responseTypeEnum.error) {
-                    setFormType("login")
+                    changeFormType("login")
                 } else {
+                    setRegistrationErrorOccured(true)
                     console.log("error while registration")
                 }
             })
@@ -43,13 +53,13 @@ const LoginPage = () => {
                     <button className={formType == "login" ? "selected_type" : ""}
                         onClick={(event) => {
                             event.preventDefault()
-                            setFormType("login")
+                            changeFormType("login")
                         }}>Вход</button>
 
                     <button className={formType == "registration" ? "selected_type" : ""}
                         onClick={(event) => {
                             event.preventDefault()
-                            setFormType("registration")
+                            changeFormType("registration")
                         }}>Регистрация</button>
                 </div>
 
@@ -88,7 +98,16 @@ const LoginPage = () => {
                         />
                     }
                 </div>
-
+                <div className="errors">
+                    {registrationErrorOccured &&
+                        <div className="registration_error">
+                            Не подходящие имя пользователя или пароль
+                        </div>}
+                    {loginErrorOccured &&
+                        <div className="login_error">
+                            Такой пользователь не найден
+                        </div>}
+                </div>
                 {formType == "login" &&
                     <button className="login_button">Вход</button>}
                 {formType == "registration" &&

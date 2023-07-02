@@ -12,6 +12,11 @@
     margin-bottom: 50px;
 }
 
+.login_form .errors {
+    color: red;
+    text-align: center;
+}
+
 .login_page .type_buttons {
     display: flex;
     justify-content: space-around;

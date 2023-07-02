@@ -3,7 +3,8 @@ from .views.documentation import Documentation
 from .views.user import (UserCreateAPIView, 
                          TokenAPIView, 
                          ValidateTokenAPIView,
-                         GetUserInfoAPIView
+                         GetUserInfoAPIView,
+                         GetUserAnimeHistoryListAPIView
                         )
 from .views.anime import (  AnimeCreateAPIView,
                             AnimeRetrieveAPIView, 
@@ -24,6 +25,7 @@ urlpatterns = [
     path("get_token", TokenAPIView.as_view()),
     path("validate_token", ValidateTokenAPIView.as_view()),
     path("get_user_info", GetUserInfoAPIView.as_view()),
+    path("get_user_anime_history", GetUserAnimeHistoryListAPIView.as_view()),
     
     path("create_anime", AnimeCreateAPIView.as_view()),
     path("get_anime/<int:pk>", AnimeRetrieveAPIView.as_view()),

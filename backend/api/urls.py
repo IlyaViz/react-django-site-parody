@@ -30,7 +30,7 @@ urlpatterns = [
     path("get_user_info", GetUserInfoAPIView.as_view()),
     path("append_user_anime_watch_history", AppendUserAnimeWatchHistoryCreateAPIView.as_view()),
     path("get_user_anime_watch_history", GetUserAnimeWatchHistoryListAPIView.as_view()),
-    path("add_user_favourite_animes", AddUserFavouriteAnimeCreateAPIView.as_view()),
+    path("add_user_favourite_anime", AddUserFavouriteAnimeCreateAPIView.as_view()),
     path("get_user_favourite_animes", GetUserFavouriteAnimesListAPIView.as_view()),
 
     path("create_anime", AnimeCreateAPIView.as_view()),

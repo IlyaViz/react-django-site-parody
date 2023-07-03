@@ -5,7 +5,9 @@ from .views.user import (UserCreateAPIView,
                          ValidateTokenAPIView,
                          GetUserInfoAPIView,
                          AppendUserAnimeWatchHistoryCreateAPIView,
-                         GetUserAnimeWatchHistoryListAPIView
+                         GetUserAnimeWatchHistoryListAPIView,
+                         AddUserFavouriteAnimeCreateAPIView,
+                         GetUserFavouriteAnimesListAPIView
                         )
 from .views.anime import (  AnimeCreateAPIView,
                             AnimeRetrieveAPIView, 
@@ -28,7 +30,9 @@ urlpatterns = [
     path("get_user_info", GetUserInfoAPIView.as_view()),
     path("append_user_anime_watch_history", AppendUserAnimeWatchHistoryCreateAPIView.as_view()),
     path("get_user_anime_watch_history", GetUserAnimeWatchHistoryListAPIView.as_view()),
-    
+    path("add_user_favourite_animes", AddUserFavouriteAnimeCreateAPIView.as_view()),
+    path("get_user_favourite_animes", GetUserFavouriteAnimesListAPIView.as_view()),
+
     path("create_anime", AnimeCreateAPIView.as_view()),
     path("get_anime/<int:pk>", AnimeRetrieveAPIView.as_view()),
     path("get_new_animes/<int:count>", LastAnimesListApiView.as_view()),

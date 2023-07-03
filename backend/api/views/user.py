@@ -5,8 +5,11 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
-from ..models import Anime
-from ..serializers import UserSerializer, AnimeSerializer, AnimeWatchHistorySerializer
+from ..models import Anime, FavouriteAnime
+from ..serializers import ( UserSerializer, 
+                            AnimeSerializer,
+                            AnimeWatchHistorySerializer,
+                            FavouriteAnimeSerializer)
 
 class UserCreateAPIView(CreateAPIView):
     serializer_class = UserSerializer
@@ -57,4 +60,17 @@ class GetUserAnimeWatchHistoryListAPIView(ListAPIView):
     def get_queryset(self):
         user = self.request.user
         return Anime.objects.filter(animewatchhistory__user=user).order_by("-animewatchhistory__timestamp")
-    
+
+class GetUserFavouriteAnimesListAPIView(ListAPIView):
+    permission_classes = [IsAuthenticated]
+    authentication_classes = [TokenAuthentication]
+    serializer_class = FavouriteAnimeSerializer
+
+    def get_queryset(self):
+        user = self.request.user
+        return FavouriteAnime.objects.filter(user=user)
+
+class AddUserFavouriteAnimeCreateAPIView(CreateAPIView):
+    permission_classes = [IsAuthenticated]
+    authentication_classes = [TokenAuthentication]
+    serializer_class = FavouriteAnimeSerializer

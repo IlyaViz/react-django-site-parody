@@ -23,6 +23,10 @@ class AnimeWatchHistory(models.Model):
     anime = models.ForeignKey(Anime, on_delete=models.CASCADE)
     timestamp = models.TimeField(auto_now_add=True)
 
+class FavouriteAnime(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    anime = models.ForeignKey(Anime, on_delete=models.CASCADE)
+    
 
 # delete episode when Episode is deleted
 @receiver(models.signals.post_delete, sender=Episode)

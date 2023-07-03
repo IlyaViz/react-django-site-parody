@@ -27,6 +27,8 @@ class FavouriteAnime(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     anime = models.ForeignKey(Anime, on_delete=models.CASCADE)
     
+    class Meta:
+        unique_together = ["user", "anime"]
 
 # delete episode when Episode is deleted
 @receiver(models.signals.post_delete, sender=Episode)

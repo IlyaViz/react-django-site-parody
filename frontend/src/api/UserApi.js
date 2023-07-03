@@ -61,4 +61,20 @@ export default class UserApi {
             })
         return responseData
     }
+
+    static appendUserAnimeWatchHistory = () => {
+
+    }
+
+    static getUserAnimeWatchHistory = () => {
+
+    }
+
+    static addUserFavouriteAnime = () => {
+
+    }
+
+    static getUserFavouriteAnimes = () => {
+        
+    }
 }

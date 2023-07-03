@@ -43,6 +43,7 @@ const Nav = () => {
 
                 <BurgerMenu
                     componentNames={centerComponentNames}
+                    componentRedirects={centerComponentRedirectUrls}
                 />
 
             </div>

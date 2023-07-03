@@ -1,4 +1,3 @@
-from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 from rest_framework.generics import (CreateAPIView, ListAPIView)
 from rest_framework.views import APIView
@@ -6,8 +5,8 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
-from ..models import AnimeWatchHistory, Anime
-from ..serializers import UserSerializer, TokenSerializer, AnimeSerializer
+from ..models import Anime
+from ..serializers import UserSerializer, AnimeSerializer, AnimeWatchHistorySerializer
 
 class UserCreateAPIView(CreateAPIView):
     serializer_class = UserSerializer
@@ -44,8 +43,13 @@ class GetUserInfoAPIView(APIView):
         return Response({
             "username":user.username
         })
-    
-class GetUserAnimeHistoryListAPIView(ListAPIView):
+
+class AppendUserAnimeWatchHistoryCreateAPIView(CreateAPIView):
+    permission_classes = [IsAuthenticated]
+    authentication_classes = [TokenAuthentication]
+    serializer_class = AnimeWatchHistorySerializer
+
+class GetUserAnimeWatchHistoryListAPIView(ListAPIView):
     permission_classes = [IsAuthenticated]
     authentication_classes = [TokenAuthentication]
     serializer_class = AnimeSerializer

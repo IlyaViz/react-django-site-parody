@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from rest_framework.authtoken.models import Token
 from django.contrib.auth.models import User
-from .models import Anime, Episode
+from .models import Anime, Episode, AnimeWatchHistory
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -36,3 +36,13 @@ class TokenSerializer(serializers.ModelSerializer):
         model = Token
         fields = ["key"]
     
+class AnimeWatchHistorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = AnimeWatchHistory
+        fields = ["anime"]
+
+    def save(self, **kwargs):
+        user = self.context["request"].user
+        anime = self.validated_data["anime"]
+        self.Meta.model.objects.create(user=user, anime=anime)
+

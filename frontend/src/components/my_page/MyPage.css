@@ -1,0 +1,84 @@
+.my_page {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../../../public/images/background_image_main.png");
+    background-size: cover;
+    overflow-y: scroll;
+}
+
+.my_page::-webkit-scrollbar {
+    display: none;
+}
+
+.my_page .activity_type_buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 20px;
+    width: 50%;
+    margin: auto;
+}
+
+.my_page .activity_type_buttons button {
+    color: white;
+    cursor: pointer;
+    font-size: 2rem;
+    border: none;
+    border-bottom: 1px solid rgb(50, 50, 50);
+    border-radius: 10px;
+    padding: 0px 10px 0px 10px;
+    transition: color 0.5s linear, border 0.35s linear;
+    background: none;
+}
+
+.my_page .activity_type_buttons button p {
+    line-height: 10px;
+}
+
+.my_page .activity_type_buttons .selected_button {
+    color: rgb(220, 80, 80);
+    border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+.my_page .activity_type_buttons {
+    margin-top: 30px;
+}
+
+.my_page .my_animes {
+    margin: auto;
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 50px 10px;
+}
+
+.my_page .my_animes * {
+    animation: backInUp 1s linear;
+    margin: auto;
+}
+
+.my_page .activity_type_buttons .selected_button:hover {
+    border-bottom: 1px solid white;
+}
+
+.my_page .activity_type_buttons button:hover {
+    border-bottom: 1px solid rgb(200, 200, 200);
+}
+
+@media screen and (max-width: 1500px) {
+    .my_page .my_animes {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .my_page .my_animes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 625px) {
+    .my_page .my_animes {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

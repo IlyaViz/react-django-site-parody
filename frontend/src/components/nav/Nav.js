@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import Logo from "../logo/Logo"
 import NavComponent from "../nav_component/NavComponent"
 import BurgerMenu from '../burger_menu/BurgerMenu'
@@ -6,11 +7,24 @@ import LoginComponent from '../login_component/LoginComponent'
 import "./Nav.css"
 
 const Nav = () => {
+    const location = useLocation()
+    switch (location.pathname) {
+        case "/":
+            var pathNameEquivalent = "Главное"
+            break;
 
-    const [selectedComponent, setSelectedComponent] = useState("Главное")
+        case "/my":
+            var pathNameEquivalent = "Моё"
+            break;
 
-    const centerComponentNames = ['Главное', 'Каталог', 'Моё']
-    const centerComponentRedirectUrls = ['/', '/', '/my']
+        default:
+            var pathNameEquivalent = "Главное"
+            break;
+    }
+    const [selectedComponent, setSelectedComponent] = useState(pathNameEquivalent)
+
+    const centerComponentNames = ['Главное', 'Моё']
+    const centerComponentRedirectUrls = ['/', '/my']
 
     return (
         <nav>

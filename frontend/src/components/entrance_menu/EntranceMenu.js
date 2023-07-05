@@ -3,15 +3,6 @@ import './EntranceMenu.css'
 const EntranceMenu = (props) => {
     const { setAnimeInWatchMenuShown } = props
 
-    const onClick = (event) => {
-        setAnimeInWatchMenuShown()
-        setTimeout(() => window.scrollBy({
-            top: window.innerHeight,
-            behavior: "smooth"
-        }), 100)
-        event.target.style.animation = "buttonDisappear 0.3s linear forwards"
-    }
-
     return (
         <div>
             <div className="entrance_text">

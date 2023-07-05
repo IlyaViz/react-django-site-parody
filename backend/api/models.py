@@ -49,7 +49,8 @@ def auto_delete_file_on_change(sender, instance, **kwargs):
 def limitHistory(sender, instance, **kwargs):
     max_length = 10
     user = instance.user
-    histories = sender.objects.filter(user=user).order_by("-timestamp")
+    # order by id should work the same as order by timestamp
+    histories = sender.objects.filter(user=user).order_by("-id")
     total_length = len(histories)
     
     if total_length > max_length:

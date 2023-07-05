@@ -64,11 +64,11 @@ class GetUserAnimeWatchHistoryListAPIView(ListAPIView):
 class GetUserFavouriteAnimesListAPIView(ListAPIView):
     permission_classes = [IsAuthenticated]
     authentication_classes = [TokenAuthentication]
-    serializer_class = FavouriteAnimeSerializer
+    serializer_class = AnimeSerializer
 
     def get_queryset(self):
         user = self.request.user
-        return FavouriteAnime.objects.filter(user=user)[::-1]
+        return Anime.objects.filter(favouriteanime__user=user)
 
 class AddUserFavouriteAnimeCreateAPIView(CreateAPIView):
     permission_classes = [IsAuthenticated]

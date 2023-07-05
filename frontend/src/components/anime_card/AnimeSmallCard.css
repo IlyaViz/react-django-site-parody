@@ -51,25 +51,3 @@
 .anime_small_component:hover>.anime_small_component_name {
     opacity: 0;
 }
-
-@media screen and (max-width: 500px) {
-    .anime_small_component {
-        width: 200px;
-        min-width: 200px;
-    }
-
-    .anime_small_component_description {
-        transform: translate(10px, 15px);
-    }
-
-    .anime_small_component_name {
-        transform: translate(15px, -15px);
-        height: 55px;
-        width: 200px;
-    }
-
-    .anime_small_component_background {
-        bottom: 205px;
-    }
-
-}

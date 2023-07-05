@@ -53,7 +53,7 @@
 }
 
 .my_page .my_animes * {
-    animation: backInUp 1s linear;
+    animation: backInUp 0.65s linear;
     margin: auto;
 }
 

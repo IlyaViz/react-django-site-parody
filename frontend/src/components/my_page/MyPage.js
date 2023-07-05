@@ -23,6 +23,7 @@ const MyPage = () => {
 
 
     useEffect(() => {
+        setAnimeList([])
         switch (selectedButton) {
             case "Последние просмотры":
                 UserApi.getUserAnimeWatchHistory().then((res) => {

@@ -68,7 +68,7 @@ class GetUserFavouriteAnimesListAPIView(ListAPIView):
 
     def get_queryset(self):
         user = self.request.user
-        return FavouriteAnime.objects.filter(user=user)
+        return FavouriteAnime.objects.filter(user=user)[::-1]
 
 class AddUserFavouriteAnimeCreateAPIView(CreateAPIView):
     permission_classes = [IsAuthenticated]

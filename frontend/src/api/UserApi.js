@@ -116,4 +116,16 @@ export default class UserApi {
             })
         return responseData
     }
+
+    static removeUserFavouriteAnime = (anime_id) => {
+        const requestedUrl = constants.backendUrl + "remove_user_favourite_anime/" + anime_id.toString()
+        const responseData = axios.delete(requestedUrl, constants.config)
+            .then((response) => { 
+                return response.data
+            })
+            .catch((error) => {
+                return responseTypeEnum.error
+            })
+        return responseData
+    }
 }

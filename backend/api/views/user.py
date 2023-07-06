@@ -1,5 +1,6 @@
 from django.contrib.auth import authenticate
-from rest_framework.generics import (CreateAPIView, ListAPIView)
+from rest_framework.generics import (CreateAPIView, 
+                                     ListAPIView)
 from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import TokenAuthentication
@@ -74,3 +75,13 @@ class AddUserFavouriteAnimeCreateAPIView(CreateAPIView):
     permission_classes = [IsAuthenticated]
     authentication_classes = [TokenAuthentication]
     serializer_class = FavouriteAnimeSerializer
+
+class RemoveUserFavouriteAnimeAPIView(APIView):
+    permission_classes = [IsAuthenticated]
+    authentication_classes = [TokenAuthentication]
+
+    def delete(self, request, *args, **kwargs):
+        user = self.request.user
+        anime_id = self.kwargs["pk"]
+        FavouriteAnime.objects.get(user=user, anime=anime_id).delete()
+        return Response({"anime":anime_id})

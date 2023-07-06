@@ -3,12 +3,12 @@ from rest_framework.response import Response
 
 def get_prettified_endpoint_documentation(endpoint:str, 
                           methods:list, 
-                          post_data:list, 
+                          body_data:list, 
                           description:str) -> dict:
     result = {
         "endpoint":endpoint,
         "methods":methods,
-        "post data":post_data,
+        "body data":body_data,
         "description":description
     }
     return result
@@ -30,7 +30,8 @@ class Documentation(APIView):
             ["get_new_animes/<int:count>", ["get"], [], "return <count> new animes"],
             # bug with that endpoint ["add_episode", ["post"], ["name", "episode_number", "anime"]],
             ["get_episodes/<int:anime_pk>", ["get"], [], "return episodes for anime with id = anime_pk"],
-            ["get_episode_video/<int:episode_pk>", ["get"], [], "return episode with id = episode_pk with rewind feature"]
+            ["get_episode_video/<int:episode_pk>", ["get"], [], "return episode with id = episode_pk with rewind feature"],
+            ["remove_user_favourite_anime/<int:pk>", ["delete"], [], "delete favourite anime of User found by token recieved in Authorization header by anime's id = pk"]
         ]
         for instance in data:
             documentation_dict = get_prettified_endpoint_documentation(*instance)

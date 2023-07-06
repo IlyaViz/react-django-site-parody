@@ -11,16 +11,6 @@ const MyPage = () => {
 
     const [selectedButton, setSelectedButton] = useState("Последние просмотры")
     const [animeList, setAnimeList] = useState([])
-    const navigate = useNavigate()
-
-    useEffect(() => {
-        UserApi.validateLocalStorageToken().then((res) => {
-            if (res == responseTypeEnum.error) {
-                navigate("/login")
-            }
-        })
-    }, [localStorage])
-
 
     useEffect(() => {
         setAnimeList([])

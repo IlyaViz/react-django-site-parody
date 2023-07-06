@@ -20,7 +20,7 @@ const NewAnimesMenu = (props) => {
         if (menuIsInView) {
             menuRef.current.style.visibility = "visible"
             menuRef.current.classList.add("animate__animated")
-            if (screen.width > 900) {
+            if (window.screen.width > 900) {
                 menuRef.current.classList.add("animate__fadeInRightBig")
             } else {
                 menuRef.current.classList.add("animate__fadeInLeft")

@@ -8,10 +8,10 @@ import AnimeApi from "../../api/AnimeApi"
 const Test = () => {
 
     useEffect(() => {
-        UserApi.validateLocalStorageToken().then((res) => {
+        UserApi.removeUserFavouriteAnime(7).then((res) => {
             if (res != responseTypeEnum.error) {
                 console.log(res)
-            }
+            } 
         })
     }, [])
 

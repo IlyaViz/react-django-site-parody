@@ -1,3 +1,36 @@
+@import url('https://unpkg.com/css.gg@2.0.0/icons/css/heart.css');
+
+.gg-heart {
+    scale: 3;
+    color: black;
+}
+
+.gg-heart::before{
+    width: 8px;
+    height: 11px;
+    border-left: 2px solid;
+    border-bottom: 2px solid;
+    left: -2px;
+    top: 3px
+}
+
+.gg-heart, .gg-heart::after, .gg-heart::before {
+    transition: color 0.25s, background-color 0.25s linear;
+}
+
+.gg-heart-active {
+    background-color: red;
+    color: white;
+}
+
+.gg-heart-active::after{
+    background-color: red;
+}
+
+.gg-heart-active::before{
+    background-color: red;
+}
+
 .anime_big_component {
     font-size: 1.5rem;
     width: 500px;
@@ -43,6 +76,21 @@
     transition: opacity 0.2s linear;
     color: whitesmoke;
     text-shadow: 0px 0px 1px black;
+}
+
+.anime_big_component_favourite_button {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    float: right;
+    transform: translate(-30px, -50px);
+}
+
+.anime_big_component_favourite_button_active {}
+
+.anime_big_component_favourite_button img {
+    width: 100%;
+    height: 100%;
 }
 
 .anime_big_component:hover>.anime_big_component_description {

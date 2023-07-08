@@ -12,7 +12,8 @@ from .views.user import (UserCreateAPIView,
                         )
 from .views.anime import (  AnimeCreateAPIView,
                             AnimeRetrieveAPIView, 
-                            LastAnimesListApiView)
+                            LastAnimesListApiView,
+                            SearchAnimeByNameListAPIView)
 from .views.episode import (EpisodeCreateAPIView, 
                             GetEpisodesListApiView, 
                             GetEpisodeVideoAPIView)
@@ -42,6 +43,8 @@ urlpatterns = [
     path("add_episode/", EpisodeCreateAPIView.as_view()),
     path("get_episodes/<int:anime_pk>", GetEpisodesListApiView.as_view()),
     path("get_episode_video/<int:episode_pk>", GetEpisodeVideoAPIView.as_view()),
+
+    path("search_anime_by_name/<str:name_query>", SearchAnimeByNameListAPIView.as_view()),
 
     path("test", TestAPIView.as_view())
 ]

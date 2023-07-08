@@ -26,12 +26,13 @@ class Documentation(APIView):
             ["add_user_favourite_anime", ["post"], ["anime_id"], "add favourite anime to User found by token recieved in Authorization header"],
             ["get_user_favourite_animes", ["get"], [], "get favourite animes of User found by token recieved in Authorization header"],
             ["create_anime", ["post"], ["name", "description", "image"], "create new anime; image should be a file"],
-            ["get_anime/<int:pk>", ["get"], [], "return anime by it's id = pk"],
+            ["get_anime/<int:pk>", ["get"], [], "return anime by it's id = <pk>"],
             ["get_new_animes/<int:count>", ["get"], [], "return <count> new animes"],
             # bug with that endpoint ["add_episode", ["post"], ["name", "episode_number", "anime"]],
-            ["get_episodes/<int:anime_pk>", ["get"], [], "return episodes for anime with id = anime_pk"],
-            ["get_episode_video/<int:episode_pk>", ["get"], [], "return episode with id = episode_pk with rewind feature"],
-            ["remove_user_favourite_anime/<int:pk>", ["delete"], [], "delete favourite anime of User found by token recieved in Authorization header by anime's id = pk"]
+            ["get_episodes/<int:anime_pk>", ["get"], [], "return episodes for anime with id = <anime_pk>"],
+            ["get_episode_video/<int:episode_pk>", ["get"], [], "return episode with id = <episode_pk> with rewind feature"],
+            ["remove_user_favourite_anime/<int:pk>", ["delete"], [], "delete favourite anime of User found by token recieved in Authorization header by anime's id = <pk>"],
+            ["search_anime_by_name/<str:name_query>", ["get"], [], "return animes with names that contains part = <name_query>"]
         ]
         for instance in data:
             documentation_dict = get_prettified_endpoint_documentation(*instance)

@@ -30,7 +30,6 @@ const LoginComponent = () => {
                 :
                 <Link to="/login">Войти</Link>
             }
-
         </div>
     )
 }

@@ -18,6 +18,9 @@ class Episode(models.Model):
     episode = models.FileField(upload_to="videos/", null=False, blank=False)
     anime = models.ForeignKey(Anime, on_delete=models.CASCADE)
 
+    class Meta:
+        unique_together = [["anime", "episode_number"], ["anime", "name"]]
+
 class AnimeWatchHistory(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     anime = models.ForeignKey(Anime, on_delete=models.CASCADE)

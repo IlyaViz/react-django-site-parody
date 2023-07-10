@@ -35,19 +35,12 @@ const Nav = () => {
 
                 <div className="center_components">
                     {centerComponentNames.map((val, index) => {
-                        if (val === selectedComponent) {
-                            return <NavComponent
-                                key={index}
-                                name={val}
-                                redirect={centerComponentRedirectUrls[index]}
-                                selected />
-                        } else {
-                            return <NavComponent
-                                key={index}
-                                name={val}
-                                redirect={centerComponentRedirectUrls[index]}
-                                onClick={() => setSelectedComponent(val)} />
-                        }
+                        return <NavComponent
+                            key={index}
+                            name={val}
+                            redirect={centerComponentRedirectUrls[index]}
+                            selected={val == selectedComponent}
+                            onClick={() => setSelectedComponent(val)} />
                     })}
                 </div>
 

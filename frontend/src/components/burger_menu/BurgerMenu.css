@@ -43,6 +43,7 @@
 .burger_components {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 15px;
     position: fixed;
     right: 0px;

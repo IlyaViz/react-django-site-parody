@@ -5,19 +5,26 @@ import responseTypeEnum from '../../enums/ResponseTypeEnum'
 import './SearchBar.css'
 
 
-const SearchBar = () => {
+const SearchBar = (props) => {
+    const { showParentComponents } = props /* function or something else */
     const [opened, setOpened] = useState(false)
     const [animes, setAnimes] = useState([])
     const [searchQuery, setSearchQuery] = useState("")
     const inputRef = useRef()
 
     const openBar = () => {
+        try {
+            showParentComponents(false)
+        } catch (e) { }
         setOpened(true)
         setTimeout(() => inputRef.current.focus(), 100)
     }
 
     const closeBar = () => {
         setTimeout(() => {
+            try {
+                showParentComponents(true)
+            } catch (e) { }
             setOpened(false)
             setAnimes([])
         }, 100)

@@ -19,6 +19,7 @@
     background-color: rgb(35, 35, 35);
     color: white;
     animation: openInput 0.25s linear;
+    outline: none;
 }
 
 .search_bar .search_result {
@@ -56,4 +57,15 @@
     0% {
         width: 0px;
     }
+}
+
+@media screen and (max-width: 600px) {
+    .search_bar input {
+        width: 150px;
+    }
+
+    .search_bar .search_result {
+        margin-top: 8px;
+    }
+
 }

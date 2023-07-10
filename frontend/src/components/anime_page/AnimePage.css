@@ -29,7 +29,7 @@
     display: none;
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (min-width:751px) and (max-width: 950px) {
     .anime_page .anime_page_content {
         flex-direction: column;
     }
@@ -45,7 +45,7 @@
 }
 
 @media screen and (max-width: 750px) {
-    .anime_page_content {
+    .anime_page .anime_page_content {
         flex-direction: column;
     }
 

@@ -34,14 +34,16 @@ nav .right_components {
 
 @media screen and (max-width: 600px) {
     nav .all_components {
-        gap: 100px;
+        gap: 0;
     }
 
     nav .left_components {
         margin-left: 15px;
     }
 
-    nav .center_components,
+    nav .center_components div:not(:last-child) {
+        display: none;
+    }
     nav .right_components {
         display: none;
     }

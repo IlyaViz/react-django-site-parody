@@ -16,3 +16,9 @@
     padding-top: 20px;
     color: rgb(250, 240, 230) !important;
 }
+
+@media screen and (max-width: 600px) {
+    .login_or_user a {
+        padding-bottom: 20px;
+    }
+}

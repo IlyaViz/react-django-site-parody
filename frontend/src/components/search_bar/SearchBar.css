@@ -1,0 +1,59 @@
+@import url('https://unpkg.com/css.gg@2.0.0/icons/css/search.css');
+
+.gg-search {
+    transform: scale(1.75);
+    cursor: pointer;
+}
+
+.search_bar {
+    margin: 0px 0px 5px 10px;
+}
+
+.search_bar input {
+    text-align: center;
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 1.25rem;
+    width: 300px;
+    border: 1px solid white;
+    background-color: rgb(35, 35, 35);
+    color: white;
+    animation: openInput 0.25s linear;
+}
+
+.search_bar .search_result {
+    z-index: 1;
+    margin-top: 20px;
+    position: absolute;
+    background-color: rgb(50, 50, 50);
+    padding: 15px 20px 15px 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+
+}
+
+.search_bar .search_result_content {
+    overflow: scroll;
+    max-height: 500px;
+    width: 250px;
+}
+
+.search_bar .search_result a {
+    white-space: nowrap;
+    display: block;
+    text-decoration: none;
+    color: white;
+    border-bottom: 1px solid gray;
+    margin-top: 12px;
+}
+
+.search_bar .search_result_content::-webkit-scrollbar {
+    display: none;
+}
+
+@keyframes openInput {
+    0% {
+        width: 0px;
+    }
+}

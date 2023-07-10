@@ -4,19 +4,18 @@ import responseTypeEnum from '../../enums/ResponseTypeEnum'
 import UserApi from "../../api/UserApi"
 import AnimeCard from "../anime_card/AnimeCard"
 import AnimeApi from "../../api/AnimeApi"
+import SearchBar from "../search_bar/SearchBar"
 
 const Test = () => {
 
     useEffect(() => {
-        UserApi.removeUserFavouriteAnime(7).then((res) => {
-            if (res != responseTypeEnum.error) {
-                console.log(res)
-            } 
+        AnimeApi.searchAnimeByNamePart("big").then((res) => {
+            console.log(res)
         })
     }, [])
 
     return (
-        1
+        <SearchBar /> 
     )
 }
 

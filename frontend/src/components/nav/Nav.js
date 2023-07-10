@@ -4,6 +4,7 @@ import Logo from "../logo/Logo"
 import NavComponent from "../nav_component/NavComponent"
 import BurgerMenu from '../burger_menu/BurgerMenu'
 import LoginComponent from '../login_component/LoginComponent'
+import SearchBar from '../search_bar/SearchBar'
 import "./Nav.css"
 
 const Nav = () => {
@@ -42,6 +43,7 @@ const Nav = () => {
                             selected={val == selectedComponent}
                             onClick={() => setSelectedComponent(val)} />
                     })}
+                    <SearchBar />
                 </div>
 
                 <div className="right_components">

@@ -40,4 +40,16 @@ export default class AnimeApi {
         return responseData
     }
 
+    static searchAnimeByNamePart = (namePart) => {
+        const requestedUrl = constants.backendUrl + "search_anime_by_name/" + namePart
+        const responseData = axios.get(requestedUrl)
+            .then((response) => {
+                return response.data
+            })
+            .catch((error) => {
+                return responseTypeEnum.error
+            })
+        return responseData
+    }
+
 }

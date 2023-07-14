@@ -5,7 +5,7 @@ Parody on anitype site
 
 
 # To run:
-Either docker-compose up (will run as two seperate services, without communication; will be fixed later) 
+Either docker-compose up 
 
 Or 
 

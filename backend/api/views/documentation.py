@@ -32,7 +32,9 @@ class Documentation(APIView):
             ["get_episodes/<int:anime_pk>", ["get"], [], "return episodes for anime with id = <anime_pk>"],
             ["get_episode_video/<int:episode_pk>", ["get"], [], "return episode with id = <episode_pk> with rewind feature"],
             ["remove_user_favourite_anime/<int:pk>", ["delete"], [], "delete favourite anime of User found by token recieved in Authorization header by anime's id = <pk>"],
-            ["search_anime_by_name/<str:name_query>", ["get"], [], "return animes with names that contains part = <name_query>"]
+            ["search_anime_by_name/<str:name_query>", ["get"], [], "return animes with names that contains part = <name_query>"],
+            ["add_comment", ["post"], ["type", "commented_object_id", "content"], "add comment for object(anime or comment) with type = <type> and id = <commented_object_id> and content = <content>"],
+            ["get_comments/<str:type>/<int:commented_object_id>", ["get"], [], "get comments for object(anime or comment) with type = <type> and id = <commented_object_id>"]
         ]
         for instance in data:
             documentation_dict = get_prettified_endpoint_documentation(*instance)

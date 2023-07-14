@@ -4,7 +4,8 @@ from django.contrib.auth.models import User
 from .models import (Anime, 
                      Episode, 
                      AnimeWatchHistory,
-                     FavouriteAnime)
+                     FavouriteAnime,
+                     Comment)
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -58,3 +59,15 @@ class FavouriteAnimeSerializer(serializers.ModelSerializer):
         user = self.context["request"].user
         anime = self.validated_data["anime"]
         self.Meta.model.objects.create(user=user, anime=anime)
+
+class CommentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Comment
+        fields = ["type", "commented_object_id", "content"]
+
+    def save(self, **kwargs):
+        user = self.context["request"].user
+        type = self.validated_data["type"]
+        commented_object_id = self.validated_data["commented_object_id"]
+        content = self.validated_data["content"]
+        self.Meta.model.objects.create(commenter=user, type=type, commented_object_id=commented_object_id, content=content)

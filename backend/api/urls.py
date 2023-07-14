@@ -10,7 +10,7 @@ from .views.user import (UserCreateAPIView,
                          GetUserFavouriteAnimesListAPIView,
                          RemoveUserFavouriteAnimeAPIView
                         )
-from .views.anime import (  AnimeCreateAPIView,
+from .views.anime import   (AnimeCreateAPIView,
                             AnimeRetrieveAPIView, 
                             LastAnimesListApiView,
                             SearchAnimeByNameListAPIView)
@@ -18,6 +18,7 @@ from .views.episode import (EpisodeCreateAPIView,
                             GetEpisodesListApiView, 
                             GetEpisodeVideoAPIView)
 from .views.documentation import TestAPIView
+from .views.comment import GetCommentsListAPIView, AddCommentCreateAPIView
 
 
 app_name = 'api'
@@ -45,6 +46,9 @@ urlpatterns = [
     path("get_episode_video/<int:episode_pk>", GetEpisodeVideoAPIView.as_view()),
 
     path("search_anime_by_name/<str:name_query>", SearchAnimeByNameListAPIView.as_view()),
+
+    path("add_comment", AddCommentCreateAPIView.as_view()),
+    path("get_comments/<str:type>/<int:commented_object_id>", GetCommentsListAPIView.as_view()),
 
     path("test", TestAPIView.as_view())
 ]

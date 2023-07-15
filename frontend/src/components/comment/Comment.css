@@ -1,0 +1,28 @@
+.comment {
+    width: 300px;
+    background-color: black;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.comment .comment_info {
+    color: white;
+    border-bottom: 6px;
+}
+
+.comment .time_info {
+    font-size: 0.75rem;
+    margin-top: 4px;
+    float: right;
+}
+
+.comment .commenter_info {
+    display: inline-block;
+    border-bottom: 1px solid white;
+}
+
+.comment .content {
+    margin-top: 12px;
+    color: rgb(160, 160, 160);
+}

@@ -37,8 +37,8 @@ class Comment(models.Model):
     commenter = models.ForeignKey(User, on_delete=models.CASCADE)
     type = models.CharField(max_length=50, choices=[("anime", "anime"), ("comment", "comment")])
     commented_object_id = models.BigIntegerField()
-    created_at = models.TimeField(auto_now_add=True)
-    updated_at = models.TimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
     content = models.CharField(max_length=1000)
 
 # delete episode when Episode is deleted

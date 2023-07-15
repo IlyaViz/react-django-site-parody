@@ -63,6 +63,18 @@ export default class UserApi {
         return responseData
     }
 
+    static getPublicUserInfoById = (id) => {
+        const requestedUrl = `${constants.backendUrl}get_public_user_info?id=${id}`
+        const responseData = axios.get(requestedUrl, constants.config)
+            .then((response) => {
+                return response.data
+            })
+            .catch((error) => {
+                return responseTypeEnum.error
+            })
+        return responseData
+    }
+
     static appendUserAnimeWatchHistory = (anime_id) => {
         const requestedUrl = constants.backendUrl + "append_user_anime_watch_history"
         const data = {

@@ -20,8 +20,8 @@ class TokenAPIView(APIView):
     serializer_class = UserSerializer
 
     def post(self, request, *args, **kwargs):
-        username = request.POST["username"]
-        password = request.POST["password"]
+        username = request.data["username"]
+        password = request.data["password"]
         user = authenticate(request, username=username, password=password)
         if user is None:
             return Response({"error":"user with this username or password does not exist"}, status=400)

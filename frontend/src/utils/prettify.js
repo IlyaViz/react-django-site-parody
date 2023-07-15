@@ -6,6 +6,27 @@ export const textPrettification = (text, max_length) => {
     return text
 }
 
+export const dateTimeConverter = (mysqlDateTime) => {
+    const monthNameDictionary = {
+        "01":"Января",
+        "02":"Февраля",
+        "03":"Марта",
+        "04":"Апреля",
+        "05":"Мая",
+        "06":"Июня",
+        "07":"Июля",
+        "08":"Августа",
+        "09":"Сентября",
+        "10":"Октября",
+        "11":"Ноября",
+        "12":"Декабря"
+    }
+    const [firstPart, secondPart] = mysqlDateTime.split("T")
+    const [year, month, day] = firstPart.split("-")
+    const monthName = monthNameDictionary[month]
+    return `${day} ${monthName} ${year}`
+}
+
 export const toCamelCase = (key) => {
     let indexToReplace = []
     for (let index = 0; index < key.length; index++) {

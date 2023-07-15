@@ -1,10 +1,11 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import urlNameConverter from '../../utils/UrlNameConverter'
 import './NavComponent.css'
 
 const NavComponent = (props) => {
     const { name, redirect } = props
-    const selected = urlNameConverter() == name
+    const location = useLocation()
+    const selected = urlNameConverter(location) == name
     
     return (
         <div className="nav_component">

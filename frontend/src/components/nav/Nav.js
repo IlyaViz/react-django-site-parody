@@ -22,7 +22,6 @@ const Nav = () => {
                     </div>
                 }
 
-
                 <div className="center_components">
                     {showOtherComponents &&
                         centerComponentNames.map((val, index) => {
@@ -33,7 +32,6 @@ const Nav = () => {
                         })
                     }
 
-
                     <SearchBar showParentComponents={window.screen.width > 1200 ? null : setShowOtherComponents} />
                 </div>
                 {showOtherComponents &&
@@ -41,7 +39,6 @@ const Nav = () => {
                         <LoginComponent />
                     </div>
                 }
-
 
                 <BurgerMenu
                     componentNames={centerComponentNames}

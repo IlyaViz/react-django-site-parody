@@ -1,7 +1,6 @@
 import { useLocation } from "react-router-dom";
 
-const urlNameConverter = () => {
-    const location = useLocation()
+const urlNameConverter = (location) => {
 
     switch (location.pathname) {
         case "/":

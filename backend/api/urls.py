@@ -3,7 +3,7 @@ from .views.documentation import Documentation
 from .views.user import (UserCreateAPIView, 
                          TokenAPIView, 
                          ValidateTokenAPIView,
-                         GetUserInfoAPIView,
+                         GetPrivateUserInfoAPIView,
                          AppendUserAnimeWatchHistoryCreateAPIView,
                          GetUserAnimeWatchHistoryListAPIView,
                          AddUserFavouriteAnimeCreateAPIView,
@@ -30,7 +30,7 @@ urlpatterns = [
 
     path("get_token", TokenAPIView.as_view()),
     path("validate_token", ValidateTokenAPIView.as_view()),
-    path("get_user_info", GetUserInfoAPIView.as_view()),
+    path("get_private_user_info", GetPrivateUserInfoAPIView.as_view()),
     path("append_user_anime_watch_history", AppendUserAnimeWatchHistoryCreateAPIView.as_view()),
     path("get_user_anime_watch_history", GetUserAnimeWatchHistoryListAPIView.as_view()),
     path("add_user_favourite_anime", AddUserFavouriteAnimeCreateAPIView.as_view()),

@@ -51,8 +51,8 @@ export default class UserApi {
         return responseData
     }
 
-    static getUserInfo = () => {
-        const requestedUrl = constants.backendUrl + "get_user_info"
+    static getPrivateUserInfo = () => {
+        const requestedUrl = constants.backendUrl + "get_private_user_info"
         const responseData = axios.get(requestedUrl, constants.config)
             .then((response) => {
                 return response.data

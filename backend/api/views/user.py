@@ -38,7 +38,7 @@ class ValidateTokenAPIView(APIView):
             "valid":True
         })
     
-class GetUserInfoAPIView(APIView):
+class GetPrivateUserInfoAPIView(APIView):
     permission_classes = [IsAuthenticated]
     authentication_classes = [TokenAuthentication]
 

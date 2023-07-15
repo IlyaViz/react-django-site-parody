@@ -14,8 +14,7 @@ const LoginComponent = () => {
             // if valid get token from localstorage and get user info by it
             if (res != responseTypeEnum.error) {
                 setIsTokenValid(true)
-                const token = localStorage.getItem("token")
-                UserApi.getUserInfo().then((res) => {
+                UserApi.getPrivateUserInfo().then((res) => {
                     setUser(res)
                 })
             }

@@ -5,14 +5,15 @@ import UserApi from "../../api/UserApi"
 import AnimeCard from "../anime_card/AnimeCard"
 import AnimeApi from "../../api/AnimeApi"
 import SearchBar from "../search_bar/SearchBar"
+import CommentApi from "../../api/CommentApi"
 
 const Test = () => {
 
     useEffect(() => {
-        AnimeApi.searchAnimeByNamePart("big").then((res) => {
+        CommentApi.addComment("anime", 7, "Top anime").then((res) => {
             console.log(res)
         })
-    }, [])
+    })
 
     return (
         <SearchBar /> 

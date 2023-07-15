@@ -1,4 +1,5 @@
 from django.contrib.auth import authenticate
+from django.contrib.auth.models import User
 from rest_framework.generics import (CreateAPIView, 
                                      ListAPIView)
 from rest_framework.views import APIView
@@ -47,6 +48,27 @@ class GetPrivateUserInfoAPIView(APIView):
         return Response({
             "username":user.username
         })
+    
+class GetPublicUserInfoAPIView(APIView):
+
+    def get(self, request, *args, **kwargs):
+        id = request.GET.get("id", None)
+        username = request.GET.get("username", None)
+        user = None
+        if id is not None:
+            user = User.objects.get(id=id)
+        elif username is not None:
+            user = User.objects.get(username=username)
+    
+        if user is None:
+            return Response({
+                "error":"user not found"
+            })
+
+        return Response({
+            "username":user.username
+        })
+
 
 class AppendUserAnimeWatchHistoryCreateAPIView(CreateAPIView):
     permission_classes = [IsAuthenticated]

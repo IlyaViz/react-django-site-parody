@@ -10,7 +10,7 @@ import './AnimePage.css'
 
 const AnimePage = () => {
     const [anime, setAnime] = useState({})
-    const [episodesList, setEpisodesList] = useState([])
+    const [episodes, setEpisodes] = useState([])
     const [animeExist, setAnimeExist] = useState(false)
     const { animeId } = useParams()
 
@@ -18,7 +18,7 @@ const AnimePage = () => {
         AnimeApi.getEpisodes(animeId).then((res) => {
             if (res != responseTypeEnum.error) {
                 const prettifiedArray = jsonObjectArrayPrettification(res)
-                setEpisodesList(prettifiedArray)
+                setEpisodes(prettifiedArray)
             }
         })
     }, [])
@@ -46,8 +46,8 @@ const AnimePage = () => {
                         </div>
 
                         <div className='episodes'>
-                            {episodesList.length != 0 ?
-                                episodesList.map((episode, index) => {
+                            {episodes.length != 0 ?
+                                episodes.map((episode, index) => {
                                     return <Episode
                                         key={index}
                                         episodeObject={episode}

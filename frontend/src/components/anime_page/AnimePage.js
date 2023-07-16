@@ -4,8 +4,10 @@ import { jsonObjectArrayPrettification, jsonObjectPrettification } from '../../u
 import AnimeApi from '../../api/AnimeApi'
 import responseTypeEnum from '../../enums/ResponseTypeEnum'
 import animeCardTypeEnum from '../../enums/AnimeCardTypeEnum'
+import CommentMenu from '../comment_menu/CommentMenu'
 import Episode from '../episode/Episode'
 import AnimeCard from '../anime_card/AnimeCard'
+import commentTypeEnum from '../../enums/CommentTypeEnum'
 import './AnimePage.css'
 
 const AnimePage = () => {
@@ -58,6 +60,10 @@ const AnimePage = () => {
                             }
                         </div>
                     </div>
+                    <CommentMenu
+                        type={commentTypeEnum.anime}
+                        commentedObjectId={animeId}
+                    />
                 </div>
                 :
                 <div className='no_anime_error'>

@@ -5,7 +5,7 @@
     color: black;
 }
 
-.gg-heart::before{
+.gg-heart::before {
     width: 8px;
     height: 11px;
     border-left: 2px solid;
@@ -14,7 +14,9 @@
     top: 3px
 }
 
-.gg-heart, .gg-heart::after, .gg-heart::before {
+.gg-heart,
+.gg-heart::after,
+.gg-heart::before {
     transition: color 0.25s, background-color 0.25s linear;
 }
 
@@ -23,11 +25,11 @@
     color: white;
 }
 
-.gg-heart-active::after{
+.gg-heart-active::after {
     background-color: red;
 }
 
-.gg-heart-active::before{
+.gg-heart-active::before {
     background-color: red;
 }
 
@@ -127,7 +129,11 @@
     }
 
     .anime_big_component_favourite_button {
-        transform: translate(0px, 0px);
+        transform: translate(-10px, -10px);
+    }
+
+    .gg-heart {
+        scale: 2.5;
     }
 
 }

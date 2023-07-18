@@ -1,6 +1,7 @@
 from rest_framework.generics import CreateAPIView, RetrieveAPIView, ListAPIView
 from rest_framework.response import Response
 from django.db.models.functions import Length
+from ..pagination import StandardResultsSetPagination
 from ..models import Anime
 from ..serializers import AnimeSerializer
 
@@ -15,12 +16,14 @@ class AnimeRetrieveAPIView(RetrieveAPIView):
     
 class LastAnimesListApiView(ListAPIView):
     serializer_class = AnimeSerializer
+    pagination_class = StandardResultsSetPagination
 
     def get_queryset(self):
-        return Anime.objects.order_by("-id")[:self.kwargs["count"]]
+        return Anime.objects.order_by("-id")
     
 class SearchAnimeByNameListAPIView(ListAPIView):
     serializer_class = AnimeSerializer
+    pagination_class = StandardResultsSetPagination
 
     def get_queryset(self):
         name_query = self.kwargs["name_query"]

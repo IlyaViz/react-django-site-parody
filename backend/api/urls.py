@@ -41,7 +41,7 @@ urlpatterns = [
 
     path("create_anime", AnimeCreateAPIView.as_view()),
     path("get_anime/<int:pk>", AnimeRetrieveAPIView.as_view()),
-    path("get_new_animes/<int:count>", LastAnimesListApiView.as_view()),
+    path("get_new_animes", LastAnimesListApiView.as_view()),
     
     path("add_episode/", EpisodeCreateAPIView.as_view()),
     path("get_episodes/<int:anime_pk>", GetEpisodesListApiView.as_view()),

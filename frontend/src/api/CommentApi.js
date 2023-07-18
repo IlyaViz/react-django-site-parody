@@ -3,8 +3,9 @@ import responseTypeEnum from '../enums/ResponseTypeEnum'
 import * as constants from './Constants'
 
 export default class CommentApi {
-    static getComments = (type, commentedObjectId) => {
-        const requestedUrl = `${constants.backendUrl}get_comments/${type}/${commentedObjectId}`
+    static getComments = (type, commentedObjectId, page) => {
+        const currentPage = page ? page : 1
+        const requestedUrl = `${constants.backendUrl}get_comments/${type}/${commentedObjectId}?page=${currentPage}`
         const responseData = axios.get(requestedUrl, constants.config)
             .then((response) => { 
                 return response.data

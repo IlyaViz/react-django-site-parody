@@ -16,8 +16,9 @@ export default class AnimeApi {
         return responseData
     }
 
-    static getNewAnimes = (count) => {
-        const requestedUrl = constants.backendUrl + "get_new_animes/" + count.toString()
+    static getNewAnimes = (page) => {
+        const currentPage = page ? page : 1
+        const requestedUrl = constants.backendUrl + "get_new_animes" + `?page=${currentPage}`
         const responseData = axios.get(requestedUrl)
             .then((response) => {
                 return response.data
@@ -40,8 +41,9 @@ export default class AnimeApi {
         return responseData
     }
 
-    static searchAnimeByNamePart = (namePart) => {
-        const requestedUrl = constants.backendUrl + "search_anime_by_name/" + namePart
+    static searchAnimeByNamePart = (namePart, page) => {
+        const currentPage = page ? page : 1
+        const requestedUrl = constants.backendUrl + "search_anime_by_name/" + namePart + `?page=${currentPage}`
         const responseData = axios.get(requestedUrl)
             .then((response) => {
                 return response.data

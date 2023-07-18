@@ -117,8 +117,9 @@ export default class UserApi {
         return responseData
     }
 
-    static getUserFavouriteAnimes = () => {
-        const requestedUrl = constants.backendUrl + "get_user_favourite_animes"
+    static getUserFavouriteAnimes = (page) => {
+        const currentPage = page ? page : 1
+        const requestedUrl = constants.backendUrl + "get_user_favourite_animes" + `?page=${currentPage}`
         const responseData = axios.get(requestedUrl, constants.config)
             .then((response) => { 
                 return response.data

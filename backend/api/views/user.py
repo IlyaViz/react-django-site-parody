@@ -12,6 +12,7 @@ from ..serializers import ( UserSerializer,
                             AnimeSerializer,
                             AnimeWatchHistorySerializer,
                             FavouriteAnimeSerializer)
+from ..pagination import StandardResultsSetPagination
 
 class UserCreateAPIView(CreateAPIView):
     serializer_class = UserSerializer
@@ -88,6 +89,7 @@ class GetUserFavouriteAnimesListAPIView(ListAPIView):
     permission_classes = [IsAuthenticated]
     authentication_classes = [TokenAuthentication]
     serializer_class = AnimeSerializer
+    pagination_class = StandardResultsSetPagination
 
     def get_queryset(self):
         user = self.request.user

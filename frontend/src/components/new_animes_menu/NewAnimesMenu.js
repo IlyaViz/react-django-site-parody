@@ -29,7 +29,7 @@ const NewAnimesMenu = (props) => {
     }, [menuIsInView])
 
     useEffect(() => {
-        AnimeApi.getNewAnimes(10).then((res) => {
+        AnimeApi.getNewAnimes().then((res) => {
             if (res != responseTypeEnum.error) {
                 const prettifiedArray = jsonObjectArrayPrettification(res)
                 setAnimes(prettifiedArray)

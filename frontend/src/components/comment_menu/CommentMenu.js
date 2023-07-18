@@ -11,6 +11,7 @@ const CommentMenu = (props) => {
     const { type, commentedObjectId } = props
     const [comments, setComments] = useState([])
     const [formSubmitCount, setFormSubmitCount] = useState(0)
+    const [inputIsEmpty, setInputIsEmpty] = useState(true)
     const newCommentInputRef = useRef()
     const navigate = useNavigate()
 
@@ -21,10 +22,21 @@ const CommentMenu = (props) => {
                 navigate("/login")
             }
         })
-        CommentApi.addComment(type, commentedObjectId, newCommentInputRef.current.value)
-        newCommentInputRef.current.value = ""
-        // next line forces useEffect to run
-        setFormSubmitCount(formSubmitCount + 1)
+        CommentApi.addComment(type, commentedObjectId, newCommentInputRef.current.value).then((res) => {
+            if (res != responseTypeEnum.error) {
+                newCommentInputRef.current.value = ""
+                setInputIsEmpty(true)
+                setFormSubmitCount(formSubmitCount + 1)
+            }
+        })
+    }
+
+    const onInputChange = (event) => {
+        if (event.target.value.length > 0) {
+            setInputIsEmpty(false)
+        } else {
+            setInputIsEmpty(true)
+        }
     }
 
     useEffect(() => {
@@ -39,8 +51,8 @@ const CommentMenu = (props) => {
     return (
         <div className='comment_menu'>
             <form className='add_comment_form' onSubmit={(event) => onFormSubmit(event)}>
-                <textarea placeholder='Оставьте свое мнение тут' ref={newCommentInputRef} />
-                <button>Отправить</button>
+                <textarea placeholder='Оставьте свое мнение тут' ref={newCommentInputRef} onChange={(event) => onInputChange(event)} />
+                <button disabled={inputIsEmpty}>Отправить</button>
             </form>
 
             <div className='comments'>

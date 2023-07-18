@@ -1,6 +1,7 @@
 from rest_framework.generics import CreateAPIView, ListAPIView
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
+from ..pagination import StandardResultsSetPagination
 from ..serializers import CommentSerializer
 from ..models import Comment
 
@@ -11,6 +12,7 @@ class AddCommentCreateAPIView(CreateAPIView):
 
 class GetCommentsListAPIView(ListAPIView):
     serializer_class = CommentSerializer
+    pagination_class = StandardResultsSetPagination
 
     def get_queryset(self):
         type = self.kwargs["type"]

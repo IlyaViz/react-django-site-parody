@@ -32,10 +32,6 @@
     padding: 5px;
     display: block;
     font-size: 1.25rem;
-    cursor: pointer;
-    border: 1px solid black;
-    opacity: 0.25;
-    transition: opacity 0.25s linear;
 }
 
 .comment_menu .comments {
@@ -44,8 +40,9 @@
     align-items: center;
 }
 
-.comment_menu .add_comment_form button:hover {
-    opacity: 1;
+.comment_menu .add_comment_form button:enabled {
+    cursor: pointer;
+    border: 1px solid
 }
 
 .comment_menu .add_comment_form textarea:focus {

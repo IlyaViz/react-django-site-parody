@@ -48,7 +48,7 @@ class AnimeWatchHistorySerializer(serializers.ModelSerializer):
     def save(self, **kwargs):
         user = self.context["request"].user
         anime = self.validated_data["anime"]
-        self.Meta.model.objects.get_or_create(user=user, anime=anime)
+        self.Meta.model.objects.create(user=user, anime=anime)
 
 class FavouriteAnimeSerializer(serializers.ModelSerializer):
     class Meta:

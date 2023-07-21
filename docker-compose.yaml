@@ -19,3 +19,4 @@ services:
       - ./frontend/public/:/frontend/public/
     environment:
       - WATCHPACK_POLLING=true
+      - REACT_APP_BACKEND_IP=127.0.0.1:8000

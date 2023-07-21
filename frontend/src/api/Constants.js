@@ -1,4 +1,6 @@
-export const backendUrl = "http://172.16.0.2:8000/api/"
+const BACKEND_IP = process.env.REACT_APP_BACKEND_IP ?? "127.0.0.1:8000"
+
+export const backendUrl = `http://${BACKEND_IP}/api/`
 export const config = {
     headers: {
         "Content-Type": "multipart/form-data",

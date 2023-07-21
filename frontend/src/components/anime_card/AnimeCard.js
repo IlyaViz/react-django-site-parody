@@ -44,7 +44,7 @@ const AnimeCard = (props) => {
             })
         } else {
             UserApi.removeUserFavouriteAnime(id).then((res) => {
-                if (res != responseTypeEnum.error){
+                if (res != responseTypeEnum.error) {
                     setisFavourite(false)
                 }
             })
@@ -52,20 +52,23 @@ const AnimeCard = (props) => {
     }
 
     useEffect(() => {
-        UserApi.getUserFavouriteAnimes().then((res) => {
-            if (res != responseTypeEnum.error) {
-                // check if current anime id is in favourite anime ids
-                res.map((animeObject) => {
-                    if (animeObject.id == id) {
-                        setisFavourite(true)
-                    }
-                })
-            }
-        })
+        if (type == animeCardTypeEnum.big) {
+            UserApi.getUserFavouriteAnimes().then((res) => {
+                if (res != responseTypeEnum.error) {
+                    // check if current anime id is in favourite anime ids
+                    res.map((animeObject) => {
+                        if (animeObject.id == id) {
+                            setisFavourite(true)
+                        }
+                    })
+                }
+            })
+        }
+
     }, [isFavourite])
 
     useEffect(() => {
-        if (type == animeCardTypeEnum.big){
+        if (type == animeCardTypeEnum.big) {
             UserApi.appendUserAnimeWatchHistory(id)
         }
     }, [])

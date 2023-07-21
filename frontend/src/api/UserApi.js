@@ -90,8 +90,9 @@ export default class UserApi {
         return responseData
     }
 
-    static getUserAnimeWatchHistory = () => {
-        const requestedUrl = constants.backendUrl + "get_user_anime_watch_history"
+    static getUserAnimeWatchHistory = (page) => {
+        const currentPage = page ? page : 1
+        const requestedUrl = constants.backendUrl + "get_user_anime_watch_history" + `?page=${currentPage}`
         const responseData = axios.get(requestedUrl, constants.config)
             .then((response) => { 
                 return response.data

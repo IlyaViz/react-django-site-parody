@@ -54,17 +54,3 @@ def auto_delete_file_on_anime_delete(sender, instance, **kwargs):
     if instance.image:
         if os.path.isfile(instance.image.path):
             os.remove(instance.image.path)   
-
-# delete old history instances if history is out of <max_length>
-@receiver(models.signals.post_save, sender=AnimeWatchHistory)
-def limitHistory(sender, instance, **kwargs):
-    max_length = 10
-    user = instance.user
-    # order by id should work the same as order by timestamp
-    histories = sender.objects.filter(user=user).order_by("-id")
-    total_length = len(histories)
-    
-    if total_length > max_length:
-        histories_to_delete = histories[max_length:]
-        for history in histories_to_delete:
-            history.delete()

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from "react-router-dom"
+import InfiniteScroll from 'react-infinite-scroll-component'
 import { jsonObjectArrayPrettification } from '../../utils/Prettify'
 import UserApi from '../../api/UserApi'
 import Comment from '../comment/Comment'
@@ -12,6 +13,8 @@ const CommentMenu = (props) => {
     const [comments, setComments] = useState([])
     const [formSubmitCount, setFormSubmitCount] = useState(0)
     const [inputIsEmpty, setInputIsEmpty] = useState(true)
+    const [page, setPage] = useState(1)
+    const [hasMoreComments, setHasMoreComments] = useState(true)
     const newCommentInputRef = useRef()
     const navigate = useNavigate()
 
@@ -39,14 +42,17 @@ const CommentMenu = (props) => {
         }
     }
 
-    useEffect(() => {
-        CommentApi.getComments(type, commentedObjectId).then((res) => {
+    const fetchComments = () => {
+        CommentApi.getComments(type, commentedObjectId, page).then((res) => {
             if (res != responseTypeEnum.error) {
                 const prettifiedArray = jsonObjectArrayPrettification(res)
-                setComments(prettifiedArray)
+                setComments(comments.concat(prettifiedArray))
+                setPage(page + 1)
+            } else {
+                setHasMoreComments(false)
             }
         })
-    }, [formSubmitCount])
+    }
 
     return (
         <div className='comment_menu'>
@@ -55,14 +61,21 @@ const CommentMenu = (props) => {
                 <button disabled={inputIsEmpty}>Отправить</button>
             </form>
 
-            <div className='comments'>
-                {comments.map((comment, index) => {
-                    return <Comment
-                        key={index}
-                        commentObject={comment}
-                    />
-                })}
-            </div>
+            <InfiniteScroll
+                dataLength={comments.length}
+                next={fetchComments}
+                hasMore={hasMoreComments}
+                loader={<h4>Loading...</h4>}
+            >
+                <div className='comments'>
+                    {comments.map((comment, index) => {
+                        return <Comment
+                            key={index}
+                            commentObject={comment}
+                        />
+                    })}
+                </div>
+            </InfiniteScroll>
 
         </div >
     )

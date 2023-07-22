@@ -54,6 +54,7 @@
 
 .my_page .my_animes * {
     animation: backInUp 0.65s linear;
+    /* error here */
     margin: auto;
 }
 

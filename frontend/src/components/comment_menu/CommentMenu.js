@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from "react-router-dom"
-import InfiniteScroll from 'react-infinite-scroll-component'
+import InfiniteScroll from 'react-infinite-scroller'
 import { jsonObjectArrayPrettification } from '../../utils/Prettify'
 import UserApi from '../../api/UserApi'
 import Comment from '../comment/Comment'
@@ -62,10 +62,10 @@ const CommentMenu = (props) => {
             </form>
 
             <InfiniteScroll
-                dataLength={comments.length}
-                next={fetchComments}
+                pageStart={0}
+                loadMore={fetchComments}
                 hasMore={hasMoreComments}
-                loader={<h4>Loading...</h4>}
+                loader={<div className="loader" key={0}>Loading ...</div>}
             >
                 <div className='comments'>
                     {comments.map((comment, index) => {
@@ -76,7 +76,6 @@ const CommentMenu = (props) => {
                     })}
                 </div>
             </InfiniteScroll>
-
         </div >
     )
 

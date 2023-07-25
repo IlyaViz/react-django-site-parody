@@ -7,6 +7,7 @@ from ranged_fileresponse import RangedFileResponse
 from wsgiref.util import FileWrapper
 from ..models import Episode, Anime
 from ..serializers import EpisodeSerializer
+from ..pagination import StandardResultsSetPagination
 
 class EpisodeCreateAPIView(CreateAPIView):
     serializer_class = EpisodeSerializer
@@ -25,6 +26,13 @@ class EpisodesListApiView(ListAPIView):
         except Anime.DoesNotExist:
             return Response({"error":"anime with this id does not exist"}, status=400)
         return super().get(request, *args, **kwargs)
+    
+class GetNewEpisodesListAPIView(ListAPIView):
+    serializer_class = EpisodeSerializer
+    pagination_class = StandardResultsSetPagination
+
+    def get_queryset(self):
+        return Episode.objects.order_by("-id")
     
 class GetEpisodeVideoAPIView(APIView):
     def get(self, request, *args, **kwargs):

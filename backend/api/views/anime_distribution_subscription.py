@@ -5,6 +5,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from ..serializers import AnimeDistributionSubscriptionSerializer
 from ..models import AnimeDistributionSubscription, User
+from ..pagination import StandardResultsSetPagination
 
 class AnimeDistributionSubscriptionCreateAPIView(CreateAPIView):
     permission_classes = [IsAuthenticated]
@@ -25,6 +26,7 @@ class AnimeDistributionSubscriptionDestroyAPIView(DestroyAPIView):
 class GetAnimeDistributionSubscribersAPIView(APIView):
     permission_classes = [IsAdminUser]
     authentication_classes = [TokenAuthentication]
+    pagination_class = StandardResultsSetPagination
 
     def get(self, request, *args, **kwargs):
         anime_id = kwargs["anime_pk"]

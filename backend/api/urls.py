@@ -14,7 +14,8 @@ from .views.anime import   (AnimeCreateAPIView,
                             SearchAnimeByNameListAPIView)
 from .views.episode import (EpisodeCreateAPIView, 
                             EpisodesListApiView, 
-                            GetEpisodeVideoAPIView)
+                            GetEpisodeVideoAPIView,
+                            GetNewEpisodesListAPIView)
 from .views.documentation import TestAPIView
 from .views.comment import CommentsListAPIView, CommentCreateAPIView
 from .views.telegram_user import TelegramUserCreateAPIView, TelegramUserDestroyAPIView
@@ -50,6 +51,7 @@ urlpatterns = [
     path("add_episode/", EpisodeCreateAPIView.as_view()),
     path("get_episodes/<int:anime_pk>", EpisodesListApiView.as_view()),
     path("get_episode_video/<int:episode_pk>", GetEpisodeVideoAPIView.as_view()),
+    path("get_new_episodes", GetNewEpisodesListAPIView.as_view()),
 
     path("add_comment", CommentCreateAPIView.as_view()),
     path("get_comments/<str:type>/<int:commented_object_id>", CommentsListAPIView.as_view()),

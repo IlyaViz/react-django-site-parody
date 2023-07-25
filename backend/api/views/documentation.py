@@ -40,7 +40,9 @@ class Documentation(APIView):
             ["remove_telegram_user", ["delete"], [], "delete telegram user instance by User found by token recieved in Authorization header"],
             ["subscribe_anime_distribution", ["post"], ["anime"], "subscribes to anime distribution by User found by token recieved in Authorization header and anime" ], 
             ["unsubscribe_anime_distribution/<int:pk>", ["delete"], [], "unsubscribes of anime distribution by User found by token recieved in Authorization header and anime"],
-            ["get_anime_distribution_subscribers/<int:anime_pk>", ["get"], [], "get subscribers on anime distribution (admin only)"]
+            ["get_anime_distribution_subscribers/<int:anime_pk>", ["get"], [], "return subscribers on anime distribution (admin only)"],
+            ["get_new_episodes", ["get"], [], "return new episodes"]
+            
         ]
         for instance in data:
             documentation_dict = get_prettified_endpoint_documentation(*instance)

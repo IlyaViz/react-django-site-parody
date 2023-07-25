@@ -4,7 +4,7 @@ from rest_framework.authentication import TokenAuthentication
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from ..serializers import AnimeDistributionSubscriptionSerializer
-from ..models import AnimeDistributionSubscription, User
+from ..models import AnimeDistributionSubscription, User, TelegramUser
 from ..pagination import StandardResultsSetPagination
 
 class AnimeDistributionSubscriptionCreateAPIView(CreateAPIView):
@@ -23,12 +23,15 @@ class AnimeDistributionSubscriptionDestroyAPIView(DestroyAPIView):
         self.perform_destroy(favourite_anime)
         return Response({"anime":anime_id})
 
-class GetAnimeDistributionSubscribersAPIView(APIView):
+class GetAnimeDistributionSubscriberTelegramChatIdsAPIView(APIView):
     permission_classes = [IsAdminUser]
     authentication_classes = [TokenAuthentication]
     pagination_class = StandardResultsSetPagination
 
     def get(self, request, *args, **kwargs):
         anime_id = kwargs["anime_pk"]
-        user_ids = AnimeDistributionSubscription.objects.filter(anime=anime_id).values_list("user", flat=True)
-        return Response(user_ids)
+        chat_ids = []
+        # temporary solution with raw sql 
+        for instance in TelegramUser.objects.raw(f"SELECT api_telegramuser.id, chat_id FROM api_telegramuser JOIN api_animedistributionsubscription ON api_telegramuser.user_id=api_animedistributionsubscription.user_id WHERE anime_id={anime_id}"):
+            chat_ids.append(instance.chat_id)
+        return Response(chat_ids)

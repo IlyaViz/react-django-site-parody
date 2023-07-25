@@ -1,7 +1,8 @@
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 from rest_framework.generics import (CreateAPIView, 
-                                     ListAPIView)
+                                     ListAPIView,
+                                     DestroyAPIView)
 from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import TokenAuthentication
@@ -10,7 +11,6 @@ from rest_framework.authtoken.models import Token
 from ..models import Anime, FavouriteAnime
 from ..serializers import ( UserSerializer, 
                             AnimeSerializer,
-                            AnimeWatchHistorySerializer,
                             FavouriteAnimeSerializer)
 from ..pagination import StandardResultsSetPagination
 
@@ -70,23 +70,7 @@ class GetPublicUserInfoAPIView(APIView):
             "username":user.username
         })
 
-
-class AppendUserAnimeWatchHistoryCreateAPIView(CreateAPIView):
-    permission_classes = [IsAuthenticated]
-    authentication_classes = [TokenAuthentication]
-    serializer_class = AnimeWatchHistorySerializer
-
-class GetUserAnimeWatchHistoryListAPIView(ListAPIView):
-    permission_classes = [IsAuthenticated]
-    authentication_classes = [TokenAuthentication]
-    serializer_class = AnimeSerializer
-    pagination_class = StandardResultsSetPagination
-
-    def get_queryset(self):
-        user = self.request.user
-        return Anime.objects.filter(animewatchhistory__user=user).order_by("-animewatchhistory__timestamp")
-
-class GetUserFavouriteAnimesListAPIView(ListAPIView):
+class UserFavouriteAnimesListAPIView(ListAPIView):
     permission_classes = [IsAuthenticated]
     authentication_classes = [TokenAuthentication]
     serializer_class = AnimeSerializer
@@ -101,12 +85,13 @@ class AddUserFavouriteAnimeCreateAPIView(CreateAPIView):
     authentication_classes = [TokenAuthentication]
     serializer_class = FavouriteAnimeSerializer
 
-class RemoveUserFavouriteAnimeAPIView(APIView):
+class RemoveUserFavouriteAnimeDestroyAPIView(DestroyAPIView):
     permission_classes = [IsAuthenticated]
     authentication_classes = [TokenAuthentication]
 
     def delete(self, request, *args, **kwargs):
         user = self.request.user
         anime_id = self.kwargs["pk"]
-        FavouriteAnime.objects.get(user=user, anime=anime_id).delete()
+        favourite_anime = FavouriteAnime.objects.get(user=user, anime=anime_id)
+        self.perform_destroy(favourite_anime)
         return Response({"anime":anime_id})

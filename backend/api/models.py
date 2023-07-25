@@ -41,6 +41,18 @@ class Comment(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     content = models.CharField(max_length=1000)
 
+class TelegramUser(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, unique=True)
+    chat_id = models.BigIntegerField()
+
+class AnimeDistributionSubscription(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    anime = models.ForeignKey(Anime, on_delete=models.CASCADE)
+
+    class Meta:
+        unique_together = ["user", "anime"]
+
+
 # delete episode when Episode is deleted
 @receiver(models.signals.post_delete, sender=Episode)
 def auto_delete_file_on_episode_delete(sender, instance, **kwargs):

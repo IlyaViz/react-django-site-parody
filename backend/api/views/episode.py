@@ -11,7 +11,7 @@ from ..serializers import EpisodeSerializer
 class EpisodeCreateAPIView(CreateAPIView):
     serializer_class = EpisodeSerializer
 
-class GetEpisodesListApiView(ListAPIView):
+class EpisodesListApiView(ListAPIView):
     serializer_class = EpisodeSerializer
 
     def get_queryset(self):

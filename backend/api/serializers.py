@@ -5,7 +5,10 @@ from .models import (Anime,
                      Episode, 
                      AnimeWatchHistory,
                      FavouriteAnime,
-                     Comment)
+                     Comment,
+                     TelegramUser,
+                     AnimeDistributionSubscription,
+                     TelegramUser)
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -74,3 +77,24 @@ class CommentSerializer(serializers.ModelSerializer):
         commented_object_id = self.validated_data["commented_object_id"]
         content = self.validated_data["content"]
         self.Meta.model.objects.create(commenter=commenter, type=type, commented_object_id=commented_object_id, content=content)
+
+class TelegramUserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = TelegramUser
+        fields = ["chat_id"]
+
+    def save(self, **kwargs):
+        user = self.context["request"].user
+        chat_id = self.validated_data["chat_id"]
+        self.Meta.model.objects.get_or_create(user=user, chat_id=chat_id)
+
+class AnimeDistributionSubscriptionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = AnimeDistributionSubscription
+        fields = ["anime"]
+
+    def save(self, **kwargs):
+        user = self.context["request"].user
+        anime = self.validated_data["anime"]
+        self.Meta.model.objects.get_or_create(user=user, anime=anime)
+        

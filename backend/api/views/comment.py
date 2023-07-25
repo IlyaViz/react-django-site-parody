@@ -5,12 +5,12 @@ from ..pagination import StandardResultsSetPagination
 from ..serializers import CommentSerializer
 from ..models import Comment
 
-class AddCommentCreateAPIView(CreateAPIView):
+class CommentCreateAPIView(CreateAPIView):
     permission_classes = [IsAuthenticated]
     authentication_classes = [TokenAuthentication]
     serializer_class = CommentSerializer
 
-class GetCommentsListAPIView(ListAPIView):
+class CommentsListAPIView(ListAPIView):
     serializer_class = CommentSerializer
     pagination_class = StandardResultsSetPagination
 

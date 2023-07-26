@@ -21,7 +21,7 @@ from .views.comment import CommentsListAPIView, CommentCreateAPIView
 from .views.telegram_user import TelegramUserCreateAPIView, TelegramUserDestroyAPIView
 from .views.anime_distribution_subscription import (AnimeDistributionSubscriptionCreateAPIView, 
                                                     AnimeDistributionSubscriptionDestroyAPIView,
-                                                    GetAnimeDistributionSubscriberTelegramChatIdsAPIView)
+                                                    GetTelegramChatIdsOfAnimeDistributionSubscribersAPIView)
 from .views.anime_watch_history import (AppendUserAnimeWatchHistoryCreateAPIView,
                                         UserAnimeWatchHistoryListAPIView)
 
@@ -61,7 +61,7 @@ urlpatterns = [
 
     path("subscribe_anime_distribution", AnimeDistributionSubscriptionCreateAPIView.as_view()),
     path("unsubscribe_anime_distribution/<int:pk>", AnimeDistributionSubscriptionDestroyAPIView.as_view()),
-    path("get_anime_distribution_subscribers_telegram_chat_ids/<int:anime_pk>", GetAnimeDistributionSubscriberTelegramChatIdsAPIView.as_view()),
+    path("get_telegram_chat_ids_of_anime_distribution_subscribers/<int:anime_pk>", GetTelegramChatIdsOfAnimeDistributionSubscribersAPIView.as_view()),
 
     path("test", TestAPIView.as_view())
 ]

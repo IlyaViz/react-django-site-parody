@@ -1,5 +1,7 @@
 from telegram.ext import Updater, CommandHandler
 from telegram import ReplyKeyboardMarkup
+import threading
+from distribution import episode_distribution
 from constants import TOKEN, BOT_KEYBOARD_OPTIONS
 
 def start(update, context):
@@ -7,7 +9,6 @@ def start(update, context):
     options_length = len(BOT_KEYBOARD_OPTIONS)
     for index in range(0, options_length, 2):
         if index != options_length-1:
-            print(index, options_length)
             keyboard.append([BOT_KEYBOARD_OPTIONS[index], BOT_KEYBOARD_OPTIONS[index+1]])
         else:
             keyboard.append([BOT_KEYBOARD_OPTIONS[index]])
@@ -21,9 +22,13 @@ def get_chat_id(update, context):
 
 if __name__ == "__main__":
     updater = Updater(TOKEN)
+    bot = updater.bot
     dispatcher = updater.dispatcher
 
     dispatcher.add_handler(CommandHandler("start", start))
     dispatcher.add_handler(CommandHandler("chat_id", get_chat_id))
+
+    #distribution in another thread
+    threading.Thread(target=episode_distribution, args=[bot]).start()
 
     updater.start_polling()

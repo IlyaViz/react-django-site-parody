@@ -6,5 +6,3 @@ def get_list_difference(first_list, second_list):
         if first_part == second_part:
             return second_list[:shift]
     return second_list
-
-print(get_list_difference([7,1,7,7],[3,3,3,3]))

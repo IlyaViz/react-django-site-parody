@@ -21,18 +21,10 @@ services:
       - WATCHPACK_POLLING=true
       - REACT_APP_BACKEND_IP=127.0.0.1:8000
 
-  telegram-bot-main:
-    build:
-      context: ./telegram-bot
-      dockerfile: Dockerfile.main
+  telegram-bot:
+    build: ./telegram-bot
     depends_on: 
       - backend
 
-  telegram-bot-distribution:
-    build:
-      context: ./telegram-bot
-      dockerfile: Dockerfile.distribution
-    depends_on: 
-      - backend
 
     

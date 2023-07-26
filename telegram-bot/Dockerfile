@@ -5,4 +5,4 @@ COPY . .
 RUN pip install -r requirements.txt
 ENV BACKEND_IP="172.16.0.2:8000"
 
-CMD [ "python", "distribution.py" ]
+CMD [ "python", "main.py" ]

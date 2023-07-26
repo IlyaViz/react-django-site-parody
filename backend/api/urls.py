@@ -30,8 +30,7 @@ app_name = 'api'
 urlpatterns = [
     path("", Documentation.as_view()),
 
-    path("create_user", UserCreateAPIView.as_view()),
-
+    path("create_user", UserCreateAPIView.as_view()), 
     path("get_token", TokenAPIView.as_view()),
     path("validate_token", ValidateTokenAPIView.as_view()),
     path("get_private_user_info", GetPrivateUserInfoAPIView.as_view()),

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: telegram-bot-deployment
+spec:
+  replicas: 1  
+  selector:
+    matchLabels:
+      app: telegram-bot
+  template:
+    metadata:
+      labels:
+        app: telegram-bot
+    spec:
+      containers:
+      - name: telegram-bot-container
+        image: ilyaviz/site-copy-telegram-bot
+        imagePullPolicy: Always  
+        env: 
+          - name: BACKEND_IP
+            value: backend-cluster-ip-service:8000

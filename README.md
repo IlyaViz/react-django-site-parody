@@ -13,8 +13,10 @@ Steps:
 
 1) pull
 2) run backend server:
+- create venv and install requirements.txt
 - activate venv
 - python manage.py runserver 0.0.0.0:8000 (port can be changed in frontend/src/api/Constant) 
 3) change in frontend/src/api/Constants backendUrl ip to local ip of computer on which you run backend server
 4) run frontend:
+- npm install
 - npm start 

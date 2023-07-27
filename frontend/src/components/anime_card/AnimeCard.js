@@ -2,6 +2,8 @@ import { useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { textPrettification } from '../../utils/Prettify'
 import UserApi from '../../api/UserApi'
+import AnimeWatchHistoryApi from '../../api/AnimeWatchHistoryApi'
+import FavouriteAnimeApi from '../../api/FavouriteAnimeApi'
 import animeCardTypeEnum from '../../enums/AnimeCardTypeEnum'
 import responseTypeEnum from '../../enums/ResponseTypeEnum'
 import './AnimeSmallCard.css'
@@ -37,13 +39,13 @@ const AnimeCard = (props) => {
         })
 
         if (!isFavourite) {
-            UserApi.addUserFavouriteAnime(id).then((res) => {
+            FavouriteAnimeApi.addUserFavouriteAnime(id).then((res) => {
                 if (res != responseTypeEnum.error) {
                     setisFavourite(true)
                 }
             })
         } else {
-            UserApi.removeUserFavouriteAnime(id).then((res) => {
+            FavouriteAnimeApi.removeUserFavouriteAnime(id).then((res) => {
                 if (res != responseTypeEnum.error) {
                     setisFavourite(false)
                 }
@@ -53,7 +55,7 @@ const AnimeCard = (props) => {
 
     useEffect(() => {
         if (type == animeCardTypeEnum.big) {
-            UserApi.getUserFavouriteAnimes().then((res) => {
+            FavouriteAnimeApi.getUserFavouriteAnimes().then((res) => {
                 if (res != responseTypeEnum.error) {
                     // check if current anime id is in favourite anime ids
                     res.map((animeObject) => {
@@ -69,7 +71,7 @@ const AnimeCard = (props) => {
 
     useEffect(() => {
         if (type == animeCardTypeEnum.big) {
-            UserApi.appendUserAnimeWatchHistory(id)
+            AnimeWatchHistoryApi.appendUserAnimeWatchHistory(id)
         }
     }, [])
 

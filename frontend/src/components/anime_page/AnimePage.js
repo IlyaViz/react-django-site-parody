@@ -7,6 +7,7 @@ import animeCardTypeEnum from '../../enums/AnimeCardTypeEnum'
 import CommentMenu from '../comment_menu/CommentMenu'
 import Episode from '../episode/Episode'
 import AnimeCard from '../anime_card/AnimeCard'
+import EpisodeApi from '../../api/EpisodeApi'
 import commentTypeEnum from '../../enums/CommentTypeEnum'
 import './AnimePage.css'
 
@@ -17,7 +18,7 @@ const AnimePage = () => {
     const { animeId } = useParams()
 
     useEffect(() => {
-        AnimeApi.getEpisodes(animeId).then((res) => {
+        EpisodeApi.getEpisodes(animeId).then((res) => {
             if (res != responseTypeEnum.error) {
                 const prettifiedArray = jsonObjectArrayPrettification(res)
                 setEpisodes(prettifiedArray)

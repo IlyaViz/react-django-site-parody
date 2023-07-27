@@ -3,6 +3,7 @@ import responseTypeEnum from '../enums/ResponseTypeEnum'
 import * as constants from './Constants'
 
 export default class CommentApi {
+    
     static getComments = (type, commentedObjectId, page) => {
         const currentPage = page ? page : 1
         const requestedUrl = `${constants.backendUrl}get_comments/${type}/${commentedObjectId}?page=${currentPage}`

@@ -4,10 +4,7 @@ from .views.user import (UserCreateAPIView,
                          TokenAPIView, 
                          ValidateTokenAPIView,
                          GetPrivateUserInfoAPIView,
-                         GetPublicUserInfoAPIView,
-                         AddUserFavouriteAnimeCreateAPIView,
-                         UserFavouriteAnimesListAPIView,
-                         RemoveUserFavouriteAnimeDestroyAPIView)
+                         GetPublicUserInfoAPIView)
 from .views.anime import   (AnimeCreateAPIView,
                             AnimeRetrieveAPIView, 
                             LastAnimesListApiView,
@@ -16,6 +13,9 @@ from .views.episode import (EpisodeCreateAPIView,
                             EpisodesListApiView, 
                             GetEpisodeVideoAPIView,
                             GetNewEpisodesListAPIView)
+from .views.favourite_anime import (AddUserFavouriteAnimeCreateAPIView,
+                                    UserFavouriteAnimesListAPIView,
+                                    RemoveUserFavouriteAnimeDestroyAPIView)
 from .views.documentation import TestAPIView
 from .views.comment import CommentsListAPIView, CommentCreateAPIView
 from .views.telegram_user import TelegramUserCreateAPIView, TelegramUserDestroyAPIView

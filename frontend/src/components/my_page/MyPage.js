@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import InfiniteScroll from 'react-infinite-scroller'
 import Nav from '../nav/Nav'
 import AnimeCard from '../anime_card/AnimeCard'
 import animeCardTypeEnum from '../../enums/AnimeCardTypeEnum'
-import UserApi from '../../api/UserApi.js'
+import AnimeWatchHistoryApi from '../../api/AnimeWatchHistoryApi'
+import FavouriteAnimeApi from '../../api/FavouriteAnimeApi'
 import responseTypeEnum from '../../enums/ResponseTypeEnum.js'
 import './MyPage.css'
 
@@ -17,7 +17,7 @@ const MyPage = () => {
     const fetchAnimes = () => {
         switch (selectedButton) {
             case "Последние просмотры":
-                UserApi.getUserAnimeWatchHistory(page).then((res) => {
+                AnimeWatchHistoryApi.getUserAnimeWatchHistory(page).then((res) => {
                     if (res != responseTypeEnum.error) {
                         setAnimes(animes.concat(res))
                         setPage(page + 1)
@@ -28,7 +28,7 @@ const MyPage = () => {
                 break
 
             case "Любимые":
-                UserApi.getUserFavouriteAnimes(page).then((res) => {
+                FavouriteAnimeApi.getUserFavouriteAnimes(page).then((res) => {
                     if (res != responseTypeEnum.error) {
                         setAnimes(animes.concat(res))
                         setPage(page + 1)
@@ -45,7 +45,7 @@ const MyPage = () => {
         setAnimes([])
         switch (selectedButton) {
             case "Последние просмотры":
-                UserApi.getUserAnimeWatchHistory(1).then((res) => {
+                AnimeWatchHistoryApi.getUserAnimeWatchHistory(1).then((res) => {
                     if (res != responseTypeEnum.error) {
                         setAnimes(res)
                     }
@@ -53,7 +53,7 @@ const MyPage = () => {
                 break
 
             case "Любимые":
-                UserApi.getUserFavouriteAnimes(1).then((res) => {
+                FavouriteAnimeApi.getUserFavouriteAnimes(1).then((res) => {
                     if (res != responseTypeEnum.error) {
                         setAnimes(res)
                     }

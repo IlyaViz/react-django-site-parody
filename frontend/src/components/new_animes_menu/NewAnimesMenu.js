@@ -9,7 +9,7 @@ import './NewAnimesMenu.css'
 
 
 
-const NewAnimesMenu = (props) => {
+const NewAnimesMenu = () => {
     const [animes, setAnimes] = useState([])
     const contentRef = useRef();
     const menuRef = useRef()

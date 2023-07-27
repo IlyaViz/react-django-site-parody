@@ -1,5 +1,4 @@
 import { useEffect } from "react"
-import TelegramUserApi from "../../api/TelegramUserApi"
 import AnimeDistributionSubscription from "../../api/AnimeDistributionSubscriptionApi"
 import responseTypeEnum from "../../enums/ResponseTypeEnum"
 

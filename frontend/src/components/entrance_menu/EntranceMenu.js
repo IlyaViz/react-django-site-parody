@@ -1,7 +1,6 @@
 import './EntranceMenu.css'
 
 const EntranceMenu = (props) => {
-    const { setAnimeInWatchMenuShown } = props
 
     return (
         <div>

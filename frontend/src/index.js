@@ -5,6 +5,7 @@ import Home from './components/home/Home'
 import LoginPage from './components/login_page/LoginPage';
 import AnimePage from './components/anime_page/AnimePage'
 import MyPage from './components/my_page/MyPage';
+import ProfilePage from './components/profile_page/ProfilePage';
 import Test from './components/test/Test'
 import { IsAuthenticatedRoute } from './routes/Routes';
 import './index.css'
@@ -21,6 +22,11 @@ const App = () => {
           <IsAuthenticatedRoute>
             <MyPage />
           </IsAuthenticatedRoute>} />
+        <Route path='/profile' element={
+          <IsAuthenticatedRoute>
+            <ProfilePage />
+          </IsAuthenticatedRoute>
+        } />
         <Route path="/test" Component={Test} />
       </Routes>
     </BrowserRouter>

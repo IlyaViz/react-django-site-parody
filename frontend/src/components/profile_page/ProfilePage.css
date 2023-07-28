@@ -1,0 +1,104 @@
+.profile_page {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../../../public/images/background_image_main.png");
+    background-size: cover;
+}
+
+.profile_page_content {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile_page .settings {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 75vw;
+    margin-top: 100px;
+    border-radius: 15px;
+    padding: 10px 0px 30px 0px;
+}
+
+.profile_page .settings_sections {
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile_page .settings h1 {
+    color: blanchedalmond;
+    border-bottom: 1px solid rgb(220, 200, 200);
+}
+
+.profile_page .settings section {
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 4px;
+    text-align: center;
+    margin-bottom: 8px;
+    font-size: 1.25rem;
+}
+
+.profile_page input {
+    padding: 4px;
+    font-size: 0.75rem;
+    border: none;
+    text-align: center;
+    border-radius: 4px;
+    outline: none;
+}
+
+.profile_page .telegram_form button {
+    margin-left: 4px;
+    border-radius: 4px;
+    padding: 3px;
+    border: none;
+    cursor: pointer;
+}
+
+.profile_page .telegram_form a {
+    float: right;
+    color: gray;
+    font-size: 0.85rem;
+    margin-top: 4px;
+}
+
+.profile_page .settings .logout_button {
+    margin-left: auto;
+    transform: translate(-10px, 10px);
+    border: none;
+    color: rgb(255, 130, 130);
+    background-color: transparent;
+    font-size: 1.25rem;
+    cursor: pointer;
+    border-bottom: 1px;
+}
+
+@keyframes successAnimation {
+    0% {}
+
+    50% {
+        box-shadow: 0px 0px 200px 5px green;
+    }
+
+    100% {
+        box-shadow: none;
+    }
+}
+
+@keyframes failureAnimation {
+    0% {}
+
+    50% {
+        box-shadow: 0px 0px 200px 1px red;
+    }
+
+    100% {
+        box-shadow: none;
+    }
+}

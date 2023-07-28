@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import Nav from "../nav/Nav"
 import responseTypeEnum from "../../enums/ResponseTypeEnum"
 import UserApi from "../../api/UserApi"
 import "./LoginPage.css"
@@ -48,72 +49,75 @@ const LoginPage = () => {
 
     return (
         <div className="login_page">
-            <form className="login_form" onSubmit={(event) => onFormSubmit(event)}>
-                <div className="type_buttons">
-                    <button className={formType == "login" ? "selected_type" : ""}
-                        onClick={(event) => {
-                            event.preventDefault()
-                            changeFormType("login")
-                        }}>Вход</button>
+            <Nav />
+            <div className="login_page_content">
+                <form className="login_form" onSubmit={(event) => onFormSubmit(event)}>
+                    <div className="type_buttons">
+                        <button className={formType == "login" ? "selected_type" : ""}
+                            onClick={(event) => {
+                                event.preventDefault()
+                                changeFormType("login")
+                            }}>Вход</button>
 
-                    <button className={formType == "registration" ? "selected_type" : ""}
-                        onClick={(event) => {
-                            event.preventDefault()
-                            changeFormType("registration")
-                        }}>Регистрация</button>
-                </div>
+                        <button className={formType == "registration" ? "selected_type" : ""}
+                            onClick={(event) => {
+                                event.preventDefault()
+                                changeFormType("registration")
+                            }}>Регистрация</button>
+                    </div>
 
-                <div className="form_inputs">
-                    <input
-                        placeholder="Имя пользователя"
-                        value={inputValues["username"] == undefined ? "" : inputValues["username"]}
-                        onChange={(event) => {
-                            setInputValues({
-                                ...inputValues,
-                                ...{ "username": event.target.value }
-                            })
-                        }} />
-                    <input
-                        type="password"
-                        placeholder="Пароль"
-                        value={inputValues["password"] == undefined ? "" : inputValues["password"]}
-                        onChange={(event) => {
-                            setInputValues({
-                                ...inputValues,
-                                ...{ "password": event.target.value }
-                            })
-                        }} />
-                    {formType == "registration" &&
+                    <div className="form_inputs">
                         <input
-                            type="email"
-                            placeholder="Почта"
-                            value={inputValues["email"] == undefined ? "" : inputValues["email"]}
+                            placeholder="Имя пользователя"
+                            value={inputValues["username"] == undefined ? "" : inputValues["username"]}
                             onChange={(event) => {
                                 setInputValues({
                                     ...inputValues,
-                                    ...{ "email": event.target.value }
+                                    ...{ "username": event.target.value }
                                 })
-                            }}
-                            style={{ animation: "backInRight 0.75s linear" }}
-                        />
-                    }
-                </div>
-                <div className="errors">
-                    {registrationErrorOccured &&
-                        <div className="registration_error">
-                            Не подходящие имя пользователя или пароль
-                        </div>}
-                    {loginErrorOccured &&
-                        <div className="login_error">
-                            Такой пользователь не найден
-                        </div>}
-                </div>
-                {formType == "login" &&
-                    <button className="login_button">Вход</button>}
-                {formType == "registration" &&
-                    <button className="registration_button">Регистрация</button>}
+                            }} />
+                        <input
+                            type="password"
+                            placeholder="Пароль"
+                            value={inputValues["password"] == undefined ? "" : inputValues["password"]}
+                            onChange={(event) => {
+                                setInputValues({
+                                    ...inputValues,
+                                    ...{ "password": event.target.value }
+                                })
+                            }} />
+                        {formType == "registration" &&
+                            <input
+                                type="email"
+                                placeholder="Почта"
+                                value={inputValues["email"] == undefined ? "" : inputValues["email"]}
+                                onChange={(event) => {
+                                    setInputValues({
+                                        ...inputValues,
+                                        ...{ "email": event.target.value }
+                                    })
+                                }}
+                                style={{ animation: "backInRight 0.75s linear" }}
+                            />
+                        }
+                    </div>
+                    <div className="errors">
+                        {registrationErrorOccured &&
+                            <div className="registration_error">
+                                Не подходящие имя пользователя или пароль
+                            </div>}
+                        {loginErrorOccured &&
+                            <div className="login_error">
+                                Такой пользователь не найден
+                            </div>}
+                    </div>
+                    {formType == "login" &&
+                        <button className="login_button">Вход</button>}
+                    {formType == "registration" &&
+                        <button className="registration_button">Регистрация</button>}
 
-            </form>
+                </form>
+            </div>
         </div>
     )
 

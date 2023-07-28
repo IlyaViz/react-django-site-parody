@@ -1,11 +1,15 @@
 .login_page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100vw;
     height: 100vh;
     background-image: url("../../../public/images/background_image_main.png");
     background-size: cover;
+}
+
+.login_page_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 125px;
 }
 
 .login_page .login_form {

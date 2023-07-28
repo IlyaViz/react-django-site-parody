@@ -6,6 +6,7 @@ import responseTypeEnum from '../../enums/ResponseTypeEnum'
 import animeCardTypeEnum from '../../enums/AnimeCardTypeEnum'
 import CommentMenu from '../comment_menu/CommentMenu'
 import Episode from '../episode/Episode'
+import Nav from '../nav/Nav'
 import AnimeCard from '../anime_card/AnimeCard'
 import EpisodeApi from '../../api/EpisodeApi'
 import commentTypeEnum from '../../enums/CommentTypeEnum'
@@ -40,25 +41,28 @@ const AnimePage = () => {
         <>
             {animeExist ?
                 <div className='anime_page'>
-                    <div className='anime_page_content'>
-                        <div className='anime'>
-                            <AnimeCard
-                                type={animeCardTypeEnum.big}
-                                animeObject={anime}
-                            />
-                        </div>
+                    <div className='anime_page_wrapper'>
+                        <Nav />
+                        <div className='anime_page_content'>
+                            <div className='anime'>
+                                <AnimeCard
+                                    type={animeCardTypeEnum.big}
+                                    animeObject={anime}
+                                />
+                            </div>
 
-                        <div className='episodes'>
-                            {episodes.length != 0 ?
-                                episodes.map((episode, index) => {
-                                    return <Episode
-                                        key={index}
-                                        episodeObject={episode}
-                                    />
-                                })
-                                :
-                                <p className='no_anime_error'> No episodes for this anime yet</p>
-                            }
+                            <div className='episodes'>
+                                {episodes.length != 0 ?
+                                    episodes.map((episode, index) => {
+                                        return <Episode
+                                            key={index}
+                                            episodeObject={episode}
+                                        />
+                                    })
+                                    :
+                                    <p className='no_anime_error'> No episodes for this anime yet</p>
+                                }
+                            </div>
                         </div>
                     </div>
                     <CommentMenu
@@ -70,6 +74,7 @@ const AnimePage = () => {
                 <div className='no_anime_error'>
                     Anime not found
                 </div>
+
             }
         </>
     )

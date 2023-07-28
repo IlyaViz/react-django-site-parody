@@ -1,13 +1,14 @@
 .anime_page {
-    width: 100%;
-    height: 100%;
     background-image: url("../../../public/images/background_image_main.png");
-    background-size: contain;
+    background-size: cover;
+}
+
+.anime_page_wrapper { 
+    background-image: url("../../../public/images/background_image_main.png");
+    background-size: cover;
 }
 
 .anime_page_content {
-    background-image: url("../../../public/images/background_image_main.png");
-    background-size: cover;
     height: 100vh;
     display: flex;
     align-items: center;

@@ -10,11 +10,14 @@
     display: none;
 }
 
+.my_page_content { 
+    padding-top: 20px;
+}
+
 .my_page .activity_type_buttons {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    padding-top: 20px;
     width: 50%;
     margin: auto;
 }

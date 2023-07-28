@@ -15,28 +15,24 @@ const MyPage = () => {
     const [hasMoreAnimes, setHasMoreAnimes] = useState(true)
 
     const fetchAnimes = () => {
-        switch (selectedButton) {
-            case "Последние просмотры":
-                AnimeWatchHistoryApi.getUserAnimeWatchHistory(page).then((res) => {
-                    if (res != responseTypeEnum.error) {
-                        setAnimes(animes.concat(res))
-                        setPage(page + 1)
-                    } else {
-                        setHasMoreAnimes(false)
-                    }
-                })
-                break
-
-            case "Любимые":
-                FavouriteAnimeApi.getUserFavouriteAnimes(page).then((res) => {
-                    if (res != responseTypeEnum.error) {
-                        setAnimes(animes.concat(res))
-                        setPage(page + 1)
-                    } else {
-                        setHasMoreAnimes(false)
-                    }
-                })
-                break
+        if (selectedButton == "Последние просмотры") {
+            AnimeWatchHistoryApi.getUserAnimeWatchHistory(page).then((res) => {
+                if (res != responseTypeEnum.error) {
+                    setAnimes(animes.concat(res))
+                    setPage(page + 1)
+                } else {
+                    setHasMoreAnimes(false)
+                }
+            })
+        } else if (selectedButton == "Любимые") {
+            FavouriteAnimeApi.getUserFavouriteAnimes(page).then((res) => {
+                if (res != responseTypeEnum.error) {
+                    setAnimes(animes.concat(res))
+                    setPage(page + 1)
+                } else {
+                    setHasMoreAnimes(false)
+                }
+            })
         }
     }
 

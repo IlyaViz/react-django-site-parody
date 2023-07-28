@@ -8,7 +8,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
-from ..models import Anime, FavouriteAnime
+from ..models import Anime, FavouriteAnime, TelegramUser
 from ..serializers import ( UserSerializer, 
                             AnimeSerializer,
                             FavouriteAnimeSerializer)
@@ -45,10 +45,17 @@ class GetPrivateUserInfoAPIView(APIView):
     authentication_classes = [TokenAuthentication]
 
     def get(self, request, *args, **kwargs):
+        result = {}
         user = request.user
-        return Response({
-            "username":user.username
-        })
+        try:
+            telegram_user = TelegramUser.objects.get(user=user)
+            result.update({"telegram_chat_id":telegram_user.chat_id})
+        except:
+            pass
+
+        result.update({"username":user.username})
+
+        return Response(result)
     
 class GetPublicUserInfoAPIView(APIView):
 

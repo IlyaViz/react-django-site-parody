@@ -53,13 +53,13 @@ const LoginPage = () => {
             <div className="login_page_content">
                 <form className="login_form" onSubmit={(event) => onFormSubmit(event)}>
                     <div className="type_buttons">
-                        <button className={formType == "login" ? "selected_type" : ""}
+                        <button className={formType == "login" ? "active" : ""}
                             onClick={(event) => {
                                 event.preventDefault()
                                 changeFormType("login")
                             }}>Вход</button>
 
-                        <button className={formType == "registration" ? "selected_type" : ""}
+                        <button className={formType == "registration" ? "active" : ""}
                             onClick={(event) => {
                                 event.preventDefault()
                                 changeFormType("registration")

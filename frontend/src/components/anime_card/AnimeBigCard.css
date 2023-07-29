@@ -20,16 +20,16 @@
     transition: color 0.25s, background-color 0.25s linear;
 }
 
-.gg-heart-active {
+.gg-heart.active {
     background-color: red;
     color: white;
 }
 
-.gg-heart-active::after {
+.gg-heart.active::after {
     background-color: red;
 }
 
-.gg-heart-active::before {
+.gg-heart.active::before {
     background-color: red;
 }
 

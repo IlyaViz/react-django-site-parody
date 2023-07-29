@@ -9,7 +9,7 @@ const NavComponent = (props) => {
     
     return (
         <div className="nav_component">
-            <Link className={selected ? "selected_component" : ""} to={redirect}> {name} </Link>
+            <Link className={selected ? "active_component" : ""} to={redirect}> {name} </Link>
         </div>
     )
 }

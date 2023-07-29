@@ -65,7 +65,7 @@ const MyPage = () => {
             <div className='my_page_content'>
                 <div className='activity_type_buttons'>
                     <button
-                        className={selectedButton == "Последние просмотры" ? "selected_button" : ""}
+                        className={selectedButton == "Последние просмотры" ? "active" : ""}
                         onClick={() => { setSelectedButton("Последние просмотры") }}>
                         {window.innerWidth > 1200 ?
                             <p>Последние просмотры</p>
@@ -75,7 +75,7 @@ const MyPage = () => {
                     </button>
 
                     <button
-                        className={selectedButton == "Любимые" ? "selected_button" : ""}
+                        className={selectedButton == "Любимые" ? "active" : ""}
                         onClick={() => { setSelectedButton("Любимые") }}>
                         Любимые
                     </button>

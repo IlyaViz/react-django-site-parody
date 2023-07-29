@@ -39,6 +39,12 @@
     transition: background-color 0.25s linear, color 0.25s linear
 }
 
+.login_page .type_buttons button.active {
+    font-size: 1.55rem !important;
+    background-color: white !important;
+    color: black !important;
+}
+
 .login_page .form_inputs {
     margin-top: 15px;
     gap: 10px;
@@ -73,12 +79,6 @@
     width: 300px;
     border-radius: 5px;
     transform: translateX(5px);
-}
-
-.login_page .type_buttons .selected_type {
-    font-size: 1.55rem !important;
-    background-color: white !important;
-    color: black !important;
 }
 
 .login_page .type_buttons button:hover {

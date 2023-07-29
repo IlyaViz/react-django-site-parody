@@ -100,7 +100,7 @@ const AnimeCard = (props) => {
                         <div className='anime_big_component_background' style={{ backgroundImage: backgroundImage }} />
                     </div>
                     <button className='anime_big_component_favourite_button' onClick={() => onFavouriteButtonClick()}>
-                        <i className={isFavourite ? "gg-heart gg-heart-active" : "gg-heart"}></i>
+                        <i className={isFavourite ? "gg-heart active" : "gg-heart"}></i>
                     </button>
                 </>
             }

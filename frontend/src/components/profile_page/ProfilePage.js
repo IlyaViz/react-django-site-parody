@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { jsonObjectPrettification } from '../../utils/Prettify'
 import Nav from '../nav/Nav'
 import UserApi from '../../api/UserApi'
@@ -8,25 +8,36 @@ import './ProfilePage.css'
 
 const ProfilePage = () => {
     const [inputValues, setInputValues] = useState({})
+    const [settingsAnimated, setSettingsAnimated] = useState(false)
+    const settingsRef = useRef()
+
+    const animateSettings = (animation, animationTimeSec) => {
+        if (!settingsAnimated) {
+            settingsRef.current.style.animation = `${animation} ${animationTimeSec}s linear`
+            setSettingsAnimated(true)
+            setTimeout(() => {
+                settingsRef.current.style.animation = ""
+                setSettingsAnimated(false)
+            }, animationTimeSec * 1000)
+        }
+    }
 
     const onTelegramFormSubmit = (event) => {
         event.preventDefault()
         const { chatId } = inputValues
 
-        TelegramUserApi.removeTelegramUser()
-        setTimeout(() => TelegramUserApi.createTelegramUser(chatId).then((res) => {
-            if (res != responseTypeEnum.error) {
-                event.target.style.animation = "successAnimation 1s linear"
-                setTimeout(() => {
-                    event.target.style.animation = ""
-                }, 1000)
-            } else {
-                event.target.style.animation = "failureAnimation 1s linear"
-                setTimeout(() => {
-                    event.target.style.animation = ""
-                }, 1000)
-            }
-        }), 250)
+        if (!settingsAnimated) {
+            TelegramUserApi.removeTelegramUser().then(() => {
+                TelegramUserApi.createTelegramUser(chatId).then((res) => {
+                    if (res != responseTypeEnum.error) {
+                        animateSettings("successAnimation", 1.25)
+                    } else {
+                        animateSettings("failureAnimation", 1.25)
+                    }
+                })
+            })
+        }
+
     }
 
     const onLogoutButtonClick = () => {
@@ -50,7 +61,7 @@ const ProfilePage = () => {
         <div className='profile_page'>
             <Nav />
             <div className='profile_page_content'>
-                <div className='settings'>
+                <div className='settings' ref={settingsRef}>
                     <h1> Настройки </h1>
                     <div className='settings_sections'>
                         <form className='telegram_form' onSubmit={(event) => onTelegramFormSubmit(event)}>
@@ -72,7 +83,6 @@ const ProfilePage = () => {
                     <button className='logout_button' onClick={() => onLogoutButtonClick()}> Выйти </button>
                 </div>
             </div>
-
         </div>
     )
 }

@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import InfiniteScroll from 'react-infinite-scroller'
 import Nav from '../nav/Nav'
 import AnimeCard from '../anime_card/AnimeCard'
 import animeCardTypeEnum from '../../enums/animeCardTypeEnum'
@@ -39,22 +38,18 @@ const MyPage = () => {
     useEffect(() => {
         setHasMoreAnimes(true)
         setAnimes([])
-        switch (selectedButton) {
-            case "Последние просмотры":
-                AnimeWatchHistoryApi.getUserAnimeWatchHistory(1).then((res) => {
-                    if (res != responseTypeEnum.error) {
-                        setAnimes(res)
-                    }
-                })
-                break
-
-            case "Любимые":
-                FavouriteAnimeApi.getUserFavouriteAnimes(1).then((res) => {
-                    if (res != responseTypeEnum.error) {
-                        setAnimes(res)
-                    }
-                })
-                break
+        if (selectedButton == "Последние просмотры") {
+            AnimeWatchHistoryApi.getUserAnimeWatchHistory(1).then((res) => {
+                if (res != responseTypeEnum.error) {
+                    setAnimes(res)
+                }
+            })
+        } else if (selectedButton == "Любимые") {
+            FavouriteAnimeApi.getUserFavouriteAnimes(1).then((res) => {
+                if (res != responseTypeEnum.error) {
+                    setAnimes(res)
+                }
+            })
         }
         setPage(2)
     }, [selectedButton])
@@ -81,23 +76,23 @@ const MyPage = () => {
                     </button>
                 </div>
 
-                <InfiniteScroll
-                    useWindow={false}
-                    pageStart={0}
-                    loadMore={fetchAnimes}
-                    hasMore={hasMoreAnimes}
-                    loader={<div className="loader" key={0}>Loading ...</div>}
-                >
-                    <div className='my_animes'>
-                        {animes.map((anime, index) => {
-                            return <AnimeCard
-                                key={index}
-                                type={animeCardTypeEnum.small}
-                                animeObject={anime}
-                            />
-                        })}
-                    </div>
-                </InfiniteScroll>
+                <div className='my_animes'>
+                    {animes.map((anime, index) => {
+                        return <AnimeCard
+                            key={index}
+                            type={animeCardTypeEnum.small}
+                            animeObject={anime}
+                        />
+                    })}
+
+                </div>
+                {hasMoreAnimes &&
+                    <button
+                        className='load_more_button'
+                        onClick={() => fetchAnimes()}>
+                        Загрузить ещё
+                    </button>
+                }
             </div >
         </div>
     )

@@ -1,5 +1,5 @@
 import axios from 'axios'
-import responseTypeEnum from '../enums/ResponseTypeEnum.js'
+import responseTypeEnum from '../enums/responseTypeEnum.js'
 import * as constants from './Constants.js'
 
 export default class AnimeApi {

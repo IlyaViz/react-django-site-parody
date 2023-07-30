@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
-import { dateTimeConverter } from '../../utils/Prettify'
+import { dateTimeConverter } from '../../utils/prettify'
 import UserApi from '../../api/UserApi'
-import responseTypeEnum from '../../enums/ResponseTypeEnum'
+import responseTypeEnum from '../../enums/responseTypeEnum'
 import './Comment.css'
 
 const Comment = (props) => {

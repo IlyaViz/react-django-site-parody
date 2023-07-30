@@ -1,5 +1,5 @@
 import axios from 'axios'
-import responseTypeEnum from '../enums/ResponseTypeEnum'
+import responseTypeEnum from '../enums/responseTypeEnum'
 import * as constants from './Constants'
 
 export default class CommentApi {

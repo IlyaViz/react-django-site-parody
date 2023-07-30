@@ -1,5 +1,3 @@
-import { useLocation } from "react-router-dom";
-
 const urlNameConverter = (location) => {
 
     switch (location.pathname) {

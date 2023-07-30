@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import Nav from "../nav/Nav"
-import responseTypeEnum from "../../enums/ResponseTypeEnum"
+import responseTypeEnum from "../../enums/responseTypeEnum"
 import UserApi from "../../api/UserApi"
 import "./LoginPage.css"
 

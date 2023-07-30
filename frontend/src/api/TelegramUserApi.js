@@ -1,6 +1,6 @@
 import axios from 'axios'
 import * as constants from './Constants'
-import responseTypeEnum from '../enums/ResponseTypeEnum'
+import responseTypeEnum from '../enums/responseTypeEnum'
 
 
 export default class TelegramUserApi {

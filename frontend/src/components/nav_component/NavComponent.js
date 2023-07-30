@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom'
-import urlNameConverter from '../../utils/UrlNameConverter'
+import urlNameConverter from '../../utils/urlNameConverter'
 import './NavComponent.css'
 
 const NavComponent = (props) => {

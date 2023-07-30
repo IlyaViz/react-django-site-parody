@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react'
-import { textPrettification } from '../../utils/Prettify'
+import { textPrettification } from '../../utils/prettify'
 import './Episode.css'
 
 const Episode = (props) => {

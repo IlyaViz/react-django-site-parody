@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { IsAuthenticatedRoute } from './routes/routes'
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Home from './components/home/Home'
@@ -7,7 +8,6 @@ import AnimePage from './components/anime_page/AnimePage'
 import MyPage from './components/my_page/MyPage';
 import ProfilePage from './components/profile_page/ProfilePage';
 import Test from './components/test/Test'
-import { IsAuthenticatedRoute } from './routes/Routes';
 import './index.css'
 import "animate.css/animate.min.css";
 

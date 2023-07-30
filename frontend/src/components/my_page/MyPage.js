@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react'
 import InfiniteScroll from 'react-infinite-scroller'
 import Nav from '../nav/Nav'
 import AnimeCard from '../anime_card/AnimeCard'
-import animeCardTypeEnum from '../../enums/AnimeCardTypeEnum'
+import animeCardTypeEnum from '../../enums/animeCardTypeEnum'
 import AnimeWatchHistoryApi from '../../api/AnimeWatchHistoryApi'
 import FavouriteAnimeApi from '../../api/FavouriteAnimeApi'
-import responseTypeEnum from '../../enums/ResponseTypeEnum.js'
+import responseTypeEnum from '../../enums/responseTypeEnum.js'
 import './MyPage.css'
 
 const MyPage = () => {

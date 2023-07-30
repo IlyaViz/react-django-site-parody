@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from "react-router-dom"
 import InfiniteScroll from 'react-infinite-scroller'
-import { jsonObjectArrayPrettification } from '../../utils/Prettify'
+import { jsonObjectArrayPrettification } from '../../utils/prettify'
 import UserApi from '../../api/UserApi'
 import Comment from '../comment/Comment'
 import CommentApi from '../../api/CommentApi'
-import responseTypeEnum from '../../enums/ResponseTypeEnum'
+import responseTypeEnum from '../../enums/responseTypeEnum'
 import './CommentMenu.css'
 
 const CommentMenu = (props) => {

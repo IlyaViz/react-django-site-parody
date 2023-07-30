@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import { useState } from "react"
 import UserApi from "../api/UserApi"
-import responseTypeEnum from "../enums/ResponseTypeEnum"
+import responseTypeEnum from "../enums/responseTypeEnum"
 
 export const IsAuthenticatedRoute = (props) => {
     const { children } = props

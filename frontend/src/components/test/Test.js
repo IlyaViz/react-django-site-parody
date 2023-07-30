@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import AnimeDistributionSubscription from "../../api/AnimeDistributionSubscriptionApi"
-import responseTypeEnum from "../../enums/ResponseTypeEnum"
+import responseTypeEnum from "../../enums/responseTypeEnum"
 
 const Test = () => {
     useEffect(() => {

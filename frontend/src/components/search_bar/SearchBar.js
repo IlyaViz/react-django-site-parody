@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import AnimeApi from '../../api/AnimeApi'
-import responseTypeEnum from '../../enums/ResponseTypeEnum'
+import responseTypeEnum from '../../enums/responseTypeEnum'
 import './SearchBar.css'
 
 

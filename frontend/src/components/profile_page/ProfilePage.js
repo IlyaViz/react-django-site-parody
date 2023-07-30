@@ -1,9 +1,9 @@
 import { useEffect, useState, useRef } from 'react'
-import { jsonObjectPrettification } from '../../utils/Prettify'
+import { jsonObjectPrettification } from '../../utils/prettify'
 import Nav from '../nav/Nav'
 import UserApi from '../../api/UserApi'
 import TelegramUserApi from '../../api/TelegramUserApi'
-import responseTypeEnum from '../../enums/ResponseTypeEnum'
+import responseTypeEnum from '../../enums/responseTypeEnum'
 import './ProfilePage.css'
 
 const ProfilePage = () => {

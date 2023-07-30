@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import UserApi from "../../api/UserApi"
-import responseTypeEnum from "../../enums/ResponseTypeEnum"
+import responseTypeEnum from "../../enums/responseTypeEnum"
 import './LoginComponent.css'
 
 const LoginComponent = () => {

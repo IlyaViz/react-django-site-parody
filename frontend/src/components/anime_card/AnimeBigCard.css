@@ -21,14 +21,11 @@
 }
 
 .gg-heart.active {
-    background-color: red;
     color: white;
 }
 
-.gg-heart.active::after {
-    background-color: red;
-}
-
+.gg-heart.active,
+.gg-heart.active::after,
 .gg-heart.active::before {
     background-color: red;
 }

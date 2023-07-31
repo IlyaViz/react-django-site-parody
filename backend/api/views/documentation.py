@@ -28,7 +28,7 @@ class Documentation(APIView):
             ["get_user_favourite_animes", ["get"], [], "get favourite animes of User found by token recieved in Authorization header"],
             ["create_anime", ["post"], ["name", "description", "image"], "create new anime; image should be a file"],
             ["get_anime/<int:pk>", ["get"], [], "return anime by it's id = <pk>"],
-            ["get_new_animes/<int:count>", ["get"], [], "return <count> new animes"],
+            ["get_new_animes", ["get"], [], "return new animes"],
             # bug with that endpoint ["add_episode", ["post"], ["name", "episode_number", "anime"]],
             ["get_episodes/<int:anime_pk>", ["get"], [], "return episodes for anime with id = <anime_pk>"],
             ["get_episode_video/<int:episode_pk>", ["get"], [], "return episode with id = <episode_pk> with rewind feature"],

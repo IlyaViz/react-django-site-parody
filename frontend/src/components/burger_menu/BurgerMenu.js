@@ -6,7 +6,7 @@ import './BurgerMenu.css'
 
 const BurgerMenu = (props) => {
     const [burgerOpened, setBurgerOpened] = useState(false)
-    const { componentNames, componentRedirects } = props
+    const { componentsInfo } = props
 
     return (
         <div className="burger_menu">
@@ -26,11 +26,11 @@ const BurgerMenu = (props) => {
             {burgerOpened &&
                 <div className="burger_components">
                     <div className="main_burger_elements">
-                        {componentNames.map((name, index) => {
+                        {componentsInfo.map((componentInfo, index) => {
                             return <NavComponent
                                 key={index}
-                                name={name} 
-                                redirect={componentRedirects[index]}/>
+                                name={componentInfo.name} 
+                                redirect={componentInfo.redirectUrl}/>
                         })}
                     </div>
 

@@ -9,8 +9,16 @@ import "./Nav.css"
 const Nav = () => {
     const [showOtherComponents, setShowOtherComponents] = useState(true)
 
-    const centerComponentNames = ['Главное', 'Моё']
-    const centerComponentRedirectUrls = ['/', '/my']
+    const centerComponentsInfo = [
+        {
+            name: "Главное",
+            redirectUrl: "/"
+        },
+        {
+            name: "Моё",
+            redirectUrl: "/my"
+        }
+    ]
 
     return (
         <nav>
@@ -23,11 +31,11 @@ const Nav = () => {
 
                 <div className="center_components">
                     {showOtherComponents &&
-                        centerComponentNames.map((val, index) => {
+                        centerComponentsInfo.map((componentInfo, index) => {
                             return <NavComponent
                                 key={index}
-                                name={val}
-                                redirect={centerComponentRedirectUrls[index]} />
+                                name={componentInfo.name}
+                                redirect={componentInfo.redirectUrl} />
                         })
                     }
 
@@ -40,8 +48,7 @@ const Nav = () => {
                 }
 
                 <BurgerMenu
-                    componentNames={centerComponentNames}
-                    componentRedirects={centerComponentRedirectUrls}
+                    componentsInfo={centerComponentsInfo}
                 />
 
             </div>

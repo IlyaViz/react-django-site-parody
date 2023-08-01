@@ -59,6 +59,7 @@
 .burger_components a {
     color: #9ea0a1;
     font-size: 2rem;
+    margin-bottom: 8px;
 }
 
 .login_burger_component {

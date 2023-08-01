@@ -21,4 +21,8 @@
     .login_or_user a {
         padding-bottom: 20px;
     }
+
+    .login_or_user a:hover {
+        padding-top: 10px
+    }
 }

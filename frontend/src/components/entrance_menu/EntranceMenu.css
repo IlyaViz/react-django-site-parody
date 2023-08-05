@@ -1,4 +1,4 @@
-.entrance_text {
+.entrance_menu {
     color: white;
     text-align: center;
     padding: 200px 0px 400px 0px;
@@ -51,11 +51,7 @@
 }
 
 @media screen and (max-width: 600px) {
-    .center_components {
-        display: none;
-    }
-
-    .entrance_text {
+    .entrance_menu {
         padding: 100px 0px 300px 0px;
     }
 

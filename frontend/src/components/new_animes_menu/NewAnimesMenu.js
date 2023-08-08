@@ -7,8 +7,6 @@ import responseTypeEnum from '../../enums/responseTypeEnum'
 import AnimeCard from '../anime_card/AnimeCard'
 import './NewAnimesMenu.css'
 
-
-
 const NewAnimesMenu = () => {
     const [animes, setAnimes] = useState([])
     const contentRef = useRef();

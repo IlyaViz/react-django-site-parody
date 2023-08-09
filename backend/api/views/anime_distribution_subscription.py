@@ -31,12 +31,10 @@ class GetTelegramChatIdsOfAnimeDistributionSubscribersAPIView(APIView):
         anime_id = kwargs["anime_pk"]
         # temporary solution with raw sql 
         objects = TelegramUser.objects.raw(f"SELECT api_telegramuser.id, chat_id FROM api_telegramuser JOIN api_animedistributionsubscription ON api_telegramuser.user_id=api_animedistributionsubscription.user_id WHERE anime_id={anime_id}")
-        
+
         paginator = StandardResultsSetPagination()  
         paginated_queryset = paginator.paginate_queryset(objects, request)
 
-        chat_ids = []
-        for object in paginated_queryset:
-            chat_ids.append(object.chat_id)
+        chat_ids = [object.chat_id for object in paginated_queryset]
 
         return Response(chat_ids)

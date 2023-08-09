@@ -7,5 +7,5 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 10Gi  # Match the size specified in your PV
+      storage: 10Gi  
   storageClassName: manual

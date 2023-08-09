@@ -4,7 +4,7 @@ metadata:
   name: backend-media-pv
 spec:
   capacity:
-    storage: 10Gi  # Adjust the storage size as needed
+    storage: 10Gi  
   volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce

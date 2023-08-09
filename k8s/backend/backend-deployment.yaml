@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: backend-deployment
 spec:
-  replicas: 1  
+  replicas: 1
   selector:
     matchLabels:
       app: backend
@@ -13,8 +13,20 @@ spec:
         app: backend
     spec:
       containers:
-      - name: backend-container
-        image: ilyaviz/site-copy-backend  
-        imagePullPolicy: Always  
-        ports:
-        - containerPort: 8000
+        - name: backend-container
+          image: ilyaviz/site-copy-backend
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8000
+          volumeMounts:
+            - name: media-volume
+              mountPath: /backend/media
+            - name: db-volume
+              mountPath: /backend/db
+      volumes:
+        - name: media-volume
+          persistentVolumeClaim:
+            claimName: backend-media-pvc
+        - name: db-volume
+          persistentVolumeClaim:
+            claimName: backend-db-pvc

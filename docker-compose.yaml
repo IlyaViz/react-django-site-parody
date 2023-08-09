@@ -4,10 +4,14 @@ services:
     ports:
       - 8000:8000
     volumes:
+      # docker host volume
       - ./backend/api/:/backend/api/
       - ./backend/media/:/backend/media/
-      - ./backend/site_copy/:/backend/site_copy
-
+      - ./backend/site_copy/:/backend/site_copy/
+      # docker persistent volume 
+      - media:/backend/media
+      - db:/backend/db
+      
   frontend:
     build: ./frontend
     depends_on:
@@ -28,5 +32,6 @@ services:
     environment:
       - BACKEND_IP=backend:8000
 
-
-    
+volumes:
+  media:
+  db:

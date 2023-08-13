@@ -5,18 +5,25 @@ Parody on anitype site
 
 
 # To run:
-Either docker-compose up 
 
-Or 
+1 - docker-compose up 
+2) open backend on localhost:8000 / open frontend on localhost:3000
+---------------------------------------------
 
-Steps:
+2 - Steps:
 
 1) pull
 2) run backend server:
 - create venv and install requirements.txt
 - activate venv
 - python manage.py runserver 0.0.0.0:8000 (port can be changed in frontend/src/api/Constant) 
-3) change in frontend/src/api/Constants backendUrl ip to local ip of computer on which you run backend server
-4) run frontend:
+3) run frontend:
 - npm install
-- npm start 
+- npm start
+4) open backend on localhost:8000 / open frontend on localhost:3000
+---------------------------------------------
+
+3 - Steps:
+
+1) apply all files in k8s
+2) open backend on localhost:30800 / open frontend on localhost:30300

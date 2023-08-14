@@ -17,7 +17,4 @@ spec:
         image: ilyaviz/site-copy-frontend  
         imagePullPolicy: Always  
         ports:
-        - containerPort: 3000
-        env:
-          - name: REACT_APP_BACKEND_IP
-            value: "127.0.0.1:30800"
+        - containerPort: 80

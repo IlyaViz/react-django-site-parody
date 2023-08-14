@@ -13,7 +13,9 @@ services:
       - db:/backend/db
       
   frontend:
-    build: ./frontend
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./frontend
     depends_on:
       - backend
     ports:

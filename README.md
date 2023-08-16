@@ -18,4 +18,4 @@ Parody on anitype site
 
 1) apply all files in k8s
 2) connect to backend container and run "python manage.py migrate" ( if runs for the first time )
-3) open backend on localhost:30800 / open frontend on localhost:30300
+3) open backend on localhost:30800 / open frontend on localhost:30080

@@ -16,7 +16,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # initial url (FORCE_SCRIPT_NAME doesn't work)
-INITIAL_URL = "backend/"
+INITIAL_URL = "backend"
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -25,7 +25,7 @@ INITIAL_URL = "backend/"
 SECRET_KEY = 'django-insecure-dwnk^3z%0^on=4ynudr*l=!5oc%m9a%3io2rj3%j--g1cc%y&6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -122,7 +122,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = INITIAL_URL + 'static/'
+STATIC_URL = INITIAL_URL + '/static/'
 STATIC_ROOT = 'static/'
 
 # Default primary key field type
@@ -131,7 +131,7 @@ STATIC_ROOT = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #media
-MEDIA_URL = INITIAL_URL + "media/"
+MEDIA_URL = INITIAL_URL + "/media/"
 MEDIA_ROOT = "media"
 
 #cors

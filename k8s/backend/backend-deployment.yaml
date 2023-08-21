@@ -13,11 +13,20 @@ spec:
         app: backend
     spec:
       containers:
-        - name: backend-container
-          image: ilyaviz/site-copy-backend
+        - name: backend-container-nginx
+          image: ilyaviz/site-copy-backend-nginx
           imagePullPolicy: Always
           ports:
-            - containerPort: 8000
+            - containerPort: 8080
+          volumeMounts:
+            - name: media-volume
+              mountPath: /usr/share/nginx/html/backend/media
+
+        - name: backend-container-django
+          image: ilyaviz/site-copy-backend-django
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
           volumeMounts:
             - name: media-volume
               mountPath: /backend/media

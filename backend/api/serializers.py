@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from rest_framework.authtoken.models import Token
 from django.contrib.auth.models import User
+from site_copy.settings import INITIAL_URL
 from .models import (Anime, 
                      Episode, 
                      AnimeWatchHistory,
@@ -35,7 +36,7 @@ class EpisodeSerializer(serializers.ModelSerializer):
     def get_episode_video_url(self, obj):
         protocol = self.context['request'].scheme
         site_domain = self.context['request'].get_host() 
-        endpoint = f'{protocol}://{site_domain}/api/get_episode_video/{str(obj.id)}'
+        endpoint = f'{protocol}://{site_domain}/{INITIAL_URL}api/get_episode_video/{str(obj.id)}'
         return endpoint
 
 class TokenSerializer(serializers.ModelSerializer):

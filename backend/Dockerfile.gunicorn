@@ -9,4 +9,4 @@ RUN mkdir db
 RUN python manage.py migrate
 
 # do not change port 80
-CMD ["python", "manage.py", "runserver", "0.0.0.0:80"]
+CMD ["gunicorn", "--bind", "0.0.0.0:80", "site_copy.wsgi"]

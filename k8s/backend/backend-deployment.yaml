@@ -22,8 +22,8 @@ spec:
             - name: media-volume
               mountPath: /usr/share/nginx/html/backend/media
 
-        - name: backend-container-django
-          image: ilyaviz/site-copy-backend-django
+        - name: backend-container-gunicorn
+          image: ilyaviz/site-copy-backend-gunicorn
           imagePullPolicy: Always
           ports:
             - containerPort: 80

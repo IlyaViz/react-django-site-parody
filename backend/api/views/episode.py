@@ -34,17 +34,4 @@ class GetNewEpisodesListAPIView(ListAPIView):
     def get_queryset(self):
         return Episode.objects.order_by("-id")
     
-class GetEpisodeVideoAPIView(APIView):
-    def get(self, request, *args, **kwargs):
-        id = kwargs["episode_pk"]
-        try:
-            episode_instance = Episode.objects.get(id=id)
-        except:
-            return Response({"error":"episode with this id not found"},  status=400)
-        video_path = episode_instance.episode.path
-
-        response = RangedFileResponse(request, open(video_path, "rb"))
-        response["Content-type"] = "video/mp4"
-
-        return response
     

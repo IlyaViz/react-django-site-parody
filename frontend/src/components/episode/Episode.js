@@ -3,7 +3,7 @@ import { textPrettification } from '../../utils/prettify'
 import './Episode.css'
 
 const Episode = (props) => {
-    const { episodeNumber, name, episodeVideoUrl } = props.episodeObject
+    const { episodeNumber, name, episode } = props.episodeObject
     const [videoShown, setVideoShown] = useState(false)
     const videoRef = useRef()
 
@@ -23,7 +23,7 @@ const Episode = (props) => {
                 <div className='episode_name'> {prettifiedName} </div>
             </div>
             <div className='episode_video' style={{ display: displayType }}>
-                <video src={episodeVideoUrl} ref={videoRef} controls />
+                <video src={episode} ref={videoRef} controls />
             </div>
         </div>
 

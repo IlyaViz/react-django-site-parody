@@ -1,25 +1,25 @@
-.nav_component .active_component {
-   padding-bottom: 5px;
-   border-bottom: 2px solid rgb(254, 79, 79);
-   transition: border-bottom 0.1s linear !important;
-   color: white;
+.nav-component {
+    display: flex;
+    align-items: center;
 }
 
-.nav_component {
-   display: flex;
-   align-items: center;
+.nav-component__link {
+    cursor: pointer;
+    transition: color 0.3s linear;
+    text-align: center;
+    width: 100%;
+    text-decoration: none;
+    color: #9ea0a1;
+    vertical-align: middle;
 }
 
-.nav_component a {
-   cursor: pointer;
-   transition: color 0.3s linear;
-   text-align: center;
-   width: 100%;
-   text-decoration: none;
-   color: #9ea0a1;
-   vertical-align: middle;
+.nav-component--active .nav-component__link {
+    padding-bottom: 5px;
+    border-bottom: 2px solid rgb(254, 79, 79);
+    transition: border-bottom 0.1s linear !important;
+    color: white;
 }
 
-.nav_component a:hover {
-   color: white;
+.nav-component__link:hover {
+    color: white;
 }

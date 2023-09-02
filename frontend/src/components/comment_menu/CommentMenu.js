@@ -55,10 +55,17 @@ const CommentMenu = (props) => {
     }
 
     return (
-        <div className='comment_menu'>
-            <form className='add_comment_form' onSubmit={(event) => onFormSubmit(event)}>
-                <textarea placeholder='Оставьте свое мнение тут' ref={newCommentInputRef} onChange={(event) => onInputChange(event)} />
-                <button disabled={inputIsEmpty}>Отправить</button>
+        <div className='comment-menu comment-menu--container'>
+            <form className='comment-menu__add-comment-form'>
+                <textarea
+                    className='comment-menu__new-comment-input'
+                    placeholder='Оставьте свое мнение тут'
+                    ref={newCommentInputRef}
+                    onChange={(event) => onInputChange(event)}
+                />
+                <button className='comment-menu__submit-button' disabled={inputIsEmpty}>
+                    Отправить
+                </button>
             </form>
 
             <InfiniteScroll
@@ -67,16 +74,18 @@ const CommentMenu = (props) => {
                 hasMore={hasMoreComments}
                 loader={<div className="loader" key={0}>Loading ...</div>}
             >
-                <div className='comments'>
+                <div className='comment-menu__comments'>
                     {comments.map((comment, index) => {
-                        return <Comment
-                            key={index}
-                            commentObject={comment}
-                        />
+                        return (
+                            <Comment
+                                key={index}
+                                commentObject={comment}
+                            />
+                        );
                     })}
                 </div>
             </InfiniteScroll>
-        </div >
+        </div>
     )
 
 }

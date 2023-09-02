@@ -9,32 +9,32 @@ const BurgerMenu = (props) => {
     const { componentsInfo } = props
 
     return (
-        <div className="burger_menu">
+        <div className="burger-menu">
             {burgerOpened ?
-                <div className="burger_icon_opened" onClick={() => setBurgerOpened(!burgerOpened)}>
-                    <span id='first_burger_span' />
-                    <span id='second_burger_span' />
+                <div className="burger-icon burger-icon--opened" onClick={() => setBurgerOpened(!burgerOpened)}>
+                    <span className='burger-icon__span' id='first-burger-span'></span>
+                    <span className='burger-icon__span' id='second-burger-span'></span>
                 </div>
                 :
-                <div className="burger_icon_closed" onClick={() => setBurgerOpened(!burgerOpened)}>
-                    <span />
-                    <span />
-                    <span />
+                <div className="burger-icon burger-icon--closed" onClick={() => setBurgerOpened(!burgerOpened)}>
+                    <span className='burger-icon__span'></span>
+                    <span className='burger-icon__span'></span>
+                    <span className='burger-icon__span'></span>
                 </div>
             }
 
             {burgerOpened &&
-                <div className="burger_components">
-                    <div className="main_burger_elements">
+                <div className="burger-components">
+                    <div className="burger-components__main">
                         {componentsInfo.map((componentInfo, index) => {
                             return <NavComponent
                                 key={index}
-                                name={componentInfo.name} 
-                                redirect={componentInfo.redirectUrl}/>
+                                name={componentInfo.name}
+                                redirect={componentInfo.redirectUrl} />
                         })}
                     </div>
 
-                    <div className='login_burger_component'>
+                    <div className='burger-components__login'>
                         <LoginComponent />
                     </div>
 

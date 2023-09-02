@@ -2,10 +2,10 @@
     width: 350px;
 }
 
-.episode_info {
+.episode__info {
     color: black;
     margin-top: 10px;
-    border-bottom: 3px solid rgb(100,100,100);
+    border-bottom: 3px solid rgb(100, 100, 100);
     background-color: rgba(255, 255, 255, 0.8);
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
@@ -13,30 +13,30 @@
     cursor: pointer;
 }
 
-.episode_number {
+.episode__number {
     line-height: 0px;
     text-decoration: underline;
 }
 
-.episode_name {
+.episode__name {
     text-align: center;
     transition: font-size 0.15s ease-in;
     font-size: 1.25rem;
 }
 
-.episode_video {
+.episode__video {
     overflow: hidden;
     width: 350px;
     height: 200px;
 }
 
-.episode_video video {
+.episode__video video {
     width: 100%;
-    height: 100%;   
+    height: 100%;
     animation: backInDown 0.5s ease-out;
 }
 
-.episode:hover>.episode_name {
+.episode:hover .episode__name {
     font-size: 1.5rem;
 }
 
@@ -46,12 +46,12 @@
         width: 250px;
     }
 
-    .episode_name {
+    .episode__name {
         font-size: 1rem;
-        margin: 10px 0px 0px 10px
+        margin: 10px 0px 0px 10px;
     }
 
-    .episode_video {
+    .episode__video {
         width: 250px;
         height: 140px;
     }
@@ -61,7 +61,7 @@
             width: 100%;
             height: 0px;
         }
-    
+
         100% {
             height: 140px;
         }

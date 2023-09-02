@@ -21,15 +21,15 @@ const Nav = () => {
     ]
 
     return (
-        <nav>
-            <div className="all_components">
+        <nav className="nav">
+            <div className="nav__all-components">
                 {showOtherComponents &&
-                    <div className="left_components">
+                    <div className="nav__left-components">
                         <Logo />
                     </div>
                 }
 
-                <div className="center_components">
+                <div className="nav__center-components">
                     {showOtherComponents &&
                         centerComponentsInfo.map((componentInfo, index) => {
                             return <NavComponent
@@ -42,7 +42,7 @@ const Nav = () => {
                     <SearchBar showParentComponents={window.screen.width > 1200 ? null : setShowOtherComponents} />
                 </div>
                 {showOtherComponents &&
-                    <div className="right_components">
+                    <div className="nav__right-components">
                         <LoginComponent />
                     </div>
                 }

@@ -1,28 +1,26 @@
-.entrance_menu {
+.entrance-menu {
     color: white;
     text-align: center;
     padding: 200px 0px 400px 0px;
 }
 
-.entrance_main_text {
+.entrance-menu__main-text {
     font-size: 5rem;
     margin-bottom: 0px;
 }
 
-.entrance_main_text span {
+.entrance-menu__main-text--highlight {
     font-size: 5rem;
 }
 
-.entrance_extra_text {
+.entrance-menu__extra-text {
     font-size: 1rem;
     margin-top: 0px;
 }
 
-/* animations from animate.css */
 .animate__animated.animate__bounceInUp {
     --animate-timing-function: ease-in;
 }
-
 
 @keyframes buttonDisappear {
     0% {
@@ -38,7 +36,7 @@
 
 @keyframes entranceButtonMove {
     0% {
-        transform: translateX(5px)
+        transform: translateX(5px);
     }
 
     50% {
@@ -51,20 +49,20 @@
 }
 
 @media screen and (max-width: 600px) {
-    .entrance_menu {
+    .entrance-menu {
         padding: 100px 0px 300px 0px;
     }
 
-    .entrance_main_text,
-    .entrance_main_text span {
+    .entrance-menu__main-text,
+    .entrance-menu__main-text--highlight {
         font-size: 2.5rem;
     }
 
-    .entrance_main_text span {
+    .entrance-menu__main-text--highlight {
         text-shadow: 1px 0px 10px blue;
     }
 
-    .entrance_extra_text {
+    .entrance-menu__extra-text {
         font-size: 0.75rem;
         margin-top: 10px;
         padding: 5px;

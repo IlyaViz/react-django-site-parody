@@ -17,12 +17,12 @@ const Episode = (props) => {
     }
 
     return (
-        <div className='episode' >
-            <div className='episode_info' onClick={() => showOrHideVideo()}>
-                <div className='episode_number'> {episodeNumber} </div>
-                <div className='episode_name'> {prettifiedName} </div>
+        <div className='episode'>
+            <div className='episode__info' onClick={() => showOrHideVideo()}>
+                <div className='episode__number'>{episodeNumber}</div>
+                <div className='episode__name'>{prettifiedName}</div>
             </div>
-            <div className='episode_video' style={{ display: displayType }}>
+            <div className='episode__video' style={{ display: displayType }}>
                 <video src={episode} ref={videoRef} controls />
             </div>
         </div>

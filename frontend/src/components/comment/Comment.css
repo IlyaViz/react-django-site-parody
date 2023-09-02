@@ -6,23 +6,23 @@
     margin: 10px 0px 10px 0px;
 }
 
-.comment .comment_info {
+.comment__info {
     color: white;
     border-bottom: 6px;
 }
 
-.comment .time_info {
+.comment__time-info {
     font-size: 0.75rem;
     margin-top: 4px;
     float: right;
 }
 
-.comment .commenter_info {
+.comment__commenter-info {
     display: inline-block;
     border-bottom: 1px solid white;
 }
 
-.comment .content {
+.comment__content {
     margin-top: 12px;
     color: rgb(160, 160, 160);
 }

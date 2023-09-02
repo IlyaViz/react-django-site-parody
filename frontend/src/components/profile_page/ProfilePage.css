@@ -1,18 +1,18 @@
-.profile_page {
+.profile-page {
     width: 100vw;
     height: 100vh;
     background-image: url("../../../public/images/background_image_main.png");
     background-size: cover;
 }
 
-.profile_page_content {
+.profile-page__content {
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.profile_page .settings {
+.settings {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -25,17 +25,17 @@
     padding: 10px 0px 30px 0px;
 }
 
-.profile_page .settings_sections {
+.settings__sections {
     display: flex;
     justify-content: space-between;
 }
 
-.profile_page .settings h1 {
+.settings__title {
     color: blanchedalmond;
     border-bottom: 1px solid rgb(220, 200, 200);
 }
 
-.profile_page .settings section {
+.settings__section {
     border: 1px solid white;
     border-radius: 10px;
     padding: 4px;
@@ -44,7 +44,7 @@
     font-size: 1.25rem;
 }
 
-.profile_page input {
+.telegram-form input {
     padding: 4px;
     font-size: 0.75rem;
     border: none;
@@ -53,7 +53,7 @@
     outline: none;
 }
 
-.profile_page .telegram_form button {
+.telegram-form__button {
     margin-left: 4px;
     border-radius: 4px;
     padding: 3px;
@@ -61,14 +61,14 @@
     cursor: pointer;
 }
 
-.profile_page .telegram_form a {
+.telegram-form__link {
     float: right;
     color: gray;
     font-size: 0.85rem;
     margin-top: 4px;
 }
 
-.profile_page .settings .logout_button {
+.settings__logout-button {
     margin-left: auto;
     transform: translate(-10px, 10px);
     border: none;

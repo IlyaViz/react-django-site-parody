@@ -47,31 +47,30 @@ const NewAnimesMenu = () => {
     }
 
     return (
-        <div className='anime_in_watch' ref={menuRef}>
-            <div className='anime_in_watch_header'>
+        <div className='new-animes-menu' ref={menuRef}>
+            <div className='new-animes-menu__header'>
                 <p>Недавно вышли</p>
             </div>
 
-            <div className='anime_in_watch_menu'>
-                <button className='control_button left_control_button' onClick={() => scrollMenu('left')}>
-                    <div className='control_button_content'>
+            <div className='new-animes-menu__menu'>
+                <button className='new-animes-menu__control-button new-animes-menu__control-button--left' onClick={() => scrollMenu('left')}>
+                    <div className='new-animes-menu__control-button-content'>
                         <span />
                     </div>
                 </button>
 
-                <div className='anime_in_watch_menu_content' ref={contentRef}>
+                <div className='new-animes-menu__menu-content' ref={contentRef}>
                     {animes.map((anime, index) => {
                         return <AnimeCard
                             key={index}
                             type={animeCardTypeEnum.small}
                             animeObject={anime}
-                        />
-                    })
-                    }
+                        />;
+                    })}
                 </div>
 
-                <button className='control_button right_control_button' onClick={() => scrollMenu('right')}>
-                    <div className='control_button_content'>
+                <button className='new-animes-menu__control-button new-animes-menu__control-button--right' onClick={() => scrollMenu('right')}>
+                    <div className='new-animes-menu__control-button-content'>
                         <span />
                     </div>
                 </button>

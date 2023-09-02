@@ -1,9 +1,9 @@
-.entrance {
+.home__entrance {
     background-image: url("../../../public/images/background_image_main.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.bottom_section {
+.home__bottom-section {
     background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 1) 75%);
 }

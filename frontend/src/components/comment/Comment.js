@@ -20,11 +20,11 @@ const Comment = (props) => {
 
     return (
         <div className='comment'>
-            <div className='comment_info'>
-                <div className='commenter_info'>{commenterName}</div>
-                <div className='time_info'>{convertedCreatedAt}</div>
+            <div className='comment__info'>
+                <div className='comment__commenter-info'>{commenterName}</div>
+                <div className='comment__time-info'>{convertedCreatedAt}</div>
             </div>
-            <div className='content'>
+            <div className='comment__content'>
                 {content}
             </div>
         </div>

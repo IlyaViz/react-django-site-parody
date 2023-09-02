@@ -1,19 +1,18 @@
-.logo_class span {
+.logo {
+    margin-bottom: 12.5px;
+    max-width: 87px;
+    transition: transform 0.09s linear;
+}
+
+.logo__text {
     font-size: 1.5rem;
     text-align: center;
     transition: font-size 0.1s linear, text-shadow 0.1s linear;
     position: sticky;
 }
 
-.logo_class {
-    margin-bottom: 12.5px;
-    max-width: 87px;
-    transition: transform 0.09s linear;
-}
-
 @media screen and (max-width: 600px) {
-    .logo_class span {
+    .logo__text {
         font-size: 1.75rem;
     }
-
 }

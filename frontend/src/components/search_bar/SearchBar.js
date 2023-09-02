@@ -42,25 +42,30 @@ const SearchBar = (props) => {
     }, [searchQuery])
 
     return (
-        <div className='search_bar'>
-            {!opened && <i className="gg-search" onClick={() => openBar()}></i>}
-            {opened && <input placeholder='Запрос'
-                ref={inputRef}
-                onChange={(event) => setSearchQuery(event.target.value)}
-                onBlur={() => closeBar()} />}
+        <div className='search-bar'>
+            {!opened && <i className='gg-search' onClick={() => openBar()}></i>}
+            {opened && (
+                <input
+                    placeholder='Запрос'
+                    ref={inputRef}
+                    onChange={(event) => setSearchQuery(event.target.value)}
+                    onBlur={() => closeBar()}
+                />
+            )}
 
-            {opened && animes.length != 0 &&
-                <div className='search_result'>
-                    <div className='search_result_content'>
+            {opened && animes.length !== 0 && (
+                <div className='search-bar__result'>
+                    <div className='search-bar__result-content'>
                         {animes.map((anime, index) => {
-                            return <Link to={`/anime/${anime.id}`}> {anime.name} </Link>
-                        })
-                        }
+                            return (
+                                <Link key={anime.id} to={`/anime/${anime.id}`}>
+                                    {anime.name}
+                                </Link>
+                            );
+                        })}
                     </div>
-
                 </div>
-            }
-
+            )}
         </div>
     )
 }

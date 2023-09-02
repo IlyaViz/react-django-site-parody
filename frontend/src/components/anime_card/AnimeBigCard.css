@@ -30,7 +30,7 @@
     background-color: red;
 }
 
-.anime_big_component {
+.anime-big-card {
     font-size: 1.5rem;
     width: 500px;
     height: 400px;
@@ -41,7 +41,7 @@
     border: 3px solid white;
 }
 
-.anime_big_component_background {
+.anime-big-card__background {
     position: relative;
     bottom: 358px;
     height: 100%;
@@ -51,7 +51,7 @@
     transition: opacity 0.5s;
 }
 
-.anime_big_component_description {
+.anime-big-card__description {
     color: white;
     position: relative;
     width: 350px;
@@ -66,7 +66,7 @@
 
 }
 
-.anime_big_component_name {
+.anime-big-card__name {
     position: relative;
     z-index: 1;
     width: 400px;
@@ -77,7 +77,7 @@
     text-shadow: 0px 0px 1px black;
 }
 
-.anime_big_component_favourite_button {
+.anime-big-card__favourite-button {
     cursor: pointer;
     background: transparent;
     border: none;
@@ -85,47 +85,47 @@
     transform: translate(-30px, -50px);
 }
 
-.anime_big_component_favourite_button img {
+.anime-big-card__favourite-button img {
     width: 100%;
     height: 100%;
 }
 
-.anime_big_component:hover>.anime_big_component_description {
+.anime-big-card:hover>.anime-big-card__description {
     opacity: 1;
 }
 
-.anime_big_component:hover>.anime_big_component_background {
+.anime-big-card:hover>.anime-big-card__background {
     opacity: 0.25;
 }
 
-.anime_big_component:hover>.anime_big_component_name {
+.anime-big-card:hover>.anime-big-card__name {
     opacity: 0;
 }
 
 @media screen and (max-width: 500px) {
-    .anime_big_component {
+    .anime-big-card {
         font-size: 0.9rem;
         width: 300px;
         height: 250px;
     }
 
-    .anime_big_component_background {
+    .anime-big-card__background {
         bottom: 200px;
     }
 
-    .anime_big_component_name {
+    .anime-big-card__name {
         width: 250px;
         height: 35px;
         transform: translate(25px, 25px);
     }
 
-    .anime_big_component_description {
+    .anime-big-card__description {
         width: 250px;
         height: 150px;
         transform: translate(30px, 15px);
     }
 
-    .anime_big_component_favourite_button {
+    .anime-big-card__favourite-button {
         transform: translate(-10px, -10px);
     }
 

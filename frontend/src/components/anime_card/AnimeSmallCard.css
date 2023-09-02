@@ -1,4 +1,4 @@
-.anime_small_component {
+.anime-small-card {
     width: 300px;
     height: 200px;
     min-width: 300px;
@@ -7,7 +7,7 @@
     cursor: pointer;
 }
 
-.anime_small_component_background {
+.anime-small-card__background {
     position: relative;
     bottom: 185px;
     height: 100%;
@@ -18,7 +18,7 @@
     transition: opacity 0.4s ease-out;
 }
 
-.anime_small_component_description {
+.anime-small-card__description {
     position: relative;
     width: 200px;
     height: 150px;
@@ -29,7 +29,7 @@
     color: white;
 }
 
-.anime_small_component_name {
+.anime-small-card__name {
     position: relative;
     z-index: 1;
     width: 250px;
@@ -40,14 +40,14 @@
     color: white;
 }
 
-.anime_small_component:hover>.anime_small_component_description {
+.anime-small-card:hover>.anime-small-card__description {
     opacity: 1;
 }
 
-.anime_small_component:hover>.anime_small_component_background {
+.anime-small-card:hover>.anime-small-card__background {
     opacity: 0.25;
 }
 
-.anime_small_component:hover>.anime_small_component_name {
+.anime-small-card:hover>.anime-small-card__name {
     opacity: 0;
 }

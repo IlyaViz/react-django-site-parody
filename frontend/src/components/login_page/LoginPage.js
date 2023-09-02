@@ -48,74 +48,73 @@ const LoginPage = () => {
     }
 
     return (
-        <div className="login_page">
+        <div className="login-page">
             <Nav />
-            <div className="login_page_content">
-                <form className="login_form" onSubmit={(event) => onFormSubmit(event)}>
-                    <div className="type_buttons">
-                        <button className={formType == "login" ? "active" : ""}
+            <div className="login-page__content">
+                <form className="login-page__form" onSubmit={(event) => onFormSubmit(event)}>
+                    <div className="login-page__type-buttons">
+                        <button className={formType === "login" ? "active" : ""}
                             onClick={(event) => {
-                                event.preventDefault()
-                                changeFormType("login")
+                                event.preventDefault();
+                                changeFormType("login");
                             }}>Вход</button>
 
-                        <button className={formType == "registration" ? "active" : ""}
+                        <button className={formType === "registration" ? "active" : ""}
                             onClick={(event) => {
-                                event.preventDefault()
-                                changeFormType("registration")
+                                event.preventDefault();
+                                changeFormType("registration");
                             }}>Регистрация</button>
                     </div>
 
-                    <div className="form_inputs">
+                    <div className="login-page__form-inputs">
                         <input
                             placeholder="Имя пользователя"
-                            value={inputValues["username"] == undefined ? "" : inputValues["username"]}
+                            value={inputValues["username"] === undefined ? "" : inputValues["username"]}
                             onChange={(event) => {
                                 setInputValues({
                                     ...inputValues,
                                     ...{ "username": event.target.value }
-                                })
+                                });
                             }} />
                         <input
                             type="password"
                             placeholder="Пароль"
-                            value={inputValues["password"] == undefined ? "" : inputValues["password"]}
+                            value={inputValues["password"] === undefined ? "" : inputValues["password"]}
                             onChange={(event) => {
                                 setInputValues({
                                     ...inputValues,
                                     ...{ "password": event.target.value }
-                                })
+                                });
                             }} />
-                        {formType == "registration" &&
+                        {formType === "registration" &&
                             <input
                                 type="email"
                                 placeholder="Почта"
-                                value={inputValues["email"] == undefined ? "" : inputValues["email"]}
+                                value={inputValues["email"] === undefined ? "" : inputValues["email"]}
                                 onChange={(event) => {
                                     setInputValues({
                                         ...inputValues,
                                         ...{ "email": event.target.value }
-                                    })
+                                    });
                                 }}
                                 style={{ animation: "backInRight 0.75s linear" }}
                             />
                         }
                     </div>
-                    <div className="errors">
+                    <div className="login-page__errors">
                         {registrationErrorOccured &&
-                            <div className="registration_error">
+                            <div className="login-page__registration-error">
                                 Не подходящие имя пользователя или пароль
                             </div>}
                         {loginErrorOccured &&
-                            <div className="login_error">
+                            <div className="login-page__login-error">
                                 Такой пользователь не найден
                             </div>}
                     </div>
-                    {formType == "login" &&
-                        <button className="login_button">Вход</button>}
-                    {formType == "registration" &&
-                        <button className="registration_button">Регистрация</button>}
-
+                    {formType === "login" &&
+                        <button className="login-page__login-button">Вход</button>}
+                    {formType === "registration" &&
+                        <button className="login-page__registration-button">Регистрация</button>}
                 </form>
             </div>
         </div>

@@ -76,35 +76,35 @@ const AnimeCard = (props) => {
     }, [])
 
     return (
-        <>
+        <div className='anime-card'>
             {type == animeCardTypeEnum.small &&
-                <div className='anime_small_component' onClick={() => navigate(navigationUrl)}>
-                    <div className='anime_small_component_description'>
+                <div className='anime-small-card' onClick={() => navigate(navigationUrl)}>
+                    <div className='anime-small-card__description'>
                         <p> {prettifiedDescription} </p>
                     </div>
-                    <div className='anime_small_component_name'>
+                    <div className='anime-small-card__name'>
                         <p> {prettifiedName} </p>
                     </div>
-                    <div className='anime_small_component_background' style={{ backgroundImage: backgroundImage }} />
+                    <div className='anime-small-card__background' style={{ backgroundImage: backgroundImage }} />
                 </div>}
 
             {type == animeCardTypeEnum.big &&
                 <>
-                    <div className='anime_big_component' onClick={() => navigate(navigationUrl)}>
-                        <div className='anime_big_component_description'>
+                    <div className='anime-big-card' onClick={() => navigate(navigationUrl)}>
+                        <div className='anime-big-card__description'>
                             <p> {prettifiedDescription} </p>
                         </div>
-                        <div className='anime_big_component_name'>
+                        <div className='anime-big-card__name'>
                             <p> {prettifiedName} </p>
                         </div>
-                        <div className='anime_big_component_background' style={{ backgroundImage: backgroundImage }} />
+                        <div className='anime-big-card__background' style={{ backgroundImage: backgroundImage }} />
                     </div>
-                    <button className='anime_big_component_favourite_button' onClick={() => onFavouriteButtonClick()}>
+                    <button className='anime-big-card__favourite-button' onClick={() => onFavouriteButtonClick()}>
                         <i className={isFavourite ? "gg-heart active" : "gg-heart"}></i>
                     </button>
                 </>
             }
-        </>
+        </div>
 
     )
 }

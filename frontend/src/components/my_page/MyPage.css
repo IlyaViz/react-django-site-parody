@@ -1,4 +1,4 @@
-.my_page {
+.my-page {
     width: 100vw;
     height: 100vh;
     background-image: url("../../../public/images/background_image_main.png");
@@ -6,15 +6,15 @@
     overflow-y: scroll;
 }
 
-.my_page::-webkit-scrollbar {
+.my-page::-webkit-scrollbar {
     display: none;
 }
 
-.my_page_content { 
+.my-page__content {
     padding-top: 20px;
 }
 
-.my_page .activity_type_buttons {
+.my-page__activity-type-buttons {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -22,7 +22,7 @@
     margin: auto;
 }
 
-.my_page .activity_type_buttons button {
+.my-page__activity-type-buttons button {
     color: white;
     cursor: pointer;
     font-size: 2rem;
@@ -34,20 +34,20 @@
     background: none;
 }
 
-.my_page .activity_type_buttons button.active {
+.my-page__activity-type-buttons button.active {
     color: rgb(220, 80, 80);
     border-bottom: 1px solid rgb(255, 255, 255);
 }
 
-.my_page .activity_type_buttons button p {
+.my-page__activity-type-buttons button p {
     line-height: 10px;
 }
 
-.my_page .activity_type_buttons {
+.my-page__activity-type-buttons {
     margin-top: 30px;
 }
 
-.my_page .my_animes {
+.my-page__my-animes {
     margin: auto;
     margin-top: 100px;
     display: grid;
@@ -55,7 +55,7 @@
     grid-gap: 50px 10px;
 }
 
-.my_page .load_more_button {
+.my-page__load-more-button {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
@@ -69,39 +69,37 @@
     transition: color 0.25s linear, border 0.25s linear;
 }
 
-.my_page .my_animes * {
+.my-page__my-animes * {
     animation: backInUp 0.65s linear;
-    /* error here */
-    margin: auto;
 }
 
-.my_page .activity_type_buttons button.active:hover {
+.my-page__activity-type-buttons button.active:hover {
     border-bottom: 1px solid white;
 }
 
-.my_page .activity_type_buttons button:hover {
+.my-page__activity-type-buttons button:hover {
     border-bottom: 1px solid rgb(200, 200, 200);
 }
 
-.my_page .load_more_button:hover {
+.my-page__load-more-button:hover {
     color: white;
     border-bottom: 1px solid white;
 }
 
 @media screen and (max-width: 1500px) {
-    .my_page .my_animes {
+    .my-page__my-animes {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media screen and (max-width: 950px) {
-    .my_page .my_animes {
+    .my-page__my-animes {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media screen and (max-width: 625px) {
-    .my_page .my_animes {
+    .my-page__my-animes {
         grid-template-columns: repeat(1, 1fr);
     }
 }

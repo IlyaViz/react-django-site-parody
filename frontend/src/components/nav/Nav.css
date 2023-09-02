@@ -1,8 +1,8 @@
-nav {
+.nav {
     padding-top: 15px;
 }
 
-nav .all_components {
+.nav__all-components {
     display: flex;
     justify-content: space-around;
     gap: 10%;
@@ -10,15 +10,14 @@ nav .all_components {
     min-height: 69.8px;
 }
 
-
-nav .left_components,
-nav .center_components,
-nav .right_components {
+.nav__left-components,
+.nav__center-components,
+.nav__right-components {
     display: flex;
     align-items: center;
 }
 
-nav .center_components {
+.nav__center-components {
     color: #9ea0a1;
     justify-content: space-between;
     gap: 28px;
@@ -27,25 +26,25 @@ nav .center_components {
     margin-left: 50px;
 }
 
-nav .right_components {
+.nav__right-components {
     color: #9ea0a1;
     font-size: 1.25rem;
 }
 
 @media screen and (max-width: 600px) {
-    nav .all_components {
+    .nav__all-components {
         gap: 0;
     }
 
-    nav .left_components {
+    .nav__left-components {
         margin-left: 15px;
     }
 
-    nav .center_components div:not(:last-child) {
-        display: none;
-    }
-    nav .right_components {
+    .nav__center-components div:not(:last-child) {
         display: none;
     }
 
+    .nav__right-components {
+        display: none;
+    }
 }

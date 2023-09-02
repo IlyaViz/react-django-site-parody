@@ -1,14 +1,14 @@
-.anime_page {
+.anime-page {
     background-image: url("../../../public/images/background_image_main.png");
     background-size: cover;
 }
 
-.anime_page_wrapper { 
+.anime-page__wrapper {
     background-image: url("../../../public/images/background_image_main.png");
     background-size: cover;
 }
 
-.anime_page_content {
+.anime-page__content {
     height: 100vh;
     display: flex;
     align-items: center;
@@ -16,43 +16,43 @@
     gap: 0px;
 }
 
-.anime_page .episodes {
+.anime-page__episodes {
     display: grid;
     overflow-y: scroll;
     max-height: 350px;
 }
 
-.anime_page .no_anime_error {
+.anime-page__no-anime-error {
     font-size: 2.5rem;
     color: rgb(140, 50, 50);
     text-align: center;
 }
 
-.anime_page .episodes::-webkit-scrollbar {
+.anime-page__episodes::-webkit-scrollbar {
     display: none;
 }
 
-@media screen and (min-width:751px) and (max-width: 950px) {
-    .anime_page .anime_page_content {
+@media screen and (min-width: 751px) and (max-width: 950px) {
+    .anime-page__content {
         flex-direction: column;
     }
 
-    .anime_page .episodes {
+    .anime-page__episodes {
         grid-template-columns: 1fr 1fr;
         max-height: 300px;
     }
 
-    .anime_page .episode {
+    .anime-page__episode {
         margin-left: 10px
     }
 }
 
 @media screen and (max-width: 750px) {
-    .anime_page .anime_page_content {
+    .anime-page__content {
         flex-direction: column;
     }
 
-    .episodes {
+    .anime-page__episodes {
         grid-template-columns: 1fr;
         max-height: 300px;
     }

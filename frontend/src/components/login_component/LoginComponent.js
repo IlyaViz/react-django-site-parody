@@ -23,11 +23,11 @@ const LoginComponent = () => {
 
 
     return (
-        <div className="login_or_user">
+        <div className="login-component">
             {isTokenValid ?
-                <Link to="/profile">{user.username}</Link>
+                <Link to="/profile" className="login-component__link">{user.username}</Link>
                 :
-                <Link to="/login">Войти</Link>
+                <Link to="/login" className="login-component__link">Войти</Link>
             }
         </div>
     )

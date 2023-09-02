@@ -58,29 +58,34 @@ const ProfilePage = () => {
     }, [])
 
     return (
-        <div className='profile_page'>
+        <div className='profile-page'>
             <Nav />
-            <div className='profile_page_content'>
+            <div className='profile-page__content'>
                 <div className='settings' ref={settingsRef}>
-                    <h1> Настройки </h1>
-                    <div className='settings_sections'>
-                        <form className='telegram_form' onSubmit={(event) => onTelegramFormSubmit(event)}>
-                            <section> Телеграм </section>
+                    <h1 className='settings__title'>Настройки</h1>
+                    <div className='settings__sections'>
+                        <form className='telegram-form' onSubmit={(event) => onTelegramFormSubmit(event)}>
+                            <section className='settings__section'>Телеграм</section>
                             <input
-                                value={inputValues["chatId"] == undefined ? "" : inputValues["chatId"]}
+                                value={inputValues.chatId === undefined ? '' : inputValues.chatId}
                                 onChange={(event) => {
                                     setInputValues({
                                         ...inputValues,
-                                        ...{ "chatId": event.target.value }
-                                    })
+                                        chatId: event.target.value,
+                                    });
                                 }}
-                                placeholder='Введите ваш id с ботом' />
-                            <button> Сохранить </button>
+                                placeholder='Введите ваш id с ботом'
+                            />
+                            <button className='telegram-form__button'>Сохранить</button>
                             <br />
-                            <a href='https://t.me/test_ilya_python_bot'> Наш чат бот</a>
+                            <a href='https://t.me/test_ilya_python_bot' className='telegram-form__link'>
+                                Наш чат бот
+                            </a>
                         </form>
                     </div>
-                    <button className='logout_button' onClick={() => onLogoutButtonClick()}> Выйти </button>
+                    <button className='settings__logout-button' onClick={() => onLogoutButtonClick()}>
+                        Выйти
+                    </button>
                 </div>
             </div>
         </div>

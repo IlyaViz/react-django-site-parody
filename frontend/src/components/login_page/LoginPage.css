@@ -1,33 +1,33 @@
-.login_page {
+.login-page {
     width: 100vw;
     height: 100vh;
     background-image: url("../../../public/images/background_image_main.png");
     background-size: cover;
 }
 
-.login_page_content {
+.login-page__content {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 125px;
 }
 
-.login_page .login_form {
+.login-page__form {
     margin-bottom: 50px;
 }
 
-.login_form .errors {
+.login-page__errors {
     color: red;
     text-align: center;
 }
 
-.login_page .type_buttons {
+.login-page__type-buttons {
     display: flex;
     justify-content: space-around;
     gap: 5px;
 }
 
-.login_page .type_buttons button {
+.login-page__type-buttons button {
     border-radius: 10px;
     width: 175px;
     height: 40px;
@@ -36,16 +36,16 @@
     border: none;
     color: white;
     cursor: pointer;
-    transition: background-color 0.25s linear, color 0.25s linear
+    transition: background-color 0.25s linear, color 0.25s linear;
 }
 
-.login_page .type_buttons button.active {
+.login-page__type-buttons button.active {
     font-size: 1.55rem !important;
     background-color: white !important;
     color: black !important;
 }
 
-.login_page .form_inputs {
+.login-page__form-inputs {
     margin-top: 15px;
     gap: 10px;
     display: flex;
@@ -54,7 +54,7 @@
     align-items: center;
 }
 
-.login_page .form_inputs input {
+.login-page__form-inputs input {
     width: 300px;
     height: 50px;
     border-radius: 20px;
@@ -65,8 +65,8 @@
     border: none;
 }
 
-.login_button,
-.registration_button {
+.login-page__login-button,
+.login-page__registration-button {
     cursor: pointer;
     border: 2px solid black;
     transition: background-color 0.25s, color 0.25s;
@@ -81,16 +81,16 @@
     transform: translateX(5px);
 }
 
-.login_page .type_buttons button:hover {
+.login-page__type-buttons button:hover {
     background-color: rgb(60, 60, 60);
 }
 
-.login_button:hover,
-.registration_button:hover {
+.login-page__login-button:hover,
+.login-page__registration-button:hover {
     color: rgb(217, 217, 217);
     background-color: rgb(44, 44, 44);
 }
 
-.login_page .form_inputs input:focus {
+.login-page__form-inputs input:focus {
     outline: 1px solid rgb(255, 255, 255);
 }

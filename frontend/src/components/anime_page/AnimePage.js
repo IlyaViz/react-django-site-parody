@@ -40,19 +40,19 @@ const AnimePage = () => {
     return (
         <>
             {animeExist ?
-                <div className='anime_page'>
-                    <div className='anime_page_wrapper'>
+                <div className='anime-page'>
+                    <div className='anime-page__wrapper'>
                         <Nav />
-                        <div className='anime_page_content'>
-                            <div className='anime'>
+                        <div className='anime-page__content'>
+                            <div className='anime-page__anime'>
                                 <AnimeCard
                                     type={animeCardTypeEnum.big}
                                     animeObject={anime}
                                 />
                             </div>
 
-                            <div className='episodes'>
-                                {episodes.length != 0 ?
+                            <div className='anime-page__episodes'>
+                                {episodes.length !== 0 ?
                                     episodes.map((episode, index) => {
                                         return <Episode
                                             key={index}
@@ -60,7 +60,7 @@ const AnimePage = () => {
                                         />
                                     })
                                     :
-                                    <p className='no_anime_error'> No episodes for this anime yet</p>
+                                    <p className='anime-page__no-anime-error'> No episodes for this anime yet</p>
                                 }
                             </div>
                         </div>
@@ -71,7 +71,7 @@ const AnimePage = () => {
                     />
                 </div>
                 :
-                <div className='no_anime_error'>
+                <div className='anime-page__no-anime-error'>
                     Anime not found
                 </div>
 

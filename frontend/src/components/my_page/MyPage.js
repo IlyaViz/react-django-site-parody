@@ -55,13 +55,13 @@ const MyPage = () => {
     }, [selectedButton])
 
     return (
-        <div className='my_page'>
+        <div className='my-page'>
             <Nav />
-            <div className='my_page_content'>
-                <div className='activity_type_buttons'>
+            <div className='my-page__content'>
+                <div className='my-page__activity-type-buttons'>
                     <button
-                        className={selectedButton == "Последние просмотры" ? "active" : ""}
-                        onClick={() => { setSelectedButton("Последние просмотры") }}>
+                        className={selectedButton === "Последние просмотры" ? "active" : ""}
+                        onClick={() => { setSelectedButton("Последние просмотры"); }}>
                         {window.innerWidth > 1200 ?
                             <p>Последние просмотры</p>
                             :
@@ -70,30 +70,30 @@ const MyPage = () => {
                     </button>
 
                     <button
-                        className={selectedButton == "Любимые" ? "active" : ""}
-                        onClick={() => { setSelectedButton("Любимые") }}>
+                        className={selectedButton === "Любимые" ? "active" : ""}
+                        onClick={() => { setSelectedButton("Любимые"); }}>
                         Любимые
                     </button>
                 </div>
 
-                <div className='my_animes'>
+                <div className='my-page__my-animes'>
                     {animes.map((anime, index) => {
                         return <AnimeCard
                             key={index}
                             type={animeCardTypeEnum.small}
                             animeObject={anime}
-                        />
+                        />;
                     })}
 
                 </div>
                 {hasMoreAnimes &&
                     <button
-                        className='load_more_button'
+                        className='my-page__load-more-button'
                         onClick={() => fetchAnimes()}>
                         Загрузить ещё
                     </button>
                 }
-            </div >
+            </div>
         </div>
     )
 

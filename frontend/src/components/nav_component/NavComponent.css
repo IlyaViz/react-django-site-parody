@@ -13,7 +13,7 @@
     vertical-align: middle;
 }
 
-.nav-component--active .nav-component__link {
+.nav-component.active .nav-component__link {
     padding-bottom: 5px;
     border-bottom: 2px solid rgb(254, 79, 79);
     transition: border-bottom 0.1s linear !important;

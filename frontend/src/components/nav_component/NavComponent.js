@@ -8,7 +8,7 @@ const NavComponent = (props) => {
     const selected = urlNameConverter(location) == name
 
     return (
-        <div className={`nav-component ${selected ? 'nav-component--active' : ''}`}>
+        <div className={selected ? "nav-component active" : "nav-component"}>
             <Link to={redirect} className="nav-component__link">
                 {name}
             </Link>
